@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style:none;
+        }
+
+        ul{
+            width: 600px;
+            height:40px;
+            margin:100px auto;
+        }
+
+        li{
+            float: left;
+            position: relative;
+            width: 120px;
+            height: 40px;
+            /*transform:rotateX(30deg) rotateY(45deg) scale(3);*/
+            /* 让li里面的子盒子保持3d效果*/
+            transform-style:preserve-3d;
+
+            transition:all 0.5s;
+        }
+
+        li span{
+            position: absolute;
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: yellow;
+            left:0;
+            top:0;
+        }
+
+        li span:nth-child(1){
+            background-color: green;
+            transform:rotateX(90deg) translateZ(20px);
+        }
+
+        li span:nth-child(2){
+
+            transform:translateZ(20px);
+        }
+
+
+        ul:hover li{
+            transform:rotateX(-90deg);
+        }
+
+        li:nth-child(1){
+            transition-delay: 0s;
+        }
+
+        li:nth-child(2){
+            transition-delay:0.1s;
+        }
+
+        li:nth-child(3){
+            transition-delay:0.2s;
+        }
+
+        li:nth-child(4){
+            transition-delay:0.3s;
+        }
+
+        li:nth-child(5){
+            transition-delay:0.4s;
+        }
+    </style>
+</head>
+<body>
+<ul class="nav">
+    <li>
+        <span>menu1</span>
+        <span>CS逍遥剑仙</span>
+    </li>
+    <li>
+        <span>menu2</span>
+        <span>CS逍遥剑仙</span>
+    </li>
+    <li>
+        <span>menu3</span>
+        <span>CS逍遥剑仙</span>
+    </li>
+    <li>
+        <span>menu4</span>
+        <span>CS逍遥剑仙</span>
+    </li>
+    <li>
+        <span>menu5</span>
+        <span>CS逍遥剑仙</span>
+    </li>
+</ul>
+</body>
+</html>

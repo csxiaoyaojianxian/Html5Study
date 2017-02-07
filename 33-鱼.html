@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+
+        .fishbox{
+            width: 200px;
+            height: 200px;
+            /*background-color: rgba(0,0,0,0.4);*/
+            position: absolute;
+            left:0;
+            top:0;
+            animation: run 20s linear infinite;
+            animation-direction: normal;
+        }
+        .fish{
+            width: 174px;
+            height: 126px;
+            position: absolute;
+            left:35%;
+            top:0;
+            background:url(images/fish/fish8.png) no-repeat left top;
+            /*transition:all 0.8s steps(8) ;*/
+            animation:active1 0.8s steps(8) infinite;
+
+        }
+        
+        .sharkbox{
+              width: 509px;
+              height: 270px;
+              animation: run2 20s linear infinite;
+        }
+        .shark{
+            width: 509px;
+            height: 270px;
+            background:url(images/fish/shark1.png) no-repeat;
+            animation: active2 1s steps(8) infinite;
+        }
+
+
+
+
+        @keyframes active1 {
+            0%{
+
+            }
+            100%{
+                background-position: left -1008px;
+            }
+        }
+
+        @keyframes active2 {
+            0%{
+
+            }
+            100%{
+                background-position: left -2160px;
+            }
+        }
+
+        @keyframes run {
+            0%{
+
+            }
+
+            15%{
+                transform:translate(600px,0px) rotate(45deg) ;
+            }
+
+            50%{
+                transform:translate(600px,350px) rotate(135deg) ;
+            }
+
+            75%{
+                transform:translate(50px,300px) rotate(235deg);
+            }
+
+
+            100%{
+                transform:translate(0px,0px) rotate(360deg) ;
+            }
+        }
+
+       @keyframes run2{
+            0%{
+                transform:translateX(-600px);
+            }
+
+            100%{
+                transform:translateX(2000px);
+            }
+       }
+    </style>
+</head>
+<body>
+    <div class="fishbox">
+        <div class="fish"></div>
+    </div>
+    <div class="sharkbox">
+         <div class="shark"></div>
+    </div>
+   
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 300px;
+            height: 150px;
+            margin:100px auto;
+            border: 100px solid #000;
+            border-color:red green blue yellow;
+            
+            /**
+             * 【border-radius】
+             */
+/*             
+            border-radius: 20px;
+            border-top-left-radius:60px 120px;
+            border-top-right-radius:60px 120px;
+            border-bottom-left-radius:60px 120px;
+            border-bottom-right-radius:60px 120px; 
+*/
+            /*border-radius赋值顺序*/
+            /*
+                1  2
+
+                4  3
+             */
+            /*  一个值    4个角的水平垂直半径都是120 */
+            border-radius: 120px; 
+
+            /* 
+                两个值
+                第一个值： 左上、右下 1、3
+                第二值是： 右上、左下 2、4
+             */
+            border-radius: 60px 120px;
+
+            /*
+                三个值
+                第一个值： 左上 1
+                第二值值： 右上、左下 2、4
+                第三个值： 右下 3
+            */
+            border-radius: 20px 60px 120px;
+
+            /* ：*/
+            /*
+                四个值
+                顺时针
+                左上 -> 右上 -> 右下 -> 左下 1、2、3、4
+                如果值不满4个取对角的值
+            */
+            border-radius: 10px 30px 60px 90px;
+
+            /**
+             * 两组数据：水平 + 垂直
+             */
+            /*
+                1    2
+               5      6
+                
+               8      7
+                4    3
+            */
+
+            /* 水平半径{1,4}/垂直半径{1,4}  */
+            /* 1 2 3 4 / 5 6 7 8 */
+            border-radius: 30px 60px 90px 120px / 30px 60px 90px 120px;
+            border-radius: 30px / 120px;
+
+            /**
+             * 【border-radius】应用
+             */
+            /* 1/4圆 */
+            border-radius: 100% 0 0 0 ;
+            /* 圆 / 椭圆 */
+            border-radius: 50%;
+            border-radius: 150px / 75px;
+
+
+            /**
+             * 【box-shadow】边框阴影
+             */
+            /* box-shadow: 水平位移 垂直位移 模糊程度 阴影大小 阴影颜色 外/内阴影(inset)*/
+            /* 外阴影：outset  默认值不用写 */
+            box-shadow: 10px 10px 30px 1px red inset;
+
+            
+            /**
+             * 【border-image】边框图片
+             */
+            border-image-source: url(images/border.png);
+            /* 裁剪顺序：上右下左*/
+            border-image-slice: 27 27 27 27;
+            /* 边框图片的宽度*/
+            border-image-width: 27px;
+            /* 边框图片的平铺
+                repeat：平铺
+                stretch: 拉伸
+                round :自动计算再平铺*/
+            border-image-repeat: round;
+            border-image-outset: 27px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

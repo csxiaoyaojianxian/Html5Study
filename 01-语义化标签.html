@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /* 
+        .header{
+            width: 1000px;
+            height: 120px;
+            background-color: pink;
+            margin:0 auto;
+        }
+
+        .nav{
+            width: 1000px;
+            height: 60px;
+            background-color: #daa520;
+            margin:0 auto;
+        }
+
+        .section{
+            width: 1000px;
+            height: 400px;
+            background-color: #ccc;
+            margin:0 auto;
+        }
+
+        .section .aside{
+            float: left;
+            height: 400px;
+            background-color: red;
+            width: 400px;
+        }
+
+        .section .article{
+            float: right;
+            height: 400px;
+            background-color: green;
+            width: 600px;
+        }
+
+        .footer{
+            width: 1000px;
+            height: 90px;
+            background-color: #333;
+            margin:0 auto;
+        } 
+        */
+        header{
+            width: 1000px;
+            height: 120px;
+            background-color: pink;
+            margin:0 auto;
+        }
+
+        nav{
+            width: 1000px;
+            height: 60px;
+            background-color: #daa520;
+            margin:0 auto;
+        }
+
+        section{
+            width: 1000px;
+            height: 400px;
+            background-color: #ccc;
+            margin:0 auto;
+        }
+
+        section aside{
+            float: left;
+            height: 400px;
+            background-color: red;
+            width: 400px;
+        }
+
+        section article{
+            float: right;
+            height: 400px;
+            background-color: green;
+            width: 600px;
+        }
+
+        footer{
+            width: 1000px;
+            height: 90px;
+            background-color: #333;
+            margin:0 auto;
+        }
+    </style>
+    <!-- 注意：ie8以下的浏览器不支持h5标签-->
+    <!--解决办法： 引入html5shiv.js文件-->
+    <!--  条件注释 只有ie能够识别-->
+
+    <!--[if lte ie 8]>
+        <script src="html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!--
+        l: less 更小
+        t：than 比
+        e: equal等于
+        g：great 更大
+    -->
+</head>
+<body>
+    <!--  
+    	标签语义化：在合适的地方用合适的标签
+        p:段落  h1： 标题
+        div： 可以放任何内容
+        有利于seo优化
+          新增语义化标签
+           header 头部
+           nav 导航
+           section 区域
+           aside 侧边栏
+           article 文章
+           footer 底部
+           progress 进度条
+    -->
+
+    <!--网页经典布局-->
+<!--     
+	<div class="header"></div> 
+    <div class="nav"></div>
+    <div class="section">
+        <div class="aside"></div>
+        <div class="article"></div>
+    </div>
+    <div class="footer"></div> 
+-->
+
+    <!--头部-->
+    <header>header</header>
+    <!--导航-->
+    <nav>nav</nav>
+    <!--主体-->
+    <section>
+        <aside>侧边栏</aside>
+        <article>文章</article>
+    </section>
+    <!-- 底部-->
+    <footer>底部</footer>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--
+    autoplay: 自动播放
+    controls:控制条
+    loop：循环
+-->
+    <!--<audio src="music/yinyue.mp3" autoplay controls> </audio>-->
+    <!--推荐的兼容写法：-->
+    <audio controls loop autoplay>
+        <source src="music.mp3"/>
+        <source src="music.ogg"/>
+        <source src="music.wav"/>
+        抱歉，你的浏览器不支持音频标签！
+    </audio>
+
+    <!--<video src="video/movie.mp4" controls  autoplay ></video>-->
+    <!--  行内块 display:inline-block -->
+    <video controls autoplay>
+        <source src="video.mp4"/>
+        <source src="video.ogg"/>
+        <source src="video.webm"/>
+        抱歉，浏览器要换了！
+    </video>
+</body>
+</html>

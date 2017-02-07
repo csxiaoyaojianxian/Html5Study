@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 1000px;
+            margin:100px auto;
+        }
+
+        .box div{
+            width: 300px;
+            height:150px;
+            background-color: red;
+            float: left;
+            margin-right:15px;
+
+        }
+        .box .box2{
+            background-color: pink;
+            transition:all 1s;
+            /* 设置变换中心*/
+            transform-origin: top left;
+        }
+
+        .box .box2:hover{
+            background-color: blue;
+
+            /* 【transform】:  css3中用于做变换的属性
+                scale(): 放缩
+                    取值：大于1 放大  小于1缩小  不能为百分比
+                    scale(x,y)
+                    x：水平放缩倍数
+                    y: 垂直放缩倍数
+                    如果只写一个值为等比例缩放
+                translate(): 位移
+                    translate(x):一个值  水平方向位移，竖直方向不变
+                    tarnslate(x,y): x:水平方向上的位移，y:竖直方向上的位移
+                    x，y 可以为正也可以为负
+                         为正：向下 向右移动
+                         为负：向上 向左移动
+                    取值可以为百分比，百分比以自身宽度为参考
+                rotate(): 旋转
+                    deg：角度
+                    正值：顺时针旋转
+                    负值：逆时针旋转
+                    变换中心：transform-origin
+                        默认 几何中心
+                        自定义：left right center top bottom ,40px 30px;
+                skew(): 倾斜
+            */
+           
+            transform:scale(2,0.5) translate(0,50%) rotate(-45deg) skew(0deg,30deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+    </div>
+
+</body>
+</html>

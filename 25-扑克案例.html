@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        .box{
+            width: 310px;
+            height: 441px;
+
+            margin:100px auto;
+            position: relative;
+            
+        }
+
+        /*.img1{*/
+            /*transition:all 1s;*/
+            /* 变换中心*/
+            /*
+                transform-origin:
+                left top center  right  bottom
+                50px 50px
+            */
+            /*transform-origin:center bottom;*/
+        /*}*/
+
+    .box img{
+        position: absolute;
+        left:0;
+        top:0;
+        transition:all 1s;
+
+        /* 设置变换中心*/
+        transform-origin: center bottom;
+        box-shadow: 1px 1px 3px 1px #333;
+
+    }
+
+        .box:hover img:nth-child(6){
+            transform:rotate(-10deg);
+        }
+
+        .box:hover img:nth-child(5){
+            transform:rotate(-20deg);
+        }
+
+        .box:hover img:nth-child(4){
+            transform:rotate(-30deg);
+        }
+        .box:hover img:nth-child(3){
+            transform:rotate(-40deg);
+        }
+        .box:hover img:nth-child(2){
+            transform:rotate(-50deg);
+        }
+        .box:hover img:nth-child(1){
+            transform:rotate(-60deg);
+        }
+
+        .box:hover img:nth-child(8){
+            transform:rotate(10deg);
+        }
+
+        .box:hover img:nth-child(9){
+            transform:rotate(20deg);
+        }
+
+        .box:hover img:nth-child(10){
+            transform:rotate(30deg);
+        }
+        .box:hover img:nth-child(11){
+            transform:rotate(40deg);
+        }
+        .box:hover img:nth-child(12){
+            transform:rotate(50deg);
+        }
+        .box:hover img:nth-child(13){
+            transform:rotate(60deg);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img  src="images/pk2.png" alt=""/>
+        <img  src="images/pk2.png" alt=""/>
+        <img  src="images/pk2.png" alt=""/>
+        <img  src="images/pk2.png" alt=""/>
+        <img  src="images/pk2.png" alt=""/>
+        <img  src="images/pk2.png" alt=""/>
+        <img  src="images/pk2.png" alt=""/>
+        <img  src="images/pk2.png" alt=""/>
+        <img  src="images/pk2.png" alt=""/>
+        <img  src="images/pk2.png" alt=""/>
+        <img  src="images/pk2.png" alt=""/>
+        <img  src="images/pk2.png" alt=""/>
+        <img  src="images/pk2.png" alt=""/>
+    </div>
+</body>
+</html>

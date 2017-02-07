@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 钟表</title>
+    <style>
+
+    /*  .clock {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            border: 10px solid #000;
+            border-radius: 110px;
+            position: relative;
+        }
+
+        .line {
+            height: 100%;
+            width: 4px;
+            background-color: #CCC;
+            position: absolute;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .line2 {
+            transform: rotateZ(30deg);
+        }
+
+        .line3 {
+            transform: rotateZ(60deg);
+        }
+
+        .line4 {
+            transform: rotateZ(90deg);
+        }
+
+        .line5 {
+            transform: rotateZ(120deg);
+        }
+
+        .line6 {
+            transform: rotateZ(150deg);
+        }
+
+        .line1, .line4 {
+            width: 6px;
+            margin-left: -3px;
+            background-color: #AAA;
+        }
+
+        .cover {
+            width: 160px;
+            height: 160px;
+            border-radius: 80px;
+            background-color: #FFF;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -80px 0 0 -80px;
+        }
+
+        .hour {
+            height: 60px;
+            width: 6px;
+            background-color: #000;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -60px 0 0 -3px;
+            transform-origin: center bottom;
+            !*自已计算时间*!
+            animation: move 3600s steps(60) infinite;
+        }
+        .minute {
+            height: 70px;
+            width: 4px;
+            background-color: #000;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -70px 0 0 -2px;
+            transform-origin: center bottom;
+            animation: move 3600s steps(60) infinite;
+        }
+        .second {
+            height: 80px;
+            width: 2px;
+            background-color: red;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -80px 0 0 -1px;
+            transform-origin: center bottom;
+            animation: move 60s steps(60) infinite;
+        }
+
+        .dotted {
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #000;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -10px 0 0 -10px;
+        }
+        @keyframes move {
+            !*利用from 和 to 也可以指定动画的步骤*!
+            from {
+                transform: rotateZ(0deg);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+        }*/
+
+        .clock{
+             width: 200px;
+             height: 200px;
+             border: 10px solid #000000;
+             border-radius: 110px;
+             margin: 100px auto;
+             position: relative;
+        }
+
+        .line{
+             background: rgba(62, 62, 38, 0.18);
+             width: 4px;
+             height: 100%;
+             position: absolute;
+             left: 50%;
+             margin-left: -2px;
+        }
+
+        .line2{
+                transform: rotate(30deg);
+        }
+        .line3{
+            transform: rotate(60deg);
+        }
+        .line4{
+            transform: rotate(90deg);
+        }
+        .line5{
+            transform: rotate(120deg);
+        }
+        .line6{
+            transform: rotate(150deg);
+        }
+
+        .line1,.line4{
+             width: 6px;
+             margin-left: -3px;
+        }
+
+        .cover{
+            width: 160px;
+            height: 160px;
+            background-color: #FFFFFF;
+            border-radius: 80px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -80px 0px 0px -80px;
+        }
+
+        .hour{
+              height: 60px;
+              width: 6px;
+              background-color: pink;
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              margin: -60px 0px 0px -3px;
+            transform-origin: bottom center;
+            animation: move 21600s steps(60) infinite;
+        }
+        .minute{
+            height: 70px;
+            width: 4px;
+            background-color: deeppink;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -70px 0px 0px -2px;
+            transform-origin: bottom center;
+            animation: move 3600s steps(60) infinite;
+        }
+        .second{
+            height: 80px;
+            width: 2px;
+            background-color: pink;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -80px 0px 0px -1px;
+            transform-origin: bottom center;
+            animation: move 60s steps(60) infinite;
+        }
+
+        .dotted{
+             width: 20px;
+             height: 20px;
+             background-color: #000000;
+             border-radius: 10px;
+             left: 50%;
+            top:50%;
+             position: absolute;
+             margin: -10px 0px 0px -10px;
+        }
+
+        @keyframes move {
+                from{
+                     transform: rotateZ(0deg);
+                }to
+                 {
+                     transform: rotateZ(360deg);
+                 }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+        <div class="line line4"></div>
+        <div class="line line5"></div>
+        <div class="line line6"></div>
+        <div class="cover"></div>
+        <div class="hour"></div>
+        <div class="minute"></div>
+        <div class="second"></div>
+        <div class="dotted"></div>
+    </div>
+</body>
+</html>

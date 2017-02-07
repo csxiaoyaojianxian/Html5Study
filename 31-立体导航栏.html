@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background-color: #999;
+        }
+        ul{
+            width: 900px;
+            margin:100px auto;
+            height:80px;
+            position: relative;
+        }
+        /* 整个菜单导航条的左右边 */
+        ul::after ,ul::before{
+            content:"";
+            position: absolute;
+            width: 100px;
+            height:80px;
+            background-color: #ccc;
+            left:-100px;
+        }
+        ul::after{
+            /* left 设置auto */
+            left:auto;
+            right:-100px;
+        }
+        ul li{
+            float: left;
+            width: 180px;
+            height: 80px;
+        }
+        ul li span{
+            float: left;
+            height:80px;
+        }
+        ul li .left,ul li .right{
+            width: 30px;
+            height:100%;
+            background-color: #ccc;
+            transition:all 0.3s;
+        }
+        ul li .center{
+            width:120px;
+            height:80px;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 80px;
+            font-size: 24px;
+            font-family: "Microsoft Yahei";
+            transition:all 0.3s;
+        }
+        ul li:hover .left{
+            transform-origin: left;
+            transform:skew(0deg,-30deg);
+            background-color: #c1c1c1;
+            box-shadow: 10px 20px 20px  -10px #666;
+        }
+        ul li:hover .center{
+            transform:translateY(-17px);
+            text-shadow: 5px 5px 3px #666;
+            box-shadow: 0 20px 20px -10px #666;
+        }
+        ul li:hover .right{
+            transform-origin: right;
+            transform:skew(0deg,30deg);
+            background-color: #c1c1c1;
+            box-shadow: -10px 20px 20px  -10px #666;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>
+        <span class="left"></span>
+        <span class="center">禅林阆苑</span>
+        <span class="right"></span>
+    </li>
+    <li>
+        <span class="left"></span>
+        <span class="center">禅林阆苑</span>
+        <span class="right"></span>
+    </li>
+    <li>
+        <span class="left"></span>
+        <span class="center">禅林阆苑</span>
+        <span class="right"></span>
+    </li>
+    <li>
+        <span class="left"></span>
+        <span class="center">禅林阆苑</span>
+        <span class="right"></span>
+    </li>
+    <li>
+        <span class="left"></span>
+        <span class="center">禅林阆苑</span>
+        <span class="right"></span>
+    </li>
+</ul>
+</body>
+</html>

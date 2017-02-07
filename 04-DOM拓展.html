@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 300px;
+            height: 100px;
+            margin:10px auto;
+            border: 1px solid #000;
+        }
+        .active{
+            border-radius: 50%;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1" id="box1"></div>
+    <div class="box box3 "></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+    <button>切换</button>
+
+    <!-- 给标签添加自定义属性 必须以data-开头 -->
+    <div class="box cs" title="盒子" data-my-name="csxiaoyao"  data-content="我是一个div"></div>
+
+    <script>
+        /**
+         * 获取元素
+         */
+        //【querySelector】获取符合条件的第一个元素
+        var box1=document.querySelector('.box3');
+        box1.style.background='red';
+
+        //【querySelectorAll】获取所有的标签，返回的是一个数组，参数：可以是任意css选择器
+        var divs= document.querySelectorAll('div.box');
+        console.log(divs);
+        for(var i=0;i<divs.length;i++){
+            divs[i].style.width="100px";
+        }
+
+        /**
+         * 类名操作
+         */
+        // h5新增的操作类名的方式 和jq一样好用
+        // box1.className="";
+        // juqery
+        // addClass()  removeClass()  hasClass()  toggleClass();
+        
+        // 控制类名的API：
+        // node.classList.add()添加类名
+        // node.classList.remove();删除类名
+        // node.classList.contains()判断是否包含指定的类名
+        // node.classList.toggle()切换指定的类名
+        
+        // 添加类名
+        box1.classList.add('active');
+        // 删除类名
+        box1.classList.remove('active');
+        // 判断是否包含某类名
+        var f = box1.classList.contains('active');
+        console.log(f);//false
+        // 切换类名
+        document.querySelector('button').onclick=function(){
+            document.querySelector('.box3').classList.toggle('active');
+        }
+
+        /**
+         * 自定义属性
+         */
+        var box = document.querySelector('.cs');
+        // 原来js里的自定义属性
+        // box.index=100;
+        // console.log(box.className);
+        
+        // H5给标签添加自定义属性 必须以data-开头
+        // 【设置值与获取】通过dateset[]方式来获取
+        box.dataset['content']='csxiaoyao';
+        console.log(box.dataset['content']);//csxiaoyao
+        // data-my-name="csxiaoyao"
+        console.log(box.dataset['myName']);//csxiaoyao
+
+    </script>
+</body>
+</html>
