@@ -71,18 +71,23 @@
 
         /* 【结构伪类】*/
         /*
-            E：first-child　选中父元素中的第一个子元素
-            E：last-child　选中父元素中的最后一个子元素
-            E：nth-child(1)　选中父元素中的第5个子元素,所选到的元素的类型 必须是指定的类型E,否则选择无效
+            E：first-child:　选中父元素中的第一个子元素
+            E：last-child:　选中父元素中的最后一个子元素
+            E：nth-child(1):　选中父元素中的第5个子元素,所选到的元素的类型 必须是指定的类型E,否则选择无效
                 n: 0,1,2,3,4......当n小于1时无效
                 偶数： 2n  even
                 奇数： 2n-1 odd
                 前5个：-n+5
             E：nth-last-child(3): 从后向前选择， 选中倒数第3个
+            
+            E: first-of-type: 找到第一个这种类型的标签
+            E: last-of-type: 找到最后一个这种类型的标签
+            E: nth-of-type(2): 找到索引为设置值的某一类元素
 
-            E：empty 表示元素为空的状态
+            E：empty: 表示元素为空的状态
             E: target: 表示元素被激活的状态  要配合锚点使用
          */
+
         /* 选中第一个*/
         li:first-child{
             background-color: pink;
@@ -123,6 +128,18 @@
         /* 选中7的倍数*/
         li:nth-child(7n){
               background-color: green;
+        }
+        /* 找到第一个这种类型的标签 */
+        div h3:first-of-type{
+            background-color: darkorange;
+        }
+        /* 找到最后一个这种类型的标签 */
+        div h3:last-of-type{
+            background-color: yellowgreen;
+        }
+        /* 找到索引为设置值的某一类元素 */
+        div h3:nth-of-type(2){
+            background-color: yellowgreen;
         }
         /* 如果div是空则会被选中*/
         div:empty{
@@ -172,6 +189,7 @@
         div::first-line{
             color:red;
         }
+        
 
         /**
          * 应用：首字下沉
