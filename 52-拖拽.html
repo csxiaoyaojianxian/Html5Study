@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .one{
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+        }
+
+        .one>div,.two>div{
+            width: 98px;
+            height: 98px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            background-color: red;
+            float: left;
+            text-align: center;
+            line-height: 98px;
+        }
+
+        .two{
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            position: absolute;
+            left:600px;
+            top:200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="one">
+        <div draggable="true">1</div>
+        <div draggable="true">2</div>
+        <div draggable="true">3</div>
+        <div draggable="true">4</div>
+        <div draggable="true">5</div>
+        <div draggable="true">6</div>
+        <div draggable="true">7</div>
+        <div draggable="true">8</div>
+    </div>
+    <div class="two"></div>
+
+    <script>
+/*
+1、需要设置拖拽：draggable="true"
+2、拖拽元素：
+    ondragstart: 拖拽开始
+    ondragend:拖拽结束
+    ondragleave: 当鼠标拖拽离开 被拖拽元素时
+    ondrag:　当拖拽时，持续触发
+3、目标元素：
+    ondragenter:当被拖拽元素进入目标元素时
+    ondragleave:当鼠标进入目标元素时
+    ondragover: 当被拖拽元素在目标元素上时，持续触发
+        --> e.preventDefault(); 阻止拖拽的默认行为；
+    ondrop:当在目标元素上松开鼠标时触发；
+ */
+        var boxs=document.querySelectorAll('.one div');
+        // 临时的盒子 用于存放当前拖拽的元素
+        var two=document.querySelector('.two');
+        var temp=null;
+        // 给8个小盒子分别绑定拖拽事件
+        for(var i=0;i<boxs.length;i++){
+            boxs[i].ondragstart=function(){
+                // 保持当前拖拽的元素
+                temp=this;
+                console.log(temp);
+            }
+            boxs[i].ondragend=function(){
+                // 当拖拽结束 ，清空temp
+                temp=null;
+                console.log(temp);
+            }
+        }
+        // 目标元素的拖拽事件
+        two.ondragover=function(e){
+            // 阻止拖拽的默认行为
+            e.preventDefault();
+        }
+        // 当在目标元素上松开鼠标是触发
+        two.ondrop=function(){
+            // 将拖拽的元素追加到 two里面来
+            this.appendChild(temp);
+        }
+    </script>
+</body>
+</html>

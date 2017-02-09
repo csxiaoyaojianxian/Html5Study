@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3伸缩布局</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: '微软雅黑';
+			background-color: #F7F7F7;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.wrapper {
+			width: 1024px;
+			margin: 0 auto;
+		}
+
+		.wrapper > section {
+			min-height: 300px;
+			margin-bottom: 30px;
+			box-shadow: 1px 1px 4px #DDD;
+			background-color: #FFF;
+		}
+
+		.wrapper > header {
+			text-align: center;
+			line-height: 1;
+			padding: 20px;
+			margin-bottom: 10px;
+			font-size: 30px;
+		}
+
+		.wrapper section > header {
+			line-height: 1;
+			padding: 10px;
+			font-size: 22px;
+			color: #333;
+			background-color: #EEE;
+		}
+
+		.wrapper .wrap-box {
+			padding: 20px;
+		}
+
+		.wrapper .flex-img {
+			width: 100%;
+		}
+		
+		/*!*两端对齐（传统）*!*/
+		section:nth-child(2) ul {
+			overflow: hidden;
+		}
+
+		section:nth-child(2) li {
+			width: 200px;
+			height: 200px;
+			text-align: center;
+			line-height: 200px;
+			font-size: 20px;
+			float: left;
+			background-color: pink;
+			margin-right: 192px;
+		}
+
+		section:nth-child(2) li:last-child {
+			margin-right: 0;
+		}
+		section:nth-child(3) ul{
+			/*	/justify-content*
+				用来控制主轴方向的内容的位置的计算.
+
+			*/
+
+				/*我需要先把父盒子定义为伸缩盒子*/
+				display: flex;
+			  /* justify-content: space-between;*/
+		/*	//弹性盒子元素会平均地分布在行里，两端保留子元素与子元素之间间距大小的一半。*/
+			  /*  justify-content:space-around;*/
+				/**/
+			/*	justify-content:flex-start;*/
+			/*justify-content:flex-end;*/
+				/*居中..*/
+				justify-content: center;
+
+		}
+		section:nth-child(3) li{
+				width: 200px;
+				height: 200px;
+				text-align: center;
+				line-height: 200px;
+				font-size: 20px;
+				background-color: pink;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<header>CSS3-伸缩布局介绍</header>
+		<!-- 传统写法 -->
+		<section>
+			<header>两端对齐布局（传统）</header>
+			<div class="wrap-box">
+				<p>需要精确计算宽度及外边距，会很麻烦</p>
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- 新方法 -->
+		<section>
+			<header>两端对齐布局（伸缩布局）</header>
+			<div class="wrap-box">
+				<p>自动精确控制对齐，无需计算</p>
+				<ul>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</div>
+		</section>
+		<section>
+			<header>新概念</header>
+			<div class="wrap-box">
+				<img class="flex-img" src="./images/flex.png" alt="">
+			</div>
+		</section>
+	</div>
+</body>
+</html>

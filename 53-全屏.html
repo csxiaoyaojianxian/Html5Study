@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 250px;
+            height: 250px;
+            background-color: green;
+            margin:100px auto;
+            border-radius: 50%;
+        }
+
+        .box:-webkit-full-screen{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+        var box=document.querySelector('.box');
+        document.querySelector('.box').onclick=function(){
+//            box.requestFullscreen();
+//            兼容写法
+            if(box.requestFullscreen){
+                box.requestFullscreen();
+            }else if(box.webkitRequestFullScreen){
+                box.webkitRequestFullScreen();
+            }else if(box.mozRequestFullScreen){
+                box.mozRequestFullScreen();
+            }
+        }
+    </script>
+</body>
+</html>
