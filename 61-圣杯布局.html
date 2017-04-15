@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+header{
+	width: 100%;
+	height: 40px;
+	background-color: blue;
+}
+.container{
+	height: 200px;
+	overflow: hidden;
+	padding: 0 100px; /* 让中间自适应盒子安全显示 */
+}
+.middle{
+	width: 100%;
+	height: 200px;
+	float: left;
+	background-color: green;
+}
+.left{
+	width: 100px;
+	height: 200px;
+	float: left;
+	background-color: pink;
+	margin-left: -100%; /* 左侧盒子局左的精髓 CSS负边距 */
+	position: relative; /* 让中间自适应盒子安全显示 */
+	left: -100px;
+}
+.right{
+	width: 100px;
+	height: 200px;
+	float: left;
+	background-color: purple;
+	margin-left: -100px; /* 右侧盒子局右的精髓 CSS负边距 */
+	position: relative; /* 让中间自适应盒子安全显示 */
+	right: -100px;
+}
+footer{
+	width: 100%;
+	height: 30px;
+	background-color: #888;
+}
+</style>
+</head>
+<body>
+<header>Header</header>
+<div class="container">
+	<div class="middle">中间弹性区中间弹性区中间弹性区中间弹性区中间弹性区中间弹性区中间弹性区中间弹性区中间弹性区中间弹性区中间弹性区中间弹性区中间弹性区中间弹性区中间弹性区</div>
+	<div class="left">左侧固定区</div>
+	<div class="right">右侧固定区</div>
+</div>
+<footer>Footer</footer>
+</body>
+</html>
