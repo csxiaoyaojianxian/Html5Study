@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<!-- 
+		【关于em和rem】
+		1.设置<meta name="viewport" content="width=device-width, initial-scale=1">
+		2.设置页面元素宽度单位为 rem 或 em
+		em 相对长度单位，其参照当前元素字号大小，如果当前元素未设置字号则会继承其祖先元素字号大小 例如 .box {font-size: 16px;} 则 1em = 16px .box {font-size: 32px;} 则 1em = 32px，0.5em = 16px 
+		rem 相对长度单位，其参照根元素(html)字号大小 例如 html {font-size: 16px;} 则 1rem = 16px html {font-size: 32px;} 则 1rem = 32px，0.5rem = 16px;  注：所有浏览器默认字号都是16px
+		【技巧】font-size: 62.5%; 因为10/16=0.625
+
+		【常见注意事项】
+		1.点击高亮效果
+		在移动端浏览器会遇见点击出现高亮的效果，在项目中一般不需要这个默认的效果，通常会把这个点击的颜色设置成透明
+		-webkit-tap-highlight-color:transparent;/*清除点击高亮效果*/
+		2.盒子模型
+		css3的新属性box-sizing，设置宽度以边框开始计算，避免出现多余的滚动条
+		-webkit-box-sizing: border-box;/*webkit内核兼容性写法*/
+		box-sizing: border-box;
+		3.input默认样式清除
+		在移动设备的浏览器中input标签一般会有默认的样式，通过border=none,outline=none无法去除如立体效果、3d效果等，需要添加下列样式
+		-webkit-appearance: none;
+		4.最小宽度和最大的宽度
+			在移动端开发的时候，如果想限制某个元素的大小，选用 max-width 限制最大值，为了不让用户无止境的缩放
+			使用min-width 防止在超小屏幕上显示错乱(不考虑小屏幕手机用户)
+			移动端为了在宽度方向上进行适配会使用百分比宽度
+			高度方向上由于页面的高度由内容撑开的，所以高度还是使用具体的值
+		max-width: 640px;  /*在行业当中的移动端的设计图一般使用的是640px*/
+		min-width: 300px;  /*在移动设备当中现在最小的尺寸320px*/
+		5.结构伪类选择器
+		nth-child()如果有多个不同兄弟节点获取的时候,索引需要特殊计算,可以限定在某一个类型上
+		E:first-of-type匹配同类型中的第一个元素E
+		E:last-of-type匹配同类型中的最后一个元素E
+		E:nth-of-type(n) 匹配同类型中的第n个元素E
+	-->
+	<style type="text/css">
+		a{
+			width: 200px;
+			height: 200px;
+			display: block;
+			/* 手指点击 清除默认的 高亮效果 透明 */
+			-webkit-tap-highlight-color: transparent ;
+			/* 保证内容的大小不变 */
+			box-sizing: content-box;
+			/* 保证盒子大小不变，内容可能会变，移动端设置所有盒子border-box，盒子大小不变 */
+			box-sizing: border-box;
+		}
+		input{
+			border: 0;
+			width: 100px;
+			height: 100px;
+			background-color: skyblue;
+			/* 移动端 有些浏览器会默认给input标签添加一些特有的样式，如3d高光效果  */
+			-webkit-appearance: none;
+		}
+	</style>
+	<script type="text/javascript">
+		var viewport = document.documentElement;
+	 	var width = viewport.clientWidth;
+	 	var fontSize = width / 20;
+	 	viewport.style.fontSize = fontSize;
+	</script>
+</head>
+<body>
+	<a href="#"></a>
+	<input type="button" name="" value="按钮">
+</body>
+</html>

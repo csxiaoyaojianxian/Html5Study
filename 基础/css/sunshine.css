@@ -1,0 +1,25 @@
+/* 常用CSS样式 */
+/* 操作背景的属性 */
+body{
+	/*background-color:#CCC; 设置背景颜色*/
+	background-image:url(../sunshine.jpg);
+	background-repeat:no-repeat;/*设置背图片是否要重复*/
+	background-position:100px 100px;/*设置背景图片的位置*/
+	/*background-position:center;*/
+}
+/* 操作文本的样式 */
+div,span{
+	color:#F00;
+	font-size:16px;
+	line-height:40px;
+	letter-spacing:10px;
+	text-align:center;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+/* 操作表格的样式 */
+table{
+	/*border-collapse:collapse; 合并表格的边框*/
+	border-spacing:20px;/*设置单元格的边框与表格的边框距离*/
+	table-layout:fixed;
+}

@@ -1,0 +1,138 @@
+<html>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+  <head>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+	<style type="text/css">
+		body {background-color: white}
+		p {margin-left: 20px}
+	</style>
+  </head>
+  <body background="/i/eg_background.jpg">
+<!-- 折行 -->
+	<p style="color: red; margin-left: 20px">This is<br />a paragraph<br />with line breaks</p>
+<!-- 水平线 -->
+    <hr />
+
+<!-- 文本格式化 -->
+	<b>bold</b><strong>strong</strong><big>big</big><small>small</small>
+	<em>emphasized</em><i>italic</i>
+	<sub>subscript</sub><sup>superscript</sup>
+	<ins>insert</ins><u>Not recommend</u><!-- 下划线 -->
+	<del>delete</del><s>Not recommend</s><strike>Not recommend</strike><!-- 删除线 -->
+
+<!-- “计算机输出” -->
+	<!-- 预格式文本 适合显示代码 -->
+	<pre>
+		for i = 1 to 10
+			 print i
+		next i
+		定义预格式文本
+	</pre>
+	<listing>Not recommend 用pre代替</listing>
+	<!-- <plaintext>Not recommend 用pre代替</plaintext> -->
+	<xmp>Not recommend 用pre代替</xmp>
+	<code>Computer code 定义计算机代码</code><kbd>Keyboard input 定义键盘码</kbd><tt>Teletype text 定义打字机代码</tt><samp>Sample text 定义计算机代码样本</samp><var>Computer variable 定义变量</var>
+
+<!-- 引用和术语定义 -->
+	<abbr title="etcetera">etc.</abbr><acronym title="World Wide Web">把鼠标移至缩略词显示完整，IE 5</acronym>
+	<bdo dir="rtl">文字输出方向</bdo>
+	<address>
+		Written by <a href="mailto:webmaster@example.com">sun</a>.<br> 
+		Visit us at:<br>
+		Example.com<br>
+		Box 564, Disneyland<br>
+		USA
+	</address>
+	<blockquote>长引用-长引用-长引用-长引用-长引用-长引用-长引用</blockquote><q>短引用</q>
+	<cite>引用</site><dfn>定义项目</dfn>
+
+<!-- 样式标签 不建议使用 -->
+	<font></font><basefont></basefont><center></center>
+
+<!-- 链接 -->
+	<a href="http://www.w3school.com.cn/" target="_blank">新窗口打开 Visit W3School!</a>
+	<a name="tips">锚点</a>
+	<a href="#tips">同页中指向</a>
+	<a href="http://www.w3school.com.cn/html/html_links.asp#tips">不同页指向</a>
+	<!-- target="_top" target="_parent" -->
+	<a href="mailto:someone@microsoft.com?subject=Hello%20again">发送邮件 使用%20来替换空格</a>
+	<a href="mailto:someone@microsoft.com?cc=someoneelse@microsoft.com&bcc=andsomeoneelse2@microsoft.com&subject=Summer%20Party&body=You%20are%20invited%20to%20a%20big%20summer%20party!">发送复杂邮件</a>
+
+<!-- HTML 图像 -->
+	<img src="boat.gif" alt="Big Boat" align="middle" width="200" height="200"><!-- 图像排列bottom/middle/top,默认是bottom -->
+	<p><img src ="/i/eg_cute.gif" align ="right">带图像的段落,align属性为"right",图像浮到文本右侧</p>
+	<!-- 背景见body标签 -->
+	<!-- 图像映射 -->
+	<img src="/i/eg_planets.jpg" border="0" usemap="#planetmap" alt="Planets" />
+	<map name="planetmap" id="planetmap">
+		<area shape="rect" coords="0,0,110,260"	href ="/example/html/sun.html" target ="_blank"	alt="Sun" />
+		<area shape="circle" coords="129,161,10" href ="/example/html/mercur.html" target ="_blank" alt="Mercury" />
+	</map>
+	<a href="/example/html/html_ismap.html"><img src="/i/eg_planets.jpg" ismap /></a>
+
+<!-- HTML 表格 -->
+	<table border="8" cellpadding="10" cellspacing="20" background="/i/eg_bg_07.gif" bgcolor="white" width="500">
+		<caption>标题</caption>
+		<col align="left" width="40%" />
+		<col align="right" width="60%" />
+
+		<colgroup span="2" align="left"></colgroup>
+		<colgroup align="right" style="color:#0000FF;"></colgroup>
+		<thead>
+		    <tr>
+		      	<th>页眉</th>
+		      	<th>第一行</th>
+		    </tr>
+	  	</thead>
+	  	<tfoot>
+		    <tr>
+		      	<td>页脚</td>
+		     	<td>最后一行</td>
+		    </tr>
+		</tfoot>
+		<tbody>
+			<tr>
+				<th>表头</th>
+				<th>加粗</th>
+			</tr>
+			<tr>
+				<td colspan="2" align="right">align</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td rowspan="2">row 2, cell 2</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>Table with frame="box":</p>
+	<table frame="box"><tr><th>Month</th><th>Savings</th></tr><tr><td>January</td><td>$100</td></tr></table>
+	<p>Table with frame="above":</p>
+	<table frame="above"><tr><th>Month</th><th>Savings</th></tr><tr><td>January</td><td>$100</td></tr></table>
+	<p>Table with frame="below":</p>
+	<table frame="below"><tr><th>Month</th><th>Savings</th></tr><tr><td>January</td><td>$100</td></tr></table>
+	<p>Table with frame="hsides":</p>
+	<table frame="hsides"><tr><th>Month</th><th>Savings</th></tr><tr><td>January</td><td>$100</td></tr></table>
+	<p>Table with frame="vsides":</p>
+	<table frame="vsides"><tr><th>Month</th><th>Savings</th></tr><tr><td>January</td><td>$100</td></tr></table>
+
+<!-- HTML 列表 -->
+	<ul type="circle"><!-- type="disc" type="square" --><!-- <dir><menu>已弃用 -->
+		<li>Coffee</li>
+		<li>Milk</li>
+	</ul>
+	<ol type="A"><!-- type="a" type="I" type="i" -->
+		<li>Coffee</li>
+		<li>Milk</li>
+	</ol>
+	<dl>
+		<dt>Coffee</dt>
+		<dd>Black hot drink</dd>
+		<dt>Milk</dt>
+		<dd>White cold drink</dd>
+	</dl>
+
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #0094ff;
+			transition: all 1s;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
+<script type="text/javascript">
+	window.onload = function () {
+		document.querySelector("div").onclick = function () {
+			this.style.backgroundColor = 'red';
+		}
+		// 添加事件监听 transitionEnd
+		// transitionEnd 是c3中退出的新属性，浏览器厂商需要添加私有前缀
+		document.querySelector("div").addEventListener('transitionEnd',function () {
+			console.log('过渡结束');
+		})
+		// 过渡结束事件
+		document.querySelector("div").addEventListener('webkitTransitionEnd',function () {
+			console.log('过渡结束，添加浏览器前缀方法');
+			this.style.borderRadius ='20px';
+		})
+
+	}
+</script>

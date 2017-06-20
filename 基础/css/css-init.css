@@ -1,0 +1,21 @@
+@media screen and (min-width: 320px) and (max-width : 480px) {
+    html{-webkit-text-size-adjust: none;}
+}
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; } 
+body, button, input, select, textarea { font:12px/1.5 Î¢ÈíÑÅºÚ, tahoma, arial, \5b8b\4f53; } 
+h1, h2, h3, h4, h5, h6{ font-size:62.5%; } 
+address, cite, dfn, em, var { font-style:normal; } 
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; } 
+small{ font-size:12px; } 
+ul, ol { list-style:none; } 
+a { text-decoration:none; } 
+a:hover { text-decoration:underline; } 
+sup { vertical-align:text-top; } 
+sub{ vertical-align:text-bottom; } 
+legend { color:#000; } 
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:62.5%; } 
+table { border-collapse:collapse; border-spacing:0; } 
+
+.clearfix:after{content:"";display:block;height:0;visibility:hidden;overflow:hidden;clear:both;}
+.clearfix {zoom: 1;/*IE678*/}

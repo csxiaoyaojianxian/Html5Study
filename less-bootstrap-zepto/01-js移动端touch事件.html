@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 移动端视口属性 -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		html,body{
+			height: 100%;
+		}
+		body{
+			background-color:hotpink;
+		}
+		div{
+			width: 20px;
+			height: 20px;
+			border: 1px solid #0094ff;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
+<script type="text/javascript" >
+	window.onload  = function () {
+
+
+// 移动端使用的是touch事件,但是并不能直接通过ontouch等语法访问,需要使用addEventListener进行绑定
+// 可选事件
+// touchstart:手指触摸时触发
+// touchmove:手指在屏幕上滑动时连续触发
+// touchend:当手指离开屏幕时触发
+// touchcancel:系统停止跟踪触摸时候会触发(使用较少)
+
+		// 触摸开始的时候被触发
+		// 定义变量保存开始的坐标值
+		var startX = 0;
+		// 定义变量保存移动的距离
+		var moveX = 0;
+		// 定义变量记录小div结束的时候移动的距离
+		var distanceX = 0;
+
+		var startY = 0;
+		var moveY = 0;
+		var distanceY =0;
+
+		document.body.addEventListener('touchstart',function (event) {
+			console.log('touchstart');
+			// console.log(event);
+			console.log(e.targetTouches); //目标元素的所有当前触摸
+		    console.log(e.changedTouches);//最新更改的所有触摸
+		    console.log(e.touches);//所有的触摸
+			// 获取起始的坐标值
+			startX = event.touches[0].clientX;
+			startY = event.touches[0].clientY;
+			console.log('startX:'+startX);
+		})
+
+		// 手指开始移动时会一直触发
+		document.body.addEventListener('touchmove',function (event) {
+			console.log('touchmove');
+			// console.log(event);
+			// 获取在X方向移动的距离
+			moveX = event.touches[0].clientX -startX;
+			console.log('moveX:'+moveX);
+
+			moveY = event.touches[0].clientY -startY;
+			// 直接修改 div的 transform
+			// document.querySelector("div").style.transform = 'translateX('+(moveX+distanceX)+'px)';
+			document.querySelector("div").style.transform = 'translate('+(distanceX+moveX)+'px,'+(distanceY+moveY)+'px)';
+		})
+
+		// 手指抬起的时候会触发
+		document.body.addEventListener('touchend',function (event) {
+			console.log('touchend');
+			// console.log(event);
+			// 移动结束的时候记录移动的距离
+			// distanceX = moveX +distanceX;
+			distanceX+=moveX;
+			distanceY+=moveY;
+		})
+	}
+</script>

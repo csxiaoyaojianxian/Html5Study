@@ -1,0 +1,134 @@
+// 注释 less支持跟js一样的注释
+/* 使用 css的注释,编译的时候该注释也会被保留 */
+
+// 安装
+// 1、安装Nodejs环境 Node Package Manager (验证 node -v  npm -v)
+// 2、打开控制台（cmd），执行npm install -g less (验证 lessc -v)
+// 3、执行 npm install -g less-plugin-clean-css
+// 4、命令行编译 lessc path/xxx.less path/xxx.css
+// 编译
+// 一般都会借助于编辑器插件来完成编译任务，以sublime_text为例
+// 1、ctrl+shit+p打开命令面板
+// 2、输入install package然后回车
+// 3、安装 LESS、lessc、Less2Css三个插件
+// 4、alt+s快捷键即可实现编译 
+// 浏览器中使用
+// 引入一个less.js文件，实现实时的解析，而不必每次修改都要编译，最后完成所有开发任务后，再通过编辑器编译成css文件
+// 1、下载然后引入less.js
+// 2、引入xx.less文件，如：
+// <link rel="stylesheet/less" type="text/css" href="styles.less" />
+// 注意：rel属性必须指定成stylesheet/less，并且styles.less要先于less.js引入
+// 必须以服务器方式访问，可以放到study目录下，或者webstrom自带服务器功能
+
+// 基本语法
+// 【变量】
+// 变量名:变量值
+@jdRed:rgb(201,21,35);
+// 定义宽度
+@minWidth:100px;
+// 定义图片尺寸
+@imageSize:100px 100px;
+body{
+	background-color: @jdRed;
+}
+h3{
+	background-color:@jdRed;
+	background-size: @imageSize;
+}
+ul{
+	background-color:@jdRed;
+	width:@minWidth;
+}
+
+// 【混合】
+// 类似于函数用法
+.red{
+	background-color: red;
+	border:1px solid red;
+	color:red;
+}
+// 括号中  参数名:参数的默认值
+.oneColor(@color:#0094ff){
+	background-color: @color;
+	border:1px solid @color;
+	color:@color;
+}
+body{
+	.red();
+}
+ul{
+	.oneColor(yellow);
+}
+div{
+	.oneColor();
+}
+
+// 【嵌套】
+// 直接写单纯的层次关系
+.main{
+	width: 100%;
+	.main_left{
+		width: 90px;
+		ul{
+			width: 100%;
+			li{
+				width: 100%;
+				text-align: center;
+				height: 50px;
+				line-height: 50px;
+				border-bottom: 1px solid gray;
+				border-right: 1px solid gray;
+				a{
+					color:black;
+				}
+			}
+		}
+	}
+	.main_right{
+		overflow: hidden;
+		/* 顶部 左右 底部为0 */
+		padding: 10px 10px 0;
+		.right_banner{
+			display: block;
+			width: 100%;
+			img{
+				display: block;
+				width: 100%;	
+			}
+		}
+		h3{
+			margin-top: 10px;
+			font-size: 12px;	
+		}	
+		ul{
+			width: 100%;
+			padding-top: 10px;
+		}
+	}
+}
+
+// 演示 伪元素 交集选择器 :hover等 需要紧挨着元素的样式
+// 如果只是想要该class里的样式，不传递任何参数时可以不写括号
+// 如果直接往下写，生成的css是后代
+// 可以在符号之前添加&符号，就会去掉默认的空格，变为紧邻
+.clearfix{
+	content: '';
+	display:block;
+	line-height:0;
+	height:0;
+	visibility: hidden;
+	clear:both;
+}
+ul{
+	.clearfix;
+	li{
+		width: 100%;
+		height: 60px;
+		&.current{
+			color:red;
+		}
+		&::before{
+			.clearfix;
+		}
+	}
+}
