@@ -1,0 +1,40 @@
+//.mixin (@a) when (lightness(@a) >= 50%) {   //255/2=127.5
+//  background-color: black;
+//}
+//.mixin (@a) when (lightness(@a) < 50%) {
+//  background-color: white;
+//}
+//.mixin (@a) {
+//  color: @a;
+//}
+//.class1 { .mixin(#7e7e7e) }  //221  > 127.5  >50%  background-color: black;  7e7e7e  =  126
+//.class2 { .mixin(#808080) }  //85 <127.5  <50%   background-color: white;  808080 = 128
+
+//iscolor,isnumber.....判断值得类型
+//.mixin (@a) when (iscolor(@a)) {   //255/2=127.5
+//  background-color: black;
+//}
+//.mixin (@a) when (isnumber(@a) ) {
+//  background-color: white;
+//  shuzi:shuzi;
+//}
+//.mixin (@a) {
+//  color: @a;
+//}
+//.class1 { .mixin(#7e7e7e) }  //background-color: black;
+//.class2 { .mixin(123) }  //background-color: white;
+
+
+
+//ispixel,ispercentage.....单位检查函数
+.mixin (@a) when (ispixel(@a)) {
+  background-color: black;
+}
+.mixin (@a) when (ispercentage(@a) ) {
+  background-color: white;
+}
+.mixin (@a) {
+  width: @a;
+}
+.class1 { .mixin(960px) }  //background-color: black; width:960px
+.class2 { .mixin(95%) }  //background-color: white;width:95%

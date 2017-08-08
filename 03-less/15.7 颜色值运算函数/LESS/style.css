@@ -1,0 +1,61 @@
+body {
+  c: #80e619;
+  c: #80ff00;
+}
+div {
+  width: 90px;
+  height: 50px;
+  font-size: 16px;
+  text-align: center;
+}
+.ys1 {
+  background: #80e619;
+}
+.ys2 {
+  background: #80ff00;
+}
+.ys3 {
+  background: #80cc33;
+}
+.ys4 {
+  background: #b3f075;
+}
+.ys5 {
+  background: #4d8a0f;
+}
+.ys66 {
+  background: rgba(128, 230, 25, 0.5);
+}
+.ys6 {
+  background: #80e619;
+}
+.ys7 {
+  background: rgba(128, 230, 25, 0.1);
+}
+.ys8 {
+  background: #80e619;
+}
+.ys9 {
+  background: rgba(128, 230, 25, 0.4);
+}
+.ys10 {
+  background: #f2330d;
+}
+.ys11 {
+  background: #f20d0d;
+}
+.ys12 {
+  background: rgba(100, 50, 20, 0.5);
+}
+.ys13 {
+  background: rgba(0, 150, 120, 0.2);
+}
+.ys14 {
+  background: rgba(65, 85, 55, 0.35);
+}
+.ys15 {
+  background: #80ff00;
+}
+.ys16 {
+  background: #ffffff;
+}

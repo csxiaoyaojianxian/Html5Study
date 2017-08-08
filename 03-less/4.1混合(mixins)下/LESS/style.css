@@ -1,0 +1,87 @@
+.font_hn {
+  color: red;
+  font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+}
+h1 {
+  font-size: 28px;
+  color: red;
+  font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+}
+h2 {
+  font-size: 24px;
+  color: red;
+  font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+}
+h1 {
+  font-size: 28px;
+  color: red;
+  font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+}
+h2 {
+  font-size: 24px;
+  color: red;
+  font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+}
+.my-hover-mixin:hover {
+  border: 1px solid red;
+}
+button:hover {
+  border: 1px solid red;
+}
+h1:hover {
+  border: 1px solid red;
+}
+h1:hover {
+  border: 1px solid #008000;
+  border: 21px #008000 #ff0000;
+}
+h2:hover {
+  border: 1px solid #000000;
+  border: 21px #000000 #ff0000;
+}
+/*带参数并且有默认值的混合*/
+h1:hover {
+  border: 1px solid #ff0000;
+}
+h2:hover {
+  border: 1px solid #ffff00;
+}
+/*带多个参数的混合*/
+.divmaizi {
+  color: 1, 2, 3;
+  margin: 10px;
+  padding: 20px;
+}
+/*定义多个具有相同名称和参数数量的混合*/
+/*命名参数*/
+.class1 {
+  color: #33acfe;
+  margin: 20px;
+  padding: 20px;
+}
+.class2 {
+  color: #efca44;
+  margin: 10px;
+  padding: 40px;
+}
+.class3 {
+  color: #000000;
+  margin: 10px;
+  padding: 80px;
+}
+/*@arguments;*/
+.div1 {
+  border: 1px solid solid;
+  border: 21px solid #ff0000;
+}
+footer {
+  border: 21px t_l 10px;
+  border-top-left-radius: 10px;
+  border: 21px b-r 10px;
+  border-bottom-right-radius: 10px;
+  background: #33acfe;
+}
+div {
+  padding: 33px;
+  margin: 66px;
+}

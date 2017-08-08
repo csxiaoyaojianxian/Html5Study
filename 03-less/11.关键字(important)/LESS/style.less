@@ -1,0 +1,13 @@
+.foo (@bg: #f5f5f5, @color: #900) {
+  background: @bg;
+  color: @color;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.unimportant {
+  .foo();
+}
+.important {
+  .foo() !important;
+}

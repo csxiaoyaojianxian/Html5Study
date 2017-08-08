@@ -1,0 +1,37 @@
+@green: #801f77;
+@baise:white;
+
+header,footer{
+  background: @green;
+  h1{
+    color: @baise;
+  }
+}
+
+//作为选择器和属性名的变量
+
+@kuandu:width;
+
+.@{kuandu}{
+  @{kuandu}:150px
+}
+
+//作为URL的变量
+@imgurl:"https://www.baidu.com/img/";
+header{
+  background: @green url("@{imgurl}bdlogo.png");
+  height: 500px;
+}
+
+//定义多个相同名称的变量时
+@var: 0;
+
+.class {
+  @var: 1;
+    .brass {
+      @var: 2;
+      three: @var;  //这是的值是3
+      @var: 3;
+    }
+  one: @var;  //这是的值是1
+}

@@ -1,0 +1,26 @@
+div{
+//  d:escape('#, ^, (, ), {, }, |, :, >, <, ;, ], [ , =');
+//  filter: e("ms:alwaysHasItsOwnSyntax.For.Stuff()");
+//  filter: ~"ms:alwaysHasItsOwnSyntax.For.Stuff()";
+////  width: calc(960px-100px);
+//  width: calc(~'960px-100px');
+//  height: calc(~'960px-100px');
+//  font-family: %( "%a %a" , "Microsoft", "YaHei");
+//  font-family: ""Microsoft" "YaHei"";
+
+//  font-family: %( "%A %a" , "Microsoft", "YaHei");
+//  font-family: "%22Microsoft%22 "YaHei"";
+
+//  font-family: %( "%s %s" , F60, "YaHei");
+
+//  font-family: %( "%s %s" , "Microsoft", "YaHei");
+//  font-family: "Microsoft YaHei";
+
+//content: replace("Hello, maizi", "maizi", "LESS");
+//  content: replace("Hello, A", "A", "B");
+
+//n:length(1px solid #0080ff);
+
+  @list: "A", "B", "C", "D";
+  n:extract(@list,4)
+}

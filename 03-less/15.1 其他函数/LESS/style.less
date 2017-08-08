@@ -1,0 +1,32 @@
+//.x(1) {  x:11 }
+//.x(2) { y:22 }
+//.x(@x) when (default()) {z:@x}
+//body{
+////  background: color("#f60");
+////  width: convert(1s,ms);
+////  background: data-uri('arr.jpg');
+//}
+//.div1{
+//  .x(1)
+//}
+//.div2{
+//  .x(123)
+//}
+
+
+//.x(@x) when (ispixel(@x)) {width:@x}
+//.x(@x) when not(default()) {padding:(@x/10)}
+//
+//.div1{
+//  .x(100px)
+//}
+//
+//.div2{
+//  .x(100cm);
+//  color:red;
+//}
+
+
+div{
+  width: unit(100px);
+}

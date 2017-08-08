@@ -1,0 +1,69 @@
+//基本混合
+.font_hn{
+  color: red;
+  font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+}
+h1{
+  font-size: 28px;
+  .font_hn;
+}
+h2{
+  font-size: 24px;
+  .font_hn;
+}
+//不带输出的混合，类名后面使用()
+.font_hn(){
+  color: red;
+  font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+}
+h1{
+  font-size: 28px;
+  .font_hn;
+}
+h2{
+  font-size: 24px;
+  .font_hn;
+}
+
+//带选择器的混合
+.my-hover-mixin {
+  &:hover {
+    border: 1px solid red;
+  }
+}
+button {
+  .my-hover-mixin();
+}
+h1{
+  .my-hover-mixin();
+}
+
+//带参数的混合
+.border(@color){
+  border: 1px solid @color;
+}
+h1{
+  &:hover{
+    .border(green);
+  }
+}
+h2{
+  &:hover{
+    .border(#000);
+  }
+}
+/*带参数并且有默认值的混合*/
+//带参数并且有默认值的混合
+.border_you(@color:red){
+  border: 1px solid @color;
+}
+h1{
+  &:hover{
+    .border_you();
+  }
+}
+h2{
+  &:hover{
+    .border_you(yellow);
+  }
+}

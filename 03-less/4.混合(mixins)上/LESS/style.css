@@ -1,0 +1,46 @@
+.font_hn {
+  color: red;
+  font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+}
+h1 {
+  font-size: 28px;
+  color: red;
+  font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+}
+h2 {
+  font-size: 24px;
+  color: red;
+  font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+}
+h1 {
+  font-size: 28px;
+  color: red;
+  font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+}
+h2 {
+  font-size: 24px;
+  color: red;
+  font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+}
+.my-hover-mixin:hover {
+  border: 1px solid red;
+}
+button:hover {
+  border: 1px solid red;
+}
+h1:hover {
+  border: 1px solid red;
+}
+h1:hover {
+  border: 1px solid #008000;
+}
+h2:hover {
+  border: 1px solid #000000;
+}
+/*带参数并且有默认值的混合*/
+h1:hover {
+  border: 1px solid #ff0000;
+}
+h2:hover {
+  border: 1px solid #ffff00;
+}
