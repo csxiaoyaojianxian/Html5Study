@@ -1,0 +1,59 @@
+//#bgcolor(){
+//  background: #ffffff;
+//  .a{
+//    color: #888888;
+//    &:hover{
+//      color: #ff6600;
+//    }
+//    .b{
+//      background: #ff0000;
+//    }
+//  }
+//}
+//
+//.wi{
+//  background: green;
+//  color: #fff;
+//  .a{
+//    color: green;
+//    background: #ffffff;
+//  }
+//}
+//
+//.bgcolor1{
+//  background: #fdfee0;
+//  #bgcolor>.a;
+//}
+//.bgcolor2{
+// .wi>.a;
+//}
+
+
+//省略>写法
+#bgcolor(){
+  background: #ffffff;
+  .a{
+    color: #888888;
+    &:hover{
+      color: #ff6600;
+    }
+    .b{
+      background: #ff0000;
+    }
+  }
+}
+.wi {
+  background: green;
+  color: #fff;
+  .a {
+    color: green;
+    background: #ffffff;
+  }
+}
+.bgcolor1{
+  background: #fdfee0;
+  #bgcolor .a;
+}
+.bgcolor2{
+  .wi .a;
+}

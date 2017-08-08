@@ -1,0 +1,119 @@
+@charset "UTF-8";
+// 注释：只会在LESS中显示
+/* 注释：会在LESS和CSS中显示 */
+
+
+// header{
+//   width: 960px;
+// }
+// header .logo{
+//   width: 300px;
+//   height: 150px;
+//   background: darkred;
+// }
+// header .logo:hover{
+//   background: forestgreen;
+// }
+header {
+  h1{
+    color: blue;
+  }
+  width: 960px;
+  .logo {
+    width: 300px;
+    height: 150px;
+    background: darkred;
+    &:hover {
+      background: forestgreen;
+    }
+  }
+}
+
+
+// .a .b .c {
+//   color: 123;
+// }
+.a{
+  .b{
+    .c{
+      color: 123;
+    }
+  }
+}
+
+// .c.a .b {
+//   color: 123;
+// }
+.a{
+  .b{
+    .c&{
+      color: 123;
+    }
+  }
+}
+
+// p,
+// a,
+// ul,
+// li {
+//   border-top: 2px dotted #366;
+// }
+// p p,
+// p a,
+// p ul,
+// p li,
+// a p,
+// a a,
+// a ul,
+// a li,
+// ul p,
+// ul a,
+// ul ul,
+// ul li,
+// li p,
+// li a,
+// li ul,
+// li li {
+//   border-top: 0;
+// }
+p, a, ul, li {
+  border-top: 2px dotted #366;
+  &   & {
+    border-top: 0;
+  }
+}
+
+// a a a,
+// a a b,
+// a a c,
+// a b a,
+// a b b,
+// a b c,
+// a c a,
+// a c b,
+// a c c,
+// b a a,
+// b a b,
+// b a c,
+// b b a,
+// b b b,
+// b b c,
+// b c a,
+// b c b,
+// b c c,
+// c a a,
+// c a b,
+// c a c,
+// c b a,
+// c b b,
+// c b c,
+// c c a,
+// c c b,
+// c c c {
+//   border-top: 0;
+// }
+a , b ,c{
+  &   &  & {
+    border-top: 0;
+  }
+}

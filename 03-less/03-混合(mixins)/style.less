@@ -1,0 +1,171 @@
+// 基本混合
+.font_hn1{
+  color: red;
+  font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+}
+h1{
+  font-size: 28px;
+  .font_hn1;
+}
+// h1 {
+//   font-size: 28px;
+//   color: red;
+//   font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+// }
+
+// 不带输出的混合，类名后使用()
+.font_hn2(){
+  color: red;
+  font-family: microsoft yahei, "黑体", Arial, Simsun, "Arial Unicode MS", Mingliu, Helvetica;
+}
+h2{
+  font-size: 24px;
+  .font_hn2;
+}
+
+// 带选择器的混合
+.my-hover-mixin {
+  &:hover {
+    border: 1px solid red;
+  }
+}
+button {
+  .my-hover-mixin();
+}
+// .my-hover-mixin:hover {
+//   border: 1px solid red;
+// }
+// button:hover {
+//   border: 1px solid red;
+// }
+
+//带参数的混合
+.border1(@color){
+  border: 1px solid @color;
+}
+.border2(@color:red){
+  border: 1px solid @color;
+}
+h3{
+  &:hover{
+    .border1(#000);
+  }
+}
+h4{
+  &:hover{
+    .border2();
+  }
+}
+// h3:hover {
+//   border: 1px solid #008000;
+// }
+// h4:hover {
+//   border: 1px solid #ff0000;
+// }
+
+/*带多个参数的混合*/
+//带多个参数的混合
+.mixin1(@color; @padding:xxx; @margin: 2) {
+  color-3: @color;
+  padding-3: @padding;
+  margin: @margin @margin @margin @margin;
+}
+.divmaizi {
+  .mixin1(red;)
+}
+.divmaizi {
+  .mixin1(1,2,3;something, ele;132);
+}
+// 只有“,”则以逗号分割；若含“;”则以分号分割
+.divmaizi {
+  .mixin1(1,2,3); // 三个参数
+}
+.divmaizi {
+  .mixin1(1,2,3;); // 一个参数
+}
+
+/*定义多个具有相同名称和参数数量的混合*/
+.mixin2(@color) {
+  color-1: @color;
+}
+.mixin2(@color; @padding:2) {
+  color-2: @color;
+  padding-2: @padding;
+}
+.mixin2(@color; @padding; @margin: 2) {
+  color-3: @color;
+  padding-3: @padding;
+  margin: @margin @margin @margin @margin;
+}
+.some .selector div {
+  .mixin2(#008000);
+}
+// .some .selector div {
+//   color-1: #008000;
+//   color-2: #008000;
+//   padding-2: 2;
+// }
+
+//命名参数
+/*命名参数*/
+.mixin3(@color: black; @margin: 10px; @padding: 20px) {
+  color: @color;
+  margin: @margin;
+  padding: @padding;
+}
+.class1 {
+  .mixin3(@margin: 20px; @color: #33acfe);
+}
+.class2 {
+  .mixin3(#efca44; @padding: 40px);
+}
+
+/* @arguments; */
+.border(@x:solid,@c:red){
+  border: 21px @arguments;
+}
+.div1{
+  .border(dotted);
+}
+// .div1 {
+//   border: 21px dotted #ff0000;
+// }
+// .div1 {
+//   border: 21px solid #ff0000;
+// }
+
+.border3(all,@w: 5px){
+  border-radius: @w;
+}
+.border3(t_l,@w:5px){
+  border-top-left-radius: @w;
+}
+.border3(t_r,@w:5px){
+  border-top-right-radius: @w;
+}
+.border3(b-l,@w:5px){
+  border-bottom-left-radius: @w;
+}
+.border3(b-r,@w:5px){
+  border-bottom-right-radius: @w;
+}
+footer{
+  .border3(t_l,10px);
+  .border3(b-r,10px);
+  background: #33acfe;
+}
+
+//混合的返回值
+.average(@x, @y) {
+  @average: ((@x + @y) / 2);
+  @he:(@x + @y);
+}
+div {
+  .average(16px, 50px);
+  padding: @average;
+  margin: @he;
+}
+// div {
+//   padding: 33px;
+//   margin: 66px;
+// }
