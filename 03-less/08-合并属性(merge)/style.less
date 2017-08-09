@@ -1,0 +1,19 @@
+// + 合并以后，以逗号分割属性值
+.mixin() {
+  box-shadow+: inset 0 0 10px #555 ;
+}
+.myclass {
+  .mixin();
+  box-shadow+: 0 0 20px black; // box-shadow: inset 0 0 10px #555 , 0 0 20px black;
+}
+
+// +_ 合并以后，以空格分割属性值
+.a(){
+  background+:#f60;
+  background+_:url("/sss.cs") ;
+  background+:no-repeat;
+  background+_:center;
+}
+.myclass {
+  .a(); // background: #f60 url("/sss.cs"), no-repeat center;
+}

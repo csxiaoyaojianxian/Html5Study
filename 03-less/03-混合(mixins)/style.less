@@ -161,11 +161,39 @@ footer{
   @he:(@x + @y);
 }
 div {
-  .average(16px, 50px);
-  padding: @average;
-  margin: @he;
+  .average(16px, 50px); // call
+  padding: @average; // return
+  margin: @he; // return
 }
 // div {
 //   padding: 33px;
 //   margin: 66px;
 // }
+
+// extend伪类实现样式的继承使用
+.public {
+  width: 100px;
+  height: 100px;
+}
+nav ul {
+  &:extend(.public);
+  list-style: none;
+}
+nav ul:extend(.public) {
+  list-style: none;
+}
+// .public, nav ul {
+//   width: 100px;
+//   height: 100px;
+// }
+// nav ul {
+//   list-style: none;
+// }
+
+// 参数应用：处理CSS3兼容性问题
+.transition(@property:all;@duration:1s;@function:linear;@delay:0s;) {
+  -webkit-transition: @property @duration @function @delay;
+  -moz-transition: @property @duration @function @delay;
+  -ms-transition: @property @duration @function @delay;
+  -o-transition: @property @duration @function @delay;
+}

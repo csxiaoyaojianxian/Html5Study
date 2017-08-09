@@ -1,0 +1,31 @@
+// 常用的条件运算符：>、>=、<、<=、=
+// IS函数：iscolor、isnumber、isstring、iskeyword、isurl、ispixel、ispercentage...
+// when 设置条件，& when 相当于 if 语句
+// 多条件，使用and或者逗号间隔
+.mixin (@a) when (lightness(@a) >= 50%) {
+  background-color: black;
+}
+.mixin (@a) when (lightness(@a) < 50%) {
+  background-color: white;
+}
+.box1{
+  .mixin(#ddd);
+}
+// .box1 {
+// 	background-color: black;
+// }
+
+.mixin (@a; @b: 0) when (isnumber(@b)) and (@b > 0) { 
+
+}
+.mixin (@a; @b: black) when (iscolor(@b)), (@b > 0) { 
+
+}
+
+// 如果为true，.box的文字颜色才是白色
+@my-option: true;
+& when (@my-option = true) {
+  .box2 {
+    color: white;
+  }
+}

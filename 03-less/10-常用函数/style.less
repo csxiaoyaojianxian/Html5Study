@@ -1,0 +1,617 @@
+// 【 其他函数 】
+.x(1) { x:11 }
+.x(2) { y:22 }
+// .x(@x) when (default()) {z:@x}
+.x(@x) when (ispixel(@x)) {width:@x}
+.x(@x) when not(default()) {padding:(@x/10)}
+body{
+	background: color("#f60"); // background: #ff6600;
+	width: convert(1s,ms); // width: 1000ms;
+	background: data-uri('arr.jpg'); // background: url('arr.jpg');
+}
+.div1{
+	.x(1); // x: 11;
+}
+.div2{
+	.x(123); // z: 123;
+}
+.div3{
+	.x(100px); // width: 100px;
+}
+.div4{
+	.x(100cm); // z: 100cm;
+}
+div{
+	width: unit(100px); // width: 100;
+}
+
+
+
+
+// 【 字符串函数 】
+div{
+	d:escape('#, ^, (, ), {, }, |, :, >, <, ;, ], [ , =');
+	filter: e("ms:alwaysHasItsOwnSyntax.For.Stuff()");
+	filter: ~"ms:alwaysHasItsOwnSyntax.For.Stuff()";
+	width: calc('960px-100px');
+	height: calc(~'960px-100px');
+
+	font-family: %( "%a %a" , "Microsoft", "YaHei");
+	// font-family: ""Microsoft" "YaHei"";
+
+	font-family: %( "%A %a" , "Microsoft", "YaHei");
+	// font-family: "%22Microsoft%22 "YaHei"";
+
+	font-family: %( "%s %s" , F60, "YaHei");
+	font-family: %( "%s %s" , "Microsoft", "YaHei");
+	// font-family: "Microsoft YaHei";
+	
+	content: replace("Hello, csxiaoyao", "csxiaoyao", "LESS");
+	content: replace("Hello, A", "A", "B");
+
+	n:length(1px solid #0080ff);
+
+	@list: "A", "B", "C", "D";
+ 	n:extract(@list,4)
+}
+
+
+// 【 数学函数 】
+div{
+	width: ceil(2.9999999px);   //1.ceil()函数  向上取整
+	width: floor(2.9999999px);   //1.floor()函数  向下取整
+	width: percentage( 0.5px );  //将浮点数转换为百分比
+
+	// 取整和四舍五入
+	width:round(4.5px) ;
+
+	// 计算一个数的平方根，原样保持单位
+	width: sqrt(16px);
+
+	// 计算数字的绝对值，原样保持单位
+	top: abs(-999px);
+
+	width: sin(1);  //1弧度角的正弦值
+	width: sin(1deg);//1角度角的正弦值
+	width: sin(1grad); //1百分度角的正弦值
+
+	// 反正弦值
+	width: asin(-0.84147098);
+	width: asin(0);
+	width: asin(2);
+	width: cos(1);  //1弧度角的余弦值
+	width: cos(1deg);//1角度角的余弦值
+	width: cos(1grad); //1百分度角的余弦值
+	width: tan(1);  //1弧度角的正切值
+	width: tan(1deg);//1角度角的正切值
+	width: tan(1grad); //1百分度角的正切值
+
+	// PI
+	width: pi();
+
+	// 乘方运算
+	width: pow(2px,2);
+	width: pow(25px,0.5);
+
+	// mod()取余
+	width: mod(3px,2);
+
+	width: min(3px,2px,1px);
+	width: max(3px,2px,1px);
+}
+
+// 【 类型函数 】
+//如果一个值是一个数字，返回'真(true)',否则返回'假(false)'.
+//.m(@x) when (isnumber(@x)) {
+//  x:@x
+//}
+//div{
+//.m(123);
+//.m(ABC);
+//}
+
+//如果一个值是一个字符串，返回'真(true)',否则返回'假(false)'.
+//.m(@x) when (isstring(@x)) {
+//  x:@x
+//}
+//div{
+//.m(123);
+//.m("ABC");
+//}
+
+//如果一个值是一个颜色，返回'真(true)',否则返回'假(false)'.
+//.m(@x) when (iscolor(@x)) {
+//  x:@x
+//}
+//div{
+//  .m(123);
+//  .m("ABC");
+//  .m(red);
+//}
+
+//如果一个值是一个关键字，返回'真(true)',否则返回'假(false)'.
+//.m(@x) when (iskeyword(@x)) {
+//  x:@x
+//}
+//div{
+//  .m(123);
+//  .m("ABC");
+//  .m(red);
+//  .m(ABC);
+//}
+
+//如果一个值是一个url地址，返回'真(true)',否则返回'假(false)'.
+//.m(@x) when (isurl(@x)) {
+//  x:@x
+//}
+//div{
+//  .m(123);
+//  .m("ABC");
+//  .m(red);
+//  .m(ABC);
+//  .m(url(arr.jpg));
+//}
+
+//如果一个值是带像素长度单位的数字，返回'真(true)',否则返回'假(false)'.
+//.m(@x) when (ispixel(@x)) {
+//  x:@x
+//}
+//div{
+//  .m(123);
+//  .m("ABC");
+//  .m(red);
+//  .m(ABC);
+//  .m(url(arr.jpg));
+//  .m(220px);
+//  .m(220cm);
+//}
+
+//如果一个值是带em长度单位的数字，返回'真(true)',否则返回'假(false)'.
+//.m(@x) when (isem(@x)) {
+//  x:@x
+//}
+//div{
+//  .m(123);
+//  .m("ABC");
+//  .m(red);
+//  .m(ABC);
+//  .m(url(arr.jpg));
+//  .m(220px);
+//  .m(240em);
+//}
+
+//如果一个值是带百分比单位的数字，返回'真(true)',否则返回'假(false)'.
+//.m(@x) when (ispercentage(@x)) {
+//  x:@x
+//}
+//div{
+//  .m(123);
+//  .m("ABC");
+//  .m(red);
+//  .m(ABC);
+//  .m(url(arr.jpg));
+//  .m(220px);
+//  .m(240em);
+//  .m(260%);
+//}
+
+//如果一个值是带指定单位的数字，返回'真(true)',否则返回'假(false)'.
+.m(@x) when (isunit(@x,em)) {
+  x:@x
+}
+div{
+  .m(123);
+  .m(220px);
+  .m(240em);
+  .m(280em);
+  .m(290em);
+  .m(260%);
+}
+
+
+// 颜色函数
+// 
+// 颜色定义函数【【【【
+//通过十进制红色，绿色，蓝色三种值 (RGB) 创建不透明的颜色对象。
+//div{
+//  background: rgb(255,0,0);
+//  background: rgb(100%,0%,0%);
+//}
+
+//通过十进制红色，绿色，蓝色，以及 alpha 四种值 (RGBA) 创建带alpha透明的颜色对象。
+//div{
+//  background: rgba(255,0,0,0.5);
+//  background: rgba(100%,0%,0%,0.5);
+//}
+
+//创建格式为 #AARRGGBB 的十六进制 (hex representation) 颜色 (注意不是 #RRGGBBAA ！)。
+//div{
+//  background: argb(rgba(255,0,0,0.5));
+//  background: argb(rgba(100%,0%,0%,0.5));
+//}
+
+//通过色相 (hue)，饱和度 (saturation)，亮度 (lightness) 三种值 (HSL) 创建不透明的颜色对象。
+//div{
+//  background: hsl(90,100%,50%);
+//}
+
+//通过色相 (hue)，饱和度 (saturation)，亮度 (lightness)，以及 alpha 四种值 (HSLA) 创建透明的颜色对象。
+//div{
+//  background: hsla(90,100%,50%,0.5);
+//}
+
+//通过色相 (hue)，饱和度 (saturation)，色调 (value) 三种值 (HSV) 创建不透明的颜色对象。
+//div{
+//  background: hsv(90,100%,50%);
+//}
+
+//通过色相 (hue)，饱和度 (saturation)，色调 (value)，以及 alpha 四种值 (HSVA) 创建透明的颜色对象。
+//div{
+//  background: hsva(90,100%,50%,8%);
+//}
+
+
+// 颜色通道提取 【【【【
+div{
+
+//  hue()色相值
+//z-index: hue(hsl(90,100%,50%));  //90
+////saturation()饱和度
+//z-index: saturation(hsl(90,80%,50%));  //80%
+////lightness()亮度值
+//z-index: lightness(hsl(90,100%,100%));  //100%
+
+//  hsv(90,100%,50%)
+//  z-index:hsvhue( hsv(90,100%,50%));  //函数90
+//  z-index:hsvsaturation( hsv(90,100%,50%)); //函数100%
+//  z-index:hsvvalue( hsv(90,100%,50%)); //函数50%
+
+//rgba(29,199,29,80%)
+//  提取红色
+//z-index: red(rgba(29,199,150,80%));  //29
+//  //  提取绿色
+//z-index: green(rgba(29,199,150,80%));  //199
+//  //  提取蓝色
+//z-index: blue(rgba(29,199,150,80%));  //29
+//  //  提取透明度
+//z-index: alpha(rgba(29,199,150,80%));  //0.8
+
+//  计算颜色对象luma的值（亮度的百分比表示法）。
+//z-index:luma(rgb(100,200,30));
+////  计算没有伽玛校正的亮度值
+//  z-index:luminance(rgb(100,200,30));
+
+}
+
+
+
+// 颜色运算【【【
+body{
+  c:hsl(90,80%,50%);
+  c:saturate(hsl(90,80%,50%),20%);
+}
+div{
+  width: 90px;
+  height: 50px;
+  font-size: 16px;
+  text-align: center;
+}
+.ys1{
+  background: hsl(90,80%,50%);
+}
+.ys2{
+  background: saturate(hsl(90,80%,50%),20%);
+}
+.ys3{
+  background: desaturate(hsl(90,80%,50%),20%);
+}
+.ys4{
+  background: lighten(hsl(90,80%,50%),20%);
+}
+.ys5{
+  background: darken(hsl(90,80%,50%),20%);
+}
+.ys66{
+  background:hsla(90,80%,50%,50%);
+}
+.ys6{
+  background: fadein(hsla(90,80%,50%,50%),50%);
+}
+.ys7{
+  background: fadeout(hsla(90,80%,50%,50%),40%);
+}
+.ys8{
+  background: hsl(90,80%,50%);
+}
+.ys9{
+  background: fade(hsl(90,80%,50%),40%);
+}
+.ys10{
+  background: hsl(10,90%,50%);
+}
+.ys11{
+  background: spin(hsl(0,90%,50%),360);
+}
+
+.ys12{
+  background: rgba(100,50,20,0.5);
+}
+.ys13{
+  background: rgba(0,150,120,0.2);
+}
+.ys14{
+  background: mix(rgba(100,50,20,0.5),rgba(0,150,120,0.2));
+}
+.ys15{
+  background: hsl(90,100%,50%);
+}
+.ys16{
+  background:contrast(hsl(90,100%,50%),#000000,#ffffff,100%)
+}
+
+
+// 颜色混合
+body{
+  c:hsl(90,80%,50%);
+  c:saturate(hsl(90,80%,50%),20%);
+}
+div{
+  width: 90px;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+//.ys1{
+//  background:#ff6600 ;
+//}
+//.ys2{
+//  background: #000000;
+//}
+//.ys3{
+//  background: multiply(#ff6600,#000000);
+//}
+//.ys4{
+//  background:#ff6600 ;
+//}
+//.ys5{
+//  background: #333;
+//}
+//.ys6{
+//  background: multiply(#ff6600,#333);
+//}
+//.ys7{
+//  background:#ff6600 ;
+//}
+//.ys8{
+//  background: #ffffff;
+//}
+//.ys9{
+//  background: multiply(#ff6600,#fff);
+//}
+
+//.ys1{
+//  background:#ff6600 ;
+//}
+//.ys2{
+//  background: #000000;
+//}
+//.ys3{
+//  background: screen(#ff6600,#000000);
+//}
+//.ys4{
+//  background:#ff6600 ;
+//}
+//.ys5{
+//  background: #333;
+//}
+//.ys6{
+//  background: screen(#ff6600,#333);
+//}
+//.ys7{
+//  background:#ff6600 ;
+//}
+//.ys8{
+//  background: #ffffff;
+//}
+//.ys9{
+//  background: screen(#ff6600,#fff);
+//}
+
+//.ys1{
+//  background:#ff6600 ;
+//}
+//.ys2{
+//  background: #000000;
+//}
+//.ys3{
+//  background: overlay(#ff6600,#000000);
+//}
+//.ys4{
+//  background:#ff6600 ;
+//}
+//.ys5{
+//  background: #333;
+//}
+//.ys6{
+//  background: overlay(#ff6600,#333);
+//}
+//.ys7{
+//  background:#ff6600 ;
+//}
+//.ys8{
+//  background: #ffffff;
+//}
+//.ys9{
+//  background: overlay(#ff6600,#fff);
+//}
+
+//.ys1{
+//  background:#ff6600 ;
+//}
+//.ys2{
+//  background: #000000;
+//}
+//.ys3{
+//  background: softlight(#ff6600,#000000);
+//}
+//.ys4{
+//  background:#ff6600 ;
+//}
+//.ys5{
+//  background: #333;
+//}
+//.ys6{
+//  background: softlight(#ff6600,#333);
+//}
+//.ys7{
+//  background:#ff6600 ;
+//}
+//.ys8{
+//  background: #ffffff;
+//}
+//.ys9{
+//  background: softlight(#ff6600,#fff);
+//}
+
+
+//.ys1{
+//  background:#ff6600 ;
+//}
+//.ys2{
+//  background: #000000;
+//}
+//.ys3{
+//  background: hardlight(#ff6600,#000000);
+//}
+//.ys4{
+//  background:#ff6600 ;
+//}
+//.ys5{
+//  background: #333;
+//}
+//.ys6{
+//  background: hardlight(#ff6600,#333);
+//}
+//.ys7{
+//  background:#ff6600 ;
+//}
+//.ys8{
+//  background: #ffffff;
+//}
+//.ys9{
+//  background: hardlight(#ff6600,#fff);
+//}
+
+//.ys1{
+//  background:#ff6600 ;
+//}
+//.ys2{
+//  background: #000000;
+//}
+//.ys3{
+//  background: difference(#ff6600,#000000);
+//}
+//.ys4{
+//  background:#ff6600 ;
+//}
+//.ys5{
+//  background: #333;
+//}
+//.ys6{
+//  background: difference(#ff6600,#333);
+//}
+//.ys7{
+//  background:#ff6600 ;
+//}
+//.ys8{
+//  background: #ffffff;
+//}
+//.ys9{
+//  background: difference(#ff6600,#fff);
+//}
+//
+//.ys1{
+//  background:#ff6600 ;
+//}
+//.ys2{
+//  background: #000000;
+//}
+//.ys3{
+//  background: exclusion(#ff6600,#000000);
+//}
+//.ys4{
+//  background:#ff6600 ;
+//}
+//.ys5{
+//  background: #333;
+//}
+//.ys6{
+//  background: exclusion(#ff6600,#333);
+//}
+//.ys7{
+//  background:#ff6600 ;
+//}
+//.ys8{
+//  background: #ffffff;
+//}
+//.ys9{
+//  background: exclusion(#ff6600,#fff);
+//}
+//
+//.ys1{
+//  background:#ff6600 ;
+//}
+//.ys2{
+//  background: #000000;
+//}
+//.ys3{
+//  background: average(#ff6600,#000000);
+//}
+//.ys4{
+//  background:#ff6600 ;
+//}
+//.ys5{
+//  background: #333;
+//}
+//.ys6{
+//  background: average(#ff6600,#333);
+//}
+//.ys7{
+//  background:#ff6600 ;
+//}
+//.ys8{
+//  background: #ffffff;
+//}
+//.ys9{
+//  background: average(#ff6600,#fff);
+//}
+
+.ys1{
+  background:#ff6600 ;
+}
+.ys2{
+  background: #000000;
+}
+.ys3{
+  background: negation(#ff6600,#000000);
+}
+.ys4{
+  background:#ff6600 ;
+}
+.ys5{
+  background: #333;
+}
+.ys6{
+  background: negation(#ff6600,#333);
+}
+.ys7{
+  background:#ff6600 ;
+}
+.ys8{
+  background: #ffffff;
+}
+.ys9{
+  background: negation(#ff6600,#fff);
+}

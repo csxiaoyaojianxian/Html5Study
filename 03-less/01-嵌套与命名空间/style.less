@@ -1,0 +1,94 @@
+/**
+ * 字符集
+ * 注释
+ * 引入
+ * 嵌套
+ * 命名空间
+ * 作用域
+ */
+
+@charset "UTF-8";
+// 注释：只会在LESS中显示
+/* 注释：会在LESS和CSS中显示 */
+
+
+// 引入
+// @import "main.less";
+// @import (reference) "main.less";  //引用LESS文件，但是不输出
+// @import (inline) "main.less";  //引用LESS文件，在输出中包含源文件但不加工它
+// @import (once) "main.less";  //引用LESS文件，但是不进行操作，只包含文件一次（默认行为）
+// @import (less) "index.css";  //无论是什么格式的文件，都把他作为LESS文件操作
+// @import (css) "main.less";  //无论是什么格式的文件，都把他作为CSS文件操作
+// @import (multiple) "main.less";  //multiple，允许引入多次相同文件名的文件
+// @import (multiple) "main.less";
+
+
+// header{
+//   width: 960px;
+// }
+// header .logo{
+//   width: 300px;
+//   height: 150px;
+//   background: darkred;
+// }
+// header .logo:hover{
+//   background: forestgreen;
+// }
+header {
+  h1{
+    color: blue;
+  }
+  width: 960px;
+  .logo {
+    width: 300px;
+    height: 150px;
+    background: darkred;
+    &:hover {
+      background: forestgreen;
+    }
+  }
+}
+
+// .a1 .b1 .c1 {
+//   color: 123;
+// }
+.a1{
+  .b1{
+    .c1{
+      color: 123;
+    }
+  }
+}
+
+// .c2.a2 .b2 {
+//   color: 123;
+// }
+.a2{
+  .b2{
+    .c2&{
+      color: 123;
+    }
+  }
+}
+
+// 命名空间两种写法
+.cs {
+  .a1>.b1>.c1;
+  .a1 .b1;
+}
+// .cs {
+//   color: 123;
+// }
+// .cs .c1 {
+//   color: 123;
+// }
+
+// 作用域
+@clolor:#ffffff;
+.bgcolor{
+  width: 50px;
+  a{
+    color: @clolor; // #ff0000
+  }
+}
+@clolor:#ff0000;

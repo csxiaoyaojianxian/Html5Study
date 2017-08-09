@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/**
+ * 字符集
+ * 注释
+ * 引入
+ * 嵌套
+ * 命名空间
+ * 作用域
+ */
+/* 注释：会在LESS和CSS中显示 */
+header {
+  width: 960px;
+}
+header h1 {
+  color: blue;
+}
+header .logo {
+  width: 300px;
+  height: 150px;
+  background: darkred;
+}
+header .logo:hover {
+  background: forestgreen;
+}
+.a1 .b1 .c1 {
+  color: 123;
+}
+.c2.a2 .b2 {
+  color: 123;
+}
+.cs {
+  color: 123;
+}
+.cs .c1 {
+  color: 123;
+}
+.bgcolor {
+  width: 50px;
+}
+.bgcolor a {
+  color: #ff0000;
+}

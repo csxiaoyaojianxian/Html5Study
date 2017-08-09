@@ -1,0 +1,99 @@
+.box {
+	color: blue;
+	&:hover {
+		color: green;
+	}
+	&-top {
+		height: 30px;
+	}
+	// 多个&&
+	& + &-top { // .box + .box-top
+		color: red;
+	}
+	& &-top { // .box .box-top
+		color: grey;
+	}
+	&&-top { // .box.box-top
+		color: black;
+	}
+	&, &-top { // .box, .box-top
+		color: orange;
+	}
+}
+
+.header {
+	.menu {
+	border-radius: 5px;
+		.no-border-radius & { // .no-border-radius .header .menu
+			background-image: url('images/button-background.png');
+		}
+	}
+}
+
+
+// p,
+// a,
+// ul,
+// li {
+//   border-top: 2px dotted #366;
+// }
+// p p,
+// p a,
+// p ul,
+// p li,
+// a p,
+// a a,
+// a ul,
+// a li,
+// ul p,
+// ul a,
+// ul ul,
+// ul li,
+// li p,
+// li a,
+// li ul,
+// li li {
+//   border-top: 0;
+// }
+p, a, ul, li {
+  border-top: 2px dotted #366;
+  &  & {
+    border-top: 0;
+  }
+}
+
+// a a a,
+// a a b,
+// a a c,
+// a b a,
+// a b b,
+// a b c,
+// a c a,
+// a c b,
+// a c c,
+// b a a,
+// b a b,
+// b a c,
+// b b a,
+// b b b,
+// b b c,
+// b c a,
+// b c b,
+// b c c,
+// c a a,
+// c a b,
+// c a c,
+// c b a,
+// c b b,
+// c b c,
+// c c a,
+// c c b,
+// c c c {
+//   border-top: 0;
+// }
+a , b ,c{
+  &  &  & {
+    border-top: 0;
+  }
+}
+       
