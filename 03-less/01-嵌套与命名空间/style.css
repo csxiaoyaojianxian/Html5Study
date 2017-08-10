@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
  * 字符集
  * 注释
@@ -7,6 +6,7 @@
  * 命名空间
  * 作用域
  */
+@charset "UTF-8";
 /* 注释：会在LESS和CSS中显示 */
 header {
   width: 960px;
