@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sunshine</title>
+<link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<!-- 1. 栅格系统 -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- .col-xs-  .col-sm-  .col-md-  .col-lg- -->
+    <!-- offset -->
+    <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0"></div>
+    <!-- push & pull -->
+    <div class="col-md-9 col-md-push-3">.col-md-9 .col-md-push-3</div>
+    <div class="col-md-3 col-md-pull-9">.col-md-3 .col-md-pull-9</div>
+  </div>
+</div>
+
+<!-- 2. 轮播图的图片 居中 & 自适应 -->
+<!-- 原理：1.不使用img标签，使用背景图方式
+           2.web端图片的宽度大于页面可视部分，使用背景按高度拉伸(height:100%)，自动裁剪宽度
+           3.移动端使用单独的图片，按宽度(width:100%)等比例缩放
+    .banner .banner_a {
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: block;
+    }
+    .banner .mobile_a {
+      display: block;
+      width: 100%;
+    }
+    .banner .mobile_a img {
+      display: block;
+      width: 100%;
+    }
+    <div class="item active">
+      web端
+      <a href="#" class='banner_a image_a hidden-xs'></a>
+      移动端
+      <a href="" class='mobile_a hidden-lg hidden-md hidden-sm'>
+          <img src="images/slide_01_640x340.jpg" alt="" class=''>
+      </a>
+    </div>
+-->
+
+<!-- 单侧定宽（左或右定宽），其余内容自适应，需要把定宽div放自适应div前并浮动，内容才能自适应（浏览器解析顺序问题） -->
+
+<script src="../lib/jquery-3.2.1/jquery.min.js"></script>
+<script src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
