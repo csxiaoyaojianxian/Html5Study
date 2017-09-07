@@ -6,12 +6,203 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>sunshine</title>
 <link rel="stylesheet" href="../lib/bootstrap-3.3.7/css/bootstrap.min.css">
+
+<style>
+body {
+	/* 为了实现滚动监听 */
+	position: relative;
+}
+</style>
 </head>
-<body>
+<body data-spy="scroll" data-target="#navbar-example">
 
+<!-- 不需写 JavaScript 代码也可激活模态框。通过在一个起控制器作用的元素（例如：按钮）上添加 data-toggle="modal" 属性，或者 data-target="#foo" 属性，再或者 href="#foo" 属性，用于指向被控制的模态框。 -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-whatever="csxiaoyao">
+  Launch demo modal 1 - csxiaoyao
+</button>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-whatever="sunshine">
+  Launch demo modal 2 - sunshine
+</button>
+<!-- Modal -->
+<!-- 务必为 .modal 添加 role="dialog" 和 aria-labelledby="..." 属性，用于指向模态框的标题栏；为 .modal-dialog 添加 aria-hidden="true" 属性 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="myInput">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- 模态框尺寸 -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+<!-- bs-example-modal-lg / bs-example-modal-sm -->
+  <div class="modal-dialog modal-lg" role="document">
+  <!-- modal-lg / modal-sm -->
+    <div class="modal-content">
+      模态框尺寸:large
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+
+<div id="navbar-example">
+	<ul class="nav nav-tabs" role="tablist">
+		<li class=""><a href="#one">@one</a></li>
+		<li class="active"><a href="#two">@two</a></li>
+		<li class=""><a href="#three">@three</a></li>
+	</ul>
+
+</div>
+<h4 id="one">one</h4>
+<p>oneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneoneone</p>
+<h4 id="two">two</h4>
+<p>twotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwotwo</p>
+<h4 id="three">three</h4>
+<p>threethreethreethreethreethreethreethreethreethreethreethreethreethreethreethreethreethreethreethreethree</p>
+
+<div class="alert alert-warning alert-dismissible fade in" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<strong>警告信息</strong>警告信息
+</div>
+
+<button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+	Loading state
+</button>
 
 <script src="../lib/jquery-3.2.1/jquery.min.js"></script>
 <script src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script>
+/**
+ * 1.data 属性
+ */
+// 解除以 data-api 为命名空间并绑定在文档上的事件
+// $(document).off('.data-api');
+// 如果是针对某个特定的插件，只需在 data-api 前面添加那个插件的名称作为命名空间
+// $(document).off('.alert.data-api');
+
+/**
+ * 2.编程方式的 API
+ */
+// 默认设置，每个插件都可以通过修改其自身的 Constructor.DEFAULTS 对象从而改变插件的默认设置：
+// $.fn.modal.Constructor.DEFAULTS.keyboard = false // 将模态框插件的 `keyboard` 默认选参数置为 false
+
+/**
+ * 3.过渡效果 transition.js
+ */
+// 禁用过度效果
+// $.support.transition = false
+
+/**
+ * 4.模态框 modal.js
+ */
+// 4.1 模态框参数
+/*
+backdrop (true)boolean / 'static'
+keyboard (true)boolean
+show     (true)boolean
+remote   (false)path
+*/
+// 4.2 模态框方法
+// .modal(options)
+// $('.bs-example-modal-lg').modal(); // 默认参数
+$('.bs-example-modal-lg').modal({
+	backdrop:'static',// 禁止点击空白区域关闭
+	keyboard:false,// 禁止esc按键关闭
+	// show:false, // 模态框初始化以后不显示，需要手动打开
+});
+// .modal('toggle') 手动打开或关闭模态框。在模态框显示或隐藏之前返回到主调函数中（也就是，在触发 shown.bs.modal 或 hidden.bs.modal 事件之前）
+$('.bs-example-modal-lg').modal('toggle');
+// .modal('show') 手动打开模态框。在模态框显示之前返回到主调函数中 （也就是，在触发 shown.bs.modal 事件之前）。
+$('.bs-example-modal-lg').modal('show');
+// .modal('hide') 手动隐藏模态框。在模态框隐藏之前返回到主调函数中 （也就是，在触发 hidden.bs.modal 事件之前）。
+$('.bs-example-modal-lg').modal('hide');
+// .modal('handleUpdate')
+
+// 4.3 模态框事件
+/*
+show.bs.modal    show 方法调用之后立即触发该事件
+                 如果是通过点击某个作为触发器的元素，则此元素可以通过事件的 relatedTarget 属性进行访问
+shown.bs.modal   此事件在模态框已经显示出来（并且同时在 CSS 过渡效果完成）之后被触发
+                 如果是通过点击某个作为触发器的元素，则此元素可以通过事件的 relatedTarget 属性进行访问
+hide.bs.modal    hide 方法调用之后立即触发该事件
+hidden.bs.modal  此事件在模态框被隐藏（并且同时在 CSS 过渡效果完成）之后被触发
+loaded.bs.modal  从远端的数据源加载完数据之后触发该事件
+*/
+$('#myModal').on('show.bs.modal', function (event) {
+	var button = $(event.relatedTarget); // Button that triggered the modal
+	var recipient = button.data('whatever'); // Extract info from data-* attributes
+	// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+	// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+	var modal = $(this);
+	modal.find('.modal-title').text('New message to ' + recipient);
+	modal.find('.modal-body input').val(recipient);
+})
+$('#myModal').on('shown.bs.modal', function () {
+	$('#myInput').focus();
+})
+
+/**
+ * 5.下拉菜单 Dropdowns dropdown.js
+ */
+
+/**
+ * 6.滚动监听 scrollspy.js
+
+<body data-spy="scroll" data-target="#navbar-example">
+  ...
+  <div id="navbar-example">
+    <ul class="nav nav-tabs" role="tablist">
+      ...
+    </ul>
+  </div>
+  ...
+</body>
+ */
+
+/**
+ * 7.标签页 Togglable tabs tab.js
+ */
+
+/**
+ * 8.工具提示 Tooltips tooltip.js
+ */
+
+/**
+ * 9.弹出框 popover.js
+ */
+
+/**
+ * 10.警告信息 alert.js
+ */
+// $().alert()
+
+/**
+ * 11.按钮 button.js
+ */
+$('#myButton').on('click', function () {
+	var $btn = $(this).button('loading');
+	// business logic...
+	$btn.button('reset');
+})
+
+/**
+ * 12.Collapse collapse.js
+ */
+
+/**
+ * 13.Carousel carousel.js
+ */
+
+</script>
 </body>
 </html>
