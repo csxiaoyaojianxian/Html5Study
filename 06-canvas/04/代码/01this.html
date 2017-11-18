@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            height: 20px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="div"></div>
+    <script>
+        /*
+        * 四种调用模式：
+        * 1、函数调用 == window
+        * 2、方法调用 == 宿主
+        * 3、构造器 == 实例对象
+        * 4、上下文（间接调用） == 自由指定
+        *
+        * 函数执行时，内部的this指向才会确定，
+        * 函数执行时this的指向与定义无关，与调用方式有关。
+        * */
+
+        function fn() {
+            console.log( this );
+        }
+        var obj = {
+            fn: fn
+        }
+        var o = {
+            obj : {
+                f: fn
+            }
+        }
+
+        fn(); // window
+        obj.fn(); // obj
+        o.obj.f(); // obj
+        new fn(); // fn函数的实例对象
+        new o.obj.f(); // f函数的实例对象
+        fn.call( [1, 2, 3] ); // 数组
+        fn.apply( { val: 100 } ); // 对象
+
+        // 传入定时器的回调函数，this指向window
+        setTimeout( function() {
+            console.log( this );
+        }, 500);
+
+        document.getElementById( 'div' ).addEventListener( 'click', function() {
+            console.log( this );
+        } );
+
+    </script>
+</body>
+</html>

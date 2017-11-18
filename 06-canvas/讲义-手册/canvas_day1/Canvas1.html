@@ -1,0 +1,363 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:Canvas1</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<p><p style="border-bottom:1px solid #ccc;font-size:2.5em;font-weight:bold;">Canvas第1天</p></p>
+<hr>
+
+<h1 id="-">预习任务</h1>
+<h2 id="-">前置知识点复习</h2>
+<ol>
+<li><p>构造函数</p>
+</li>
+<li><p>继承的方式</p>
+</li>
+<li><p>数组的迭代方法</p>
+</li>
+</ol>
+<h2 id="-">预习笔记阅读</h2>
+<p>请下载预习笔记： <a href="知识点.md">Canvas第一天</a></p>
+<h1 id="-">学习目标与要求</h1>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>目标</th>
+<th>重点</th>
+<th>难点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1.</strong></td>
+<td><strong>Canvas入门</strong></td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞a</td>
+<td>解释canvas标记的作用</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞b</td>
+<td>解释计算机直角坐标系</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞c</td>
+<td>写出获取绘图上下文的方法</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞d</td>
+<td>描述路径的概念</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞e</td>
+<td>使用canvas属性设置画布大小</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞f</td>
+<td>使用moveTo方法设置路径起点</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞g</td>
+<td>使用lineTo方法画路径</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞h</td>
+<td>使用stroke方法根据路径描边</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞i</td>
+<td>绘制矩形、三角形或其他由线条构成的基本图形</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>2.</strong></td>
+<td><strong>绘制不同色彩的图形</strong></td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞a</td>
+<td>使用strokeStyle属性设置描边色</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞b</td>
+<td>使用beginPath方法开辟新路径，防止重绘之前的路径</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞c</td>
+<td>使用clonePath方法闭合路径</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞d</td>
+<td>封装绘制图形的函数</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞e</td>
+<td>改为面向对象的方式封装</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td><strong>3.</strong></td>
+<td><strong>填充与非零环绕原则</strong></td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞a</td>
+<td>使用fill方法根据路径填充图形</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞b</td>
+<td>使用fillStyle属性设置填充色</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞c</td>
+<td>描述非零环绕原则</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td><strong>4.</strong></td>
+<td><strong>线条相关属性介绍</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞a</td>
+<td>使用lineWidth属性设置线宽</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞b</td>
+<td>使用lineCap属性设置线帽样式</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞c</td>
+<td>使用lineJoin属性设置两线交点样式</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞d</td>
+<td>虚线绘制</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>5.</strong></td>
+<td><strong>案例</strong></td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞a</td>
+<td>自定义坐标轴绘制</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞b</td>
+<td>在自定义的坐标轴中指定位置画点</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞c</td>
+<td>根据数据动态绘制折线图</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞d</td>
+<td>等比缩放折线图</td>
+<td></td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<h1 id="-">练习任务</h1>
+<h2 id="-">【复习】复习今日内容</h2>
+<h2 id="-">【总结】总结今日内容整理成思维导图</h2>
+<h2 id="-">思考任务（课后练习）</h2>
+<ol>
+<li><p>使用面向对象的方式绘制图形，要求可以设置线宽，描边色和填充色</p>
+</li>
+<li><p>利用非零环绕原则画如下图形
+<br/><img src="imgs/非零环绕练习.png" alt=""></p>
+</li>
+<li><p>绘制网格
+<br/><img src="imgs/网格练习.png" alt=""></p>
+</li>
+<li><p>完成折线图案例</p>
+</li>
+</ol>
+<h2 id="-">博学谷每日测评</h2>
+<p>登陆博学谷系统进行每日测评。</p>
+<h1 id="-">其他任务</h1>
+<h2 id="-">熟悉每日英文单词</h2>
+<table>
+<thead>
+<tr>
+<th>英文</th>
+<th>中文</th>
+<th>音标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>canvas</td>
+<td>帆布; 油画（布）;</td>
+<td>英 [&#39;kænvəs]</td>
+</tr>
+<tr>
+<td>context</td>
+<td>语境; 上下文; 背景; 环境;</td>
+<td>英 [ˈkɒntekst]</td>
+</tr>
+<tr>
+<td>stroke</td>
+<td>中风；冲程；笔画；打击；尝试；轻抚</td>
+<td>英 [strəʊk]</td>
+</tr>
+<tr>
+<td>begin</td>
+<td>开始; 着手; 创始; 创办;</td>
+<td>英 [bɪˈgɪn]</td>
+</tr>
+<tr>
+<td>close</td>
+<td>关; 关闭; 结束; 使靠近;</td>
+<td>英 [kləʊz]</td>
+</tr>
+<tr>
+<td>fill</td>
+<td>装满，使充满；满足；堵塞；任职</td>
+<td>英 [fɪl]</td>
+</tr>
+<tr>
+<td>cap</td>
+<td>盖; 帽子; 军帽; 求交运算;</td>
+<td>英 [kæp]</td>
+</tr>
+</tbody>
+</table>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

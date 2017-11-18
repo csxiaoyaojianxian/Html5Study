@@ -1,0 +1,255 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:Canvas2</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<p><p style="border-bottom:1px solid #ccc;font-size:2.5em;font-weight:bold;">Canvas第2天</p></p>
+<hr>
+
+<h1 id="-">预习任务</h1>
+<h2 id="-">前置知识点复习</h2>
+<ol>
+<li>canvas基本api</li>
+</ol>
+<h2 id="-">预习笔记阅读</h2>
+<p>请下载预习笔记： <a href="知识点.md">Canvas第二天</a></p>
+<h1 id="-">学习目标与要求</h1>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>目标</th>
+<th>重点</th>
+<th>难点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1.</strong></td>
+<td><strong>内置的矩形方法</strong></td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞a</td>
+<td>使用rect画矩形路径</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞b</td>
+<td>使用strokeRect绘制描边矩形</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞c</td>
+<td>使用fillRect绘制描边矩形</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞d</td>
+<td>使用clearRect清除画布中的矩形区域</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>2.</strong></td>
+<td><strong>arc方法的使用</strong></td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞a</td>
+<td>使用arc方法绘制一段弧</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞b</td>
+<td>使用arc方法绘制扇形</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞c</td>
+<td>使用arc方法绘制圆形</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>3.</strong></td>
+<td><strong>绘制文本</strong></td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞a</td>
+<td>使用strokeText绘制描边文字</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞b</td>
+<td>使用fillText绘制填充文字</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞c</td>
+<td>使用textAlign设置文本水平对其方式</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞d</td>
+<td>使用textBaseline设置文本垂直对其方式</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>4.</strong></td>
+<td><strong>饼图案例</strong></td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞a</td>
+<td>绘制饼图</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞b</td>
+<td>根据数据动态绘制饼图</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞c</td>
+<td>在饼图中添加文字说明</td>
+<td></td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<h1 id="-">练习任务</h1>
+<h2 id="-">【复习】复习今日内容</h2>
+<h2 id="-">【总结】总结今日内容整理成思维导图</h2>
+<h2 id="-">思考任务（课后练习）</h2>
+<ol>
+<li><p>利用非零环绕原则画内空圆</p>
+</li>
+<li><p>完成对象版饼图案例</p>
+</li>
+</ol>
+<h2 id="-">博学谷每日测评</h2>
+<p>登陆博学谷系统进行每日测评。</p>
+<h1 id="-">其他任务</h1>
+<h2 id="-">熟悉每日英文单词</h2>
+<table>
+<thead>
+<tr>
+<th>英文</th>
+<th>中文</th>
+<th>音标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rect</td>
+<td>矩形，rectangle的简写形式</td>
+<td>英 [rect]</td>
+</tr>
+<tr>
+<td>arc</td>
+<td>弧（度）; 天穹; 电弧，弧光。</td>
+<td>英 [ɑ:k]</td>
+</tr>
+</tbody>
+</table>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

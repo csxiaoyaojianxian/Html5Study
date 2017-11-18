@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            border:1px solid red;
+        }
+        img {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cvs" width="500" height="500"></canvas>
+    <img src="./imgs/NPCrabbitbaby.png">
+    <script>
+        var cvs = document.getElementById('cvs');
+        var ctx = cvs.getContext('2d');
+        var img = document.querySelector('img');
+
+        // 混入式继承( copy继承 )
+        function extend( o1, o2 ) {
+            for ( var key in o2 ) {
+                if ( o2.hasOwnProperty( key ) ) {
+                    o1[ key ] = o2[ key ];
+                }
+            }
+        }
+
+        /*
+        * constructor { Person } 人构造函数
+        * param { ctx: Context } 绘制环境
+        * param { img: Image } 绘制的图像
+        * param { widthFrame: number } 图像一排有多少个人
+        * param { heightFrame: number } 图像一列有多少个人
+        * param { x: number } 指定人物绘制的x轴坐标
+        * param { y: number } 指定人物绘制的y轴坐标
+        * param { renderWidth: number } 人物绘制时的宽
+        * param { renderHeight: number } 人物绘制时的高
+        * */
+        function Person( ctx, img, widthFrame, heightFrame, x, y, renderWidth, renderHeight ) {
+
+            this.ctx = ctx;
+            this.img = img;
+            this.widthFrame = widthFrame;
+            this.heightFrame = heightFrame;
+
+            // 图像绘制时的坐标和大小
+            this.x = x;
+            this.y = y;
+            this.renderWidth = renderWidth;
+            this.renderHeight = renderHeight;
+
+            // 求一个人的宽和高
+            this.width = this.img.width / this.widthFrame;
+            this.height = this.img.height / this.heightFrame;
+
+            // 当前绘制某个方向的第几帧
+            this.currentFrame = 0;
+
+            // 当前行走的方向，默认是第一排的方向
+            this.direction = 0;
+        }
+
+        // 给原型扩充方法
+        extend( Person.prototype, {
+
+            // 绘制方法
+            draw: function() {
+
+                this.ctx.drawImage( this.img,
+                    0, 0, this.width, this.height,
+                    this.x, this.y, this.renderWidth, this.renderHeight);
+
+            }
+
+        } );
+    </script>
+    <script>
+        // 必须要在图片加载完毕之后，才能使用
+        img.onload = function() {
+            var person = new Person( ctx, img, 4, 4, 50, 50, 200, 200 );
+            person.draw();
+        }
+
+    </script>
+</body>
+</html>

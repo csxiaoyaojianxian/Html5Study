@@ -1,0 +1,263 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:Canvas3</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<p><p style="border-bottom:1px solid #ccc;font-size:2.5em;font-weight:bold;">Canvas第3天</p></p>
+<hr>
+
+<h1 id="-">预习任务</h1>
+<h2 id="-">前置知识点复习</h2>
+<ol>
+<li>canvas基本api</li>
+</ol>
+<h2 id="-">预习笔记阅读</h2>
+<p>请下载预习笔记： <a href="知识点.md">Canvas第三天</a></p>
+<h1 id="-">学习目标与要求</h1>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>目标</th>
+<th>重点</th>
+<th>难点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1.</strong></td>
+<td><strong>坐标变换</strong></td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞a</td>
+<td>使用translate平移坐标系</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞b</td>
+<td>使用rotate旋转坐标系</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞c</td>
+<td>使用scale缩放坐标系</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞d</td>
+<td>绘制旋转图形</td>
+<td></td>
+<td>√</td>
+</tr>
+<tr>
+<td><strong>2.</strong></td>
+<td><strong>状态保存与回滚</strong></td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞a</td>
+<td>使用save方法保存状态</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞b</td>
+<td>使用restore方法回滚状态</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td><strong>3.</strong></td>
+<td><strong>绘制图像</strong></td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞a</td>
+<td>使用drawImage方法把图像绘制到指定区域</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞b</td>
+<td>使用drawImage方法把图像绘制到指定区域，并设置图像的显示大小</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞c</td>
+<td>使用drawImage方法把裁剪的图像绘制到指定区域，并设置图像的显示大小</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞d</td>
+<td>绘制精灵帧动画</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞e</td>
+<td>帧动画案例封装为对象版本</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞f</td>
+<td>描述requestAnimationFrame方法的作用</td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>&nbsp;&nbsp;☞g</td>
+<td>使用requestAnimationFrame方法优化帧动画案例</td>
+<td>√</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<h1 id="-">练习任务</h1>
+<h2 id="-">【复习】复习今日内容</h2>
+<h2 id="-">【总结】总结今日内容整理成思维导图</h2>
+<h2 id="-">思考任务（课后练习）</h2>
+<ol>
+<li><p>canvas第一天封装的对象版图形中，加入旋转绘制和缩放绘制两个方法。</p>
+</li>
+<li><p>完成对象版的帧动画案例</p>
+</li>
+</ol>
+<h2 id="-">博学谷每日测评</h2>
+<p>登陆博学谷系统进行每日测评。</p>
+<h1 id="-">其他任务</h1>
+<h2 id="-">熟悉每日英文单词</h2>
+<table>
+<thead>
+<tr>
+<th>英文</th>
+<th>中文</th>
+<th>音标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>save</td>
+<td>保存; 节省; 储蓄; 解救;</td>
+<td>英 [seɪv]</td>
+</tr>
+<tr>
+<td>restore</td>
+<td>修复; 归还; 交还; 使恢复;</td>
+<td>英 [rɪˈstɔ:(r)]</td>
+</tr>
+<tr>
+<td>draw</td>
+<td>画; 绘画; 吸引; 拖，拉; 招致;</td>
+<td>英 [drɔ:]</td>
+</tr>
+<tr>
+<td>request</td>
+<td>要求; 需要; 所请求的事物; 申请书;</td>
+<td>英 [rɪˈkwest]</td>
+</tr>
+<tr>
+<td>animation</td>
+<td>生气，活泼; 动画片制作，动画片摄制; [影视] 动画片;</td>
+<td>英 [ˌænɪˈmeɪʃn]</td>
+</tr>
+<tr>
+<td>frame</td>
+<td>框架；结构；[电影] 画面</td>
+<td>英 [freɪm]</td>
+</tr>
+</tbody>
+</table>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
