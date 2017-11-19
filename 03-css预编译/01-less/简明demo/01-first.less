@@ -1,0 +1,27 @@
+// 注释 less 支持 跟js一样的注释 并且这样的注释 不会被编译
+
+
+/* 使用 css的注释 那么 编译的时候 该注释 也会被保留 */
+
+// 变量名 :变量值
+@jdRed:rgb(201,21,35);
+
+// 定义宽度
+@minWidth:100px;
+
+// 定义图片尺寸
+@imageSize:100px 100px;
+
+
+body{
+	background-color: @jdRed;
+}
+h3{
+	background-color:@jdRed;
+	background-size: @imageSize;
+}
+
+ul{
+	background-color:@jdRed;
+	width:@minWidth;
+}

@@ -1,0 +1,76 @@
+
+// 直接写单纯的 层次关系
+.main{
+	width: 100%;
+	.main_left{
+		width: 90px;
+		ul{
+			width: 100%;
+			li{
+				width: 100%;
+				text-align: center;
+				height: 50px;
+				line-height: 50px;
+				border-bottom: 1px solid gray;
+				border-right: 1px solid gray;
+				a{
+					color:black;
+				}
+			}
+		}
+	}
+
+	.main_right{
+		overflow: hidden;
+		/* 顶部 左右 底部为0 */
+		padding: 10px 10px 0;
+
+		.right_banner{
+			display: block;
+			width: 100%;
+			img{
+				display: block;
+				width: 100%;	
+			}
+		}
+		h3{
+			margin-top: 10px;
+			font-size: 12px;	
+		}	
+		ul{
+			width: 100%;
+			padding-top: 10px;
+		}
+	}
+}
+
+
+// 演示 伪元素 交集选择器 :hover等 需要紧挨着元素的样式
+
+// 如果 只是想要是该class里面的样式 不传递 任何的参数 时可以不写括号的
+
+// 如果 直接 往下写的话 生成的css 是后代
+//  可以再 符号之前 添加& 符号 就会去掉默认的空格 变为紧邻着的
+.clearfix{
+	content: '';
+	display:block;
+	line-height:0;
+	height:0;
+	visibility: hidden;
+	clear:both;
+}
+
+ul{
+	.clearfix;
+	li{
+		width: 100%;
+		height: 60px;
+		&.current{
+			color:red;
+		}
+		&::before{
+			.clearfix;
+		}
+	}
+
+}

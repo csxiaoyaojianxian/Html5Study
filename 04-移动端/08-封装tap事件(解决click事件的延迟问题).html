@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		html,body{
+			height: 100%;
+		}
+		body{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript" src='fox_tap.js'></script>
+<script type="text/javascript">
+	window.onload = function () {
+		// 参数1dom
+		// 参数2回调
+		fox_tap(document.body,function(e){
+			console.log('自己写的逻辑');
+			console.log(e);
+		})
+	}
+</script>
+	

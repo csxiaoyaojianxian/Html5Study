@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html,body{
+			height: 100%;
+		}
+		body{
+			background-color: hotpink;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+</html>
+<script type="text/javascript">
+window.onload = function () {
+	document.body.onclick = function () {
+		console.log('click');
+		console.log(Date.now()-startTime);
+	}
+
+	// 定义一些必须要使用的变量
+	var startTime = 0;
+
+	document.body.addEventListener('touchstart',function (e) {
+		console.log('touchstart')
+		// 获取 当前的系统时间
+		startTime =  Date.now();
+	})
+	document.body.addEventListener('touchmove',function (e) {
+		console.log('touchmove')
+	})
+	document.body.addEventListener('touchend',function (e) {
+		console.log('touchend')
+		// 计算 差值
+		console.log(Date.now()-startTime);
+
+		// 判断 差值是多少
+	})
+}
+</script>

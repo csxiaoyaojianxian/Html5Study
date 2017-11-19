@@ -1,0 +1,12 @@
+/* 使用 css的注释 那么 编译的时候 该注释 也会被保留 */
+body {
+  background-color: #c91523;
+}
+h3 {
+  background-color: #c91523;
+  background-size: 100px 100px;
+}
+ul {
+  background-color: #c91523;
+  width: 100px;
+}

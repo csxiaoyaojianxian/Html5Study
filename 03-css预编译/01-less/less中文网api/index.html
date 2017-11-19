@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://www.1024i.com/demo/less/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>首页 - LESSCSS中文官网</title>
+    <meta name="description" content="LESSCSS中文官网">
+    <meta name="keywords" content="LESS,LESSCSS,CSS,样式表,预处理">
+    <link rel="stylesheet/less" href="http://www.1024i.com/demo/less/css/main.less">
+    <script src="./less.js"></script><style type="text/css" media="screen" id="less:demo-less-css-main">html {
+  margin: 0;
+}
+body {
+  background-color: #262626;
+  margin: 0 auto;
+  font-family: Arial, hiragino sans gb, microsoft yahei, sans-serif;
+  font-size: 100%;
+  overflow-x: hidden;
+}
+nav,
+header,
+footer,
+section,
+article {
+  display: block;
+}
+a {
+  color: #b83000;
+}
+h1 a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: normal;
+}
+ul, li {
+  /*list-style-type: none;*/
+
+}
+code {
+  font-family: 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', 'Monaco', Courier, monospace !important;
+}
+code .string, code .regexp {
+  color: #3d575c;
+}
+code .comment {
+  color: rgba(0, 0, 0, 0.5);
+}
+code .number {
+  color: #143352;
+}
+code .class, code .special {
+  color: rgba(0, 50, 100, 0.8);
+}
+pre {
+  padding: 0 30px;
+  text-wrap: wrap;
+  white-space: pre-wrap;
+  /* css-3 */
+
+  white-space: -moz-pre-wrap;
+  /* Mozilla, since 1999 */
+
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+
+}
+blockquote {
+  font-style: italic;
+}
+body > footer {
+  text-align: left;
+  margin-left: 10px;
+  font-style: italic;
+  font-size: 18px;
+  color: #888;
+}
+#logo {
+  margin: 30px auto 0 auto;
+  font-size: 48px;
+  font-family: sans-serif;
+  display: block;
+  width: 500px;
+  padding-left: 220px;
+  height: 81px;
+  line-height: 81px;
+  background: url(http://www.1024i.com/demo/less/css/../images/logo.png) no-repeat;
+  color: #FFF;
+  text-shadow: 1px 1px 1px #AAA;
+}
+nav {
+  margin-left: 15px;
+}
+nav a, #dropdown li {
+  display: inline-block;
+  color: white;
+  line-height: 42px;
+  margin: 0;
+  padding: 0px 15px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-width: 0 2px;
+}
+nav a:hover, #dropdown li:hover {
+  border: 2px solid #140805;
+  border-left-color: #3d170f;
+  border-right-color: #3d170f;
+  border-bottom: 0;
+  border-top: 0;
+  background-color: #521f14;
+  text-decoration: none;
+}
+.twitter-follow-button {
+  position: absolute;
+  right: 0;
+  top: 11px;
+}
+.dark-red {
+  border: 2px solid #140805;
+  border-left-color: #3d170f;
+  border-right-color: #3d170f;
+  border-bottom: 0;
+  border-top: 0;
+  background-color: #521f14;
+}
+.content {
+  margin: 0 auto;
+  width: 980px;
+}
+#menu {
+  display: block;
+  background-color: #143352;
+  background-color: rgba(41, 102, 163, 0.4);
+  height: 42px;
+  border-bottom: 2px solid rgba(15, 38, 61, 0.5);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 0 #000;
+}
+#menu:hover {
+  background-color: #143352;
+}
+#menu #dropdown {
+  margin: 0 0 0 117px;
+  padding: 0;
+  padding-top: 5px;
+  display: none;
+  width: 190px;
+  border-top: 2px solid #7a2e1f;
+  color: #eaf2d9;
+  border: 2px solid #140805;
+  border-left-color: #3d170f;
+  border-right-color: #3d170f;
+  border-top-width: 0;
+  background-color: #521f14;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-top-right-radius: 0;
+  -moz-border-top-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+}
+#menu #dropdown ul {
+  padding: 0px;
+}
+#menu #dropdown li {
+  font-size: 14px;
+  display: block;
+  text-align: left;
+  padding: 0;
+  border: 0;
+}
+#menu #dropdown li a {
+  display: block;
+  padding: 0px 15px;
+  text-decoration: none;
+  color: white;
+}
+#menu #dropdown li a:hover {
+  background-color: #3d170f;
+  text-decoration: none;
+}
+#main {
+  margin: 0 auto;
+  width: 100%;
+  background-color: #79c3d2;
+  border-top: 8px solid #66bbcc;
+}
+#main #intro {
+  z-index: 2;
+  font-family: 'Droid Serif', 'Georgia', 'hiragino sans bg', 'microsoft yahei';
+  padding: 20px 20px 30px 30px;
+  border: 0 none;
+}
+#main #intro #download_wrapper {
+  text-align: center;
+}
+#main #intro #download_wrapper a {
+  display: inline-block;
+  width: 170px;
+  height: 54px;
+  color: #fff;
+  text-align: center;
+  line-height: 54px;
+  font-size: 24px;
+  font-weight: 400;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 20px 10px;
+  padding-left: 20px;
+  position: relative;
+}
+#main #intro #download_wrapper a::after {
+  display: block;
+  width: 35px;
+  height: 35px;
+  background: url(http://www.1024i.com/demo/less/css/../images/icons.png) no-repeat;
+  position: absolute;
+  left: 15px;
+  top: 13px;
+  content: " ";
+}
+#main #intro #download_wrapper #download_less {
+  background: #d55959;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #d55959 0%, #d25252 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #d55959), color-stop(100%, #d25252));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #d55959 0%, #d25252 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #d55959 0%, #d25252 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #d55959 0%, #d25252 100%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #d55959 0%, #d25252 100%);
+  /* W3C */
+
+  border: 1px solid #C96161;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2), -1px 2px 4px rgba(0, 0, 0, 0.2);
+}
+#main #intro #download_wrapper #download_less:hover {
+  background: #e27473;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #e27473 0%, #de5959 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e27473), color-stop(100%, #de5959));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #e27473 0%, #de5959 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #e27473 0%, #de5959 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #e27473 0%, #de5959 100%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #e27473 0%, #de5959 100%);
+  /* W3C */
+
+}
+#main #intro #download_wrapper #download_less:active {
+  background: #cb2f2f;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #cb2f2f 0%, #d34e4e 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cb2f2f), color-stop(100%, #d34e4e));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #cb2f2f 0%, #d34e4e 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #cb2f2f 0%, #d34e4e 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #cb2f2f 0%, #d34e4e 100%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #cb2f2f 0%, #d34e4e 100%);
+  /* W3C */
+
+}
+#main #intro #download_wrapper #download_koala {
+  background: #347fc8;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #347fc8 0%, #336fad 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #347fc8), color-stop(100%, #336fad));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #347fc8 0%, #336fad 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #347fc8 0%, #336fad 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #347fc8 0%, #336fad 100%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #347fc8 0%, #336fad 100%);
+  /* W3C */
+
+  border: 1px solid #4879AA;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2), -1px 2px 4px rgba(0, 0, 0, 0.2);
+}
+#main #intro #download_wrapper #download_koala::after {
+  background-position: -40px 0;
+}
+#main #intro #download_wrapper #download_koala:hover {
+  background: #5895d1;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #5895d1 0%, #4985c2 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5895d1), color-stop(100%, #4985c2));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #5895d1 0%, #4985c2 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #5895d1 0%, #4985c2 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #5895d1 0%, #4985c2 100%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #5895d1 0%, #4985c2 100%);
+  /* W3C */
+
+}
+#main #intro #download_wrapper #download_koala:active {
+  background: #28639e;
+  /* Old browsers */
+
+  background: -moz-linear-gradient(top, #28639e 0%, #3677b8 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #28639e), color-stop(100%, #3677b8));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(top, #28639e 0%, #3677b8 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(top, #28639e 0%, #3677b8 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(top, #28639e 0%, #3677b8 100%);
+  /* IE10+ */
+
+  background: linear-gradient(to bottom, #28639e 0%, #3677b8 100%);
+  /* W3C */
+
+}
+#main #intro #download-info {
+  text-align: center;
+  font-size: 12px;
+  color: #476685;
+}
+#main #intro #download-info a {
+  text-decoration: none;
+  color: #143352;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+#main #intro #download-info a:hover {
+  text-decoration: none;
+  border-bottom: 1px dashed #143352;
+}
+#main h2 {
+  color: #143352;
+  margin: 20px 0;
+  font-size: 24px;
+  line-height: 1.2em;
+}
+#main h2 span {
+  color: #7a2e1f;
+}
+#main h3 {
+  color: #143352;
+  line-height: 1.4em;
+  margin: 30px 0 15px 0;
+  font-size: 1em;
+  text-shadow: 0px 0px 0px #e6ebe0;
+}
+#main h3 span {
+  color: #7a2e1f;
+}
+#main #example {
+  height: 282px;
+  background: url(http://www.1024i.com/demo/less/css/../images/banner_code.png) center 0 no-repeat;
+}
+.page {
+  margin: 0 auto;
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  line-height: 26px;
+  padding: 0 60px;
+}
+.page .content {
+  width: 870px;
+  padding: 45px;
+}
+.page code {
+  font-size: 16px;
+}
+.page pre {
+  border-width: 1px;
+  border-style: dashed;
+  padding: 15px;
+  margin: 15px 0;
+}
+.page h1 {
+  text-align: left;
+  font-size: 40px;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+.page p + h1 {
+  margin-top: 60px;
+}
+.page h2, .page h3 {
+  margin: 30px 0 15px 0;
+}
+.page p + h2, .page pre + h2, .page code + h2 {
+  border-top: 6px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+}
+.page h3 {
+  margin: 15px 0;
+}
+.page h1,
+.page h2,
+.page h3,
+.page h4,
+.page h5,
+.page h6 {
+  font-family: hiragino sans gb,microsoft yahei,serif;
+}
+.page-light {
+  border-top: 2px solid #9fd5df;
+  color: #143352;
+  background-color: #79c3d2;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+.page-light ul li {
+  list-style-type: circle;
+}
+.page-light h1 {
+  font-family: 'Droid Serif', 'Georgia', serif;
+  padding-top: 30px;
+  padding-left: 45px;
+  font-size: 44px;
+  text-align: left;
+  margin: 30px 0 !important;
+  text-shadow: 0px 1px 1px #e6ebe0;
+  font-weight: bold;
+}
+.page-light .content {
+  clear: both;
+  border-color: transparent;
+  background-color: #d9eef2;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+.page-light pre {
+  color: #1f4c7a;
+  background-color: #ffffff;
+  border-color: #d9eef2;
+  border-width: 2px;
+}
+.page-light pre code .attribute {
+  color: #735926;
+}
+.page-light pre code .variable {
+  color: #455445;
+}
+.page-light pre code .element {
+  color: #3d5c57;
+}
+.page-light pre code .string, .page-light pre .regexp {
+  color: #70862d;
+}
+.page-light pre code .class {
+  color: #6b572e;
+  font-weight: normal;
+}
+.page-light pre code .id {
+  color: #6b612e;
+  font-weight: normal;
+}
+.page-light pre code .comment {
+  color: rgba(0, 0, 0, 0.4);
+}
+.page-light pre code .number, .page-light pre .color {
+  color: #6b382e;
+}
+.page-light pre code .class, .page-light pre code .mixin, .page-light pre .special {
+  color: #3d575c;
+}
+.page-light pre code {
+  font-size: 15px;
+}
+.page-light p + h2, .page-light pre + h2, .page-light code + h2 {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+.page-light h3,
+.page-light h4,
+.page-light h5,
+.page-light h6 {
+  border-left: 3px solid #143352;
+  padding-left: 10px;
+}
+#reference .content h1 {
+  padding: 0;
+  font-size: 1.6em;
+}
+#reference .content h3 {
+  font-weight: bold;
+}
+#reference .content p + h1, #reference .content pre + h1, #reference .content code + h1 {
+  border-top: 6px solid rgba(0, 0, 0, 0.1);
+  padding-top: 30px;
+}
+#reference .content p + h3, #reference .content pre + h3, #reference .content code + h3 {
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  padding-top: 10px;
+}
+td {
+  padding-right: 30px;
+}
+#synopsis {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+#synopsis h2, #about h2, #translations h2 {
+  font-size: 30px;
+  padding: 10px 0;
+}
+#synopsis h1 + h2, #about h1 + h2, #translations h1 + h2 {
+  margin-top: 15px;
+}
+#synopsis h3, #about h3, #translations h3 {
+  font-size: 22px;
+}
+#synopsis .code-example, #about .code-example, #translations .code-example {
+  border-spacing: 0;
+  border-width: 1px;
+  border-style: dashed;
+  padding: 0;
+}
+#synopsis .code-example pre, #about .code-example pre, #translations .code-example pre {
+  border: 0;
+  margin: 0;
+}
+#synopsis .code-example td, #about .code-example td, #translations .code-example td {
+  border: 0;
+  margin: 0;
+  background-color: #191919;
+  vertical-align: top;
+  padding: 0;
+}
+#synopsis .code-example tr, #about .code-example tr, #translations .code-example tr {
+  padding: 0;
+}
+#synopsis .css-output td, #about .css-output td, #translations .css-output td {
+  border-left: 0;
+}
+#synopsis .css-output,
+#about .css-output,
+#translations .css-output,
+#synopsis .less-example,
+#about .less-example,
+#translations .less-example {
+  width: 390px;
+}
+#synopsis pre, #about pre, #translations pre {
+  padding: 20px;
+  line-height: 20px;
+  font-size: 14px;
+}
+.page-dark {
+  text-shadow: 0 -1px 1px #262626;
+  color: #eaf2d9;
+  background-color: #191919;
+}
+.page-dark a {
+  text-decoration: none;
+  color: #fbfbcb;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+.page-dark a:hover {
+  text-decoration: none;
+  border-bottom: 1px dashed #fbfbcb;
+}
+.page-dark .content {
+  background-color: #262626;
+  clear: both;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+.page-dark h1, .page-dark h2, .page-dark h3 {
+  color: #e2e2b1;
+}
+.page-dark pre {
+  background-color: #191919;
+  border-color: #f9f9b3;
+}
+.page-dark pre code .attribute {
+  color: #d9bf8c;
+}
+.page-dark pre code .variable {
+  color: #738c73;
+}
+.page-dark pre code .element {
+  color: #669991;
+}
+.page-dark pre code .string, .page-dark pre .regexp {
+  color: #bcd279;
+}
+.page-dark pre code .class {
+  color: #c2a770;
+  font-weight: normal;
+}
+.page-dark pre code .id {
+  color: #c2b470;
+  font-weight: normal;
+}
+.page-dark pre code .comment {
+  color: rgba(255, 255, 255, 0.2);
+}
+.page-dark pre code .number, .page-dark pre .color {
+  color: #b35e4d;
+}
+.page-dark pre code .class, .page-dark pre code .mixin, .page-dark pre .special {
+  color: #669199;
+}
+.page-dark code {
+  color: #dcdc9e;
+}
+.page-dark code .string, .page-dark code .regexp {
+  color: #87bbc5;
+}
+.page-dark code .keyword {
+  color: #735926;
+  font-weight: normal;
+}
+.page-dark code .comment {
+  color: rgba(255, 255, 255, 0.2);
+}
+.page-dark code .number {
+  color: #1f4c7a;
+}
+.page-dark code .class, .page-dark code .special {
+  color: #669199;
+}
+.page-dark h3,
+.page-dark h4,
+.page-dark h5,
+.page-dark h6 {
+  border-left: 3px solid #eaf2d9;
+  padding-left: 10px;
+}
+#usage {
+  background-color: #262626;
+}
+#usage .content {
+  background-color: transparent;
+}
+#about, #translations {
+  background-color: #262626 !important;
+}
+#about .content, #translations .content {
+  background-color: #2e2e2e;
+}
+#synopsis {
+  background-color: #2e2e2e !important;
+}
+#synopsis .content {
+  background-color: #2e2e2e;
+}
+#synopsis .content, #usage .content {
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+}
+#about footer {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 6px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.35);
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.02);
+}
+#about footer #copy {
+  font-size: 12px;
+}
+</style>
+  </head>
+  <body>
+    <section id="menu">
+      <div class="content">
+        <nav><a href="./index.html">首页</a><a href="http://www.1024i.com/demo/less/document.html">语言特性</a><a href="http://www.1024i.com/demo/less/reference.html">函数手册</a></nav>
+      </div>
+    </section>
+    <section>
+      <header id="main">
+        <div class="content">
+          <section id="intro" class="page">
+            <div id="logo"> is More , Than CSS</div>
+          </section>
+        </div>
+        <div style="clear: both"></div>
+      </header>
+    </section>
+    <section id="synopsis" class="page page-dark">
+      <div class="content"><h2>什么是LESSCSS</h2>
+
+<p>LESSCSS是一种动态样式语言，属于CSS预处理语言的一种，它使用类似CSS的语法，为CSS的赋予了动态语言的特性，如变量、继承、运算、函数等，更方便CSS的编写和维护。</p>
+
+<p>LESSCSS可以在多种语言、环境中使用，包括浏览器端、桌面客户端、服务端。</p>
+
+<p>语言特性快速预览：</p>
+
+<h3>变量：</h3>
+
+<p>变量允许我们单独定义一系列通用的样式，然后在需要的时候去调用。所以在做全局样式调整的时候我们可能只需要修改几行代码就可以了。</p>
+
+<p>LESS源码：</p>
+
+<pre><code><span class="variable">@color</span>: <span class="color">#4D926F</span>;
+
+<span class="id">#header</span> {
+    <span class="attribute">color</span>: <span class="variable">@color</span>;
+}
+<span class="element">h2</span> {
+    <span class="attribute">color</span>: <span class="variable">@color</span>;
+}
+</code></pre>
+
+<p>编译后的CSS：</p>
+
+<pre><code><span class="id">#header</span> {
+    <span class="attribute">color</span>: <span class="color">#4D926F</span>;
+}
+<span class="element">h2</span> {
+    <span class="attribute">color</span>: <span class="color">#4D926F</span>;
+}
+</code></pre>
+
+<h3>混合（Mixins）</h3>
+
+<p>混合可以将一个定义好的class A轻松的引入到另一个class B中，从而简单实现class B继承class A中的所有属性。我们还可以带参数地调用，就像使用函数一样。</p>
+
+<p>LESS源码：</p>
+
+<pre><code><span class="class">.rounded-corners</span> (<span class="variable">@radius</span>: <span class="number">5px</span>) {
+    <span class="attribute">-webkit-border-radius</span>: <span class="variable">@radius</span>;
+    <span class="attribute">-moz-border-radius</span>: <span class="variable">@radius</span>;
+    <span class="attribute">-ms-border-radius</span>: <span class="variable">@radius</span>;
+    <span class="attribute">-o-border-radius</span>: <span class="variable">@radius</span>;
+    <span class="attribute">border-radius</span>: <span class="variable">@radius</span>;
+}
+
+<span class="id">#header</span> {
+    <span class="mixin">.rounded-corners</span>;
+}
+<span class="id">#footer</span> {
+    <span class="mixin">.rounded-corners</span>(<span class="number">10px</span>);
+}
+</code></pre>
+
+<p>编译后的CSS：</p>
+
+<pre><code><span class="id">#header</span> {
+    <span class="attribute">-webkit-border-radius</span>: <span class="number">5px</span>;
+    <span class="attribute">-moz-border-radius</span>: <span class="number">5px</span>;
+    <span class="attribute">-ms-border-radius</span>: <span class="number">5px</span>;
+    <span class="attribute">-o-border-radius</span>: <span class="number">5px</span>;
+    <span class="attribute">border-radius</span>: <span class="number">5px</span>;
+}
+<span class="id">#footer</span> {
+    <span class="attribute">-webkit-border-radius</span>: <span class="number">10px</span>;
+    <span class="attribute">-moz-border-radius</span>: <span class="number">10px</span>;
+    <span class="attribute">-ms-border-radius</span>: <span class="number">10px</span>;
+    <span class="attribute">-o-border-radius</span>: <span class="number">10px</span>;
+    <span class="attribute">border-radius</span>: <span class="number">10px</span>;
+}
+</code></pre>
+
+<h3>嵌套</h3>
+
+<p>我们可以在一个选择器中嵌套另一个选择器来实现继承，这样很大程度减少了代码量，并且代码看起来更加的清晰。</p>
+
+<p>LESS源码：</p>
+
+<pre><code><span class="id">#header</span> {
+    <span class="element">h1</span> {
+        <span class="attribute">font-size</span>: <span class="number">26px</span>;
+        <span class="attribute">font-weight</span>: bold;
+    }
+    <span class="element">p</span> {
+        <span class="attribute">font-size</span>: <span class="number">12px</span>;
+        <span class="element">a</span> {
+            <span class="attribute">text-decoration</span>: none;
+            &amp;<span class="class">:hover</span> {
+                <span class="attribute">border-width</span>: <span class="number">1px</span>
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>编译后的CSS：</p>
+
+<pre><code><span class="id">#header</span> <span class="element">h1</span> {
+    <span class="attribute">font-size</span>: <span class="number">26px</span>;
+    <span class="attribute">font-weight</span>: bold;
+}
+<span class="id">#header</span> <span class="element">p</span> {
+    <span class="attribute">font-size</span>: <span class="number">12px</span>;
+}
+<span class="id">#header</span> <span class="element">p</span> <span class="element">a</span> {
+    <span class="attribute">text-decoration</span>: none;
+}
+<span class="id">#header</span> <span class="element">p</span> <span class="element">a</span><span class="class">:hover</span> {
+    <span class="attribute">border-width</span>: <span class="number">1px</span>;
+}
+</code></pre>
+
+<h3>函数和运算</h3>
+
+<p>运算提供了加，减，乘，除操作；我们可以做属性值和颜色的运算，这样就可以实现属性值之间的复杂关系。LESS中的函数一一映射了JavaScript代码，如果你愿意的话可以操作属性值。</p>
+
+<p>LESS源码：</p>
+
+<pre><code><span class="variable">@the-border</span>: <span class="number">1px</span>;
+<span class="variable">@base-color</span>: <span class="color">#111</span>;
+<span class="variable">@red</span>:        <span class="color">#842210</span>;
+
+<span class="id">#header</span> {
+    <span class="attribute">color</span>: (<span class="variable">@base-color </span>* <span class="number">3</span>);
+    <span class="attribute">border-left</span>: <span class="variable">@the-border</span>;
+    <span class="attribute">border-right</span>: (<span class="variable">@the-border </span>* <span class="number">2</span>);
+}
+<span class="id">#footer</span> {
+    <span class="attribute">color</span>: (<span class="variable">@base-color </span>+ <span class="color">#003300</span>);
+    <span class="attribute">border-color</span>: desaturate(<span class="variable">@red</span>, <span class="number">10%</span>);
+}
+</code></pre>
+
+<p>编译后的CSS：</p>
+
+<pre><code><span class="id">#header</span> {
+    <span class="attribute">color</span>: <span class="color">#333</span>;
+    <span class="attribute">border-left</span>: <span class="number">1px</span>;
+    <span class="attribute">border-right</span>: <span class="number">2px</span>;
+}
+<span class="id">#footer</span> {
+    <span class="attribute">color</span>: <span class="color">#114411</span>;
+    <span class="attribute">border-color</span>: <span class="color">#7d2717</span>;
+}
+</code></pre>
+
+<h3>更多说明</h3>
+
+<p>更多更详细的语法特性请参见<a href="http://www.1024i.com/demo/less/document.html">语言文档</a></p>
+
+<h2>快速上手</h2>
+
+<p>LESSCSS的使用是很容易的，首先，使用你最常使用的代码编辑器，按LESSCSS的语法规则写好.less文件，接下来，使用编译工具它编译成.css，最后再引入页面即可。</p>
+
+<h3>GUI编译工具</h3>
+
+<p>为方便起见，建议初学者使用GUI编译工具来编译.less文件，以下是一些可选GUI编译工具：</p>
+
+<ol>
+<li><p>koala(Win/Mac/Linux)</p>
+
+<p>国人开发的LESSCSS/SASS编译工具。下载地址：<a href="http://koala-app.com/index-zh.html">http://koala-app.com/index-zh.html</a></p></li>
+<li><p>Codekit(Mac)</p>
+
+<p>一款自动编译Less/Sass/Stylus/CoffeeScript/Jade/Haml的工具，含语法检查、图片优化、自动刷新等附加功能。下载地址<a href="http://incident57.com/codekit/">http://incident57.com/codekit/</a></p></li>
+<li><p>WinLess(Win)</p>
+
+<p>一款LESS编译软件。下载地址<a href="http://winless.org/">http://winless.org/</a></p></li>
+<li><p>SimpleLess(Win/Mac/Linux)</p>
+
+<p>一款LESS编译软件。下载地址<a href="http://wearekiss.com/simpless">http://wearekiss.com/simpless</a></p></li>
+</ol>
+
+<h3>Node.js库</h3>
+
+<p>LESSCSS官方有一款基于Node.js的库，用于编译.less文件。</p>
+
+<p>使用时，首先全局安装less（部分系统下可能需要在前面加上sudo切换为超级管理员权限）：</p>
+
+<pre><code>npm install -g less
+</code></pre>
+
+<p>接下来就可以使用lessc来编译.less文件了：</p>
+
+<pre><code>lessc example/example.less example/example.css
+</code></pre>
+
+<p>更多选项可以直接运行lessc查看说明。</p>
+
+<h3>浏览器端使用</h3>
+
+<p>LESSCSS也可以不经编译，直接在浏览器端使用。</p>
+
+<p>使用方法：</p>
+
+<ol>
+<li>下载LESSCSS的.js文件，例如lesscss-1.4.0.min.js。</li>
+<li><p>在页面中引入.less文件</p>
+
+<pre><code>&lt;link rel=<span class="string">"stylesheet/less"</span> href=<span class="string">"example.less"</span> /&gt;
+</code></pre>
+
+<p>需要注意<code>rel</code>属性的值是<code>stylesheet/less</code>，而不是<code>stylesheet</code>。</p></li>
+<li><p>引入第1步下载的.js文件</p>
+
+<pre><code>&lt;script src=<span class="string">"lesscss-1.4.0.min.js"</span>&gt;&lt;/script&gt;
+</code></pre></li>
+</ol>
+
+<p>需要特别注意的是，由于浏览器端使用时是使用ajax来拉取.less文件，因此直接在本机文件系统打开（即地址是<code>file:<span class="comment">//</span></code>开头）或者是有跨域的情况下会拉取不到.less文件，导致样式无法生效。</p>
+
+<p>还有一种情况容易导致样式无法生效，就是部分服务器（以IIS居多）会对未知后缀的文件返回404，导致无法正常读取.less文件。解决方案是在服务器中为.less文件配置MIME值为<code>text/css</code>（具体方法请搜索）。或者还有一种更简单的方法，即是直接将.less文件改名为.css文件即可。</p>
+
+<h3>更多说明</h3>
+
+<p>更多使用上的说明请参见<a href="http://www.1024i.com/demo/less/usage.html">使用说明</a>。</p>
+
+<h2>更新说明</h2>
+
+<h3>1.4.0</h3>
+
+<p>1.4.0已经正式发布，这个版本引入了一些新特性，如派生（extends）、<code>data-uri</code>函数以及更多的数学函数。详细的变更情况请查看<a href="http://www.1024i.com/demo/less/changelog.html">更新日志</a>。</p>
+
+<p>在这个版本中，有一些不兼容的变化。</p>
+
+<ul>
+<li><code><span class="variable">@import-once</span></code>被移除，现在<code><span class="variable">@import</span></code>的默认行为就是只引入一次（和旧版本<code><span class="variable">@import-once</span></code>功能一样）。</li>
+<li>像<code>(~<span class="string">".myclass_@{index}"</span>) {...}</code>这样在选择器中插入变量的语法不再被支持，请使用<code><span class="class">.myclass_</span>@{index} {...}</code>来代替，这种新语法在1.3.1以上版本中都支持。</li>
+<li>用于浏览器的less.js不再包含es5-shim.js。因为我们之前用的es5-shim.js版本中有一些错误，而新版本的体积又明显变大了。使用时请根据需要选用es5-shim或者是只在现代浏览器中使用。</li>
+<li><p>引入了一种“严格运算模式”（可选），在严格运算模式中，数学运算必须被括号包裹，如：</p>
+
+<pre><code>(<span class="number">1</span> + <span class="number">1</span>)  <span class="comment">// 2</span>
+<span class="number">1</span> + <span class="number">1</span>    <span class="comment">// 1+1</span>
+</code></pre>
+
+<p>在1.4.0中，这个选项默认被关闭，但我们希望在未来的某个时间将它默认设置为开启。我们建议你升级代码的写法，并打开严格运算模式。（在命令行中加上<code>-strict-math=on</code>或者是在JavaScript代码中加入<code>strictMath:true</code>。）带括号的写法与旧版的less编译器兼容。</p></li>
+<li>引入了一种“严格单位模式”（<code>strictUnits:true</code>或者<code>strict-units=on</code>），这将强制让lessc验证单位的合法性。例如<code><span class="number">4px</span>/<span class="number">2px</span></code>结果为<code><span class="number">2</span></code>，而不是<code><span class="number">2px</span></code>，而<code><span class="number">4em</span>/<span class="number">2px</span></code>将报错。目前没有将这个选项默认打开的计划，但它可能在排查bug的时候有用。</li>
+<li>单位的运算功能已完成，所以<code>(<span class="number">4px</span> * <span class="number">3em</span>) / <span class="number">4px</span></code>以前结果是<code><span class="number">3px</span></code>，但现在是<code><span class="number">3em</span></code>。但是，我们没有取消有单位数字向无单位数字转换的功能，除非“严格单位模式”被开启。</li>
+</ul>
+
+<p>你可以现在就将选择器中插入变量、运算、单位的涉及到的变化应用到代码中去，这些变化能很好地与less 1.3.3兼容。</p></div>
+    </section>
+    
+    <script src="./hiless.js"></script>
+  
+</body></html>
