@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #app {
+      width: 600px;
+      height: 100px;
+      margin: 40px auto;
+      font-size: 0;
+    }
+    #app .area1 {
+      width: 100px;
+      height: 100px;
+      background-color: #ECECF0;
+      display: inline-block;
+    }
+    #app .area2 {
+      width: 400px;
+      height: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+      display: inline-block;
+    }
+    #app .area2 .area2-1{
+      width: 330px;
+      height: 50px;
+      background-color: #ECECF0;
+    }
+    #app .area2 .area2-2{
+      width: 240px;
+      height: 30px;
+      margin-top: 20px;
+      background-color: #ECECF0;
+    }
+    #app .area3 {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+      background-color: #ECECF0;
+    }
+    #mask {
+      width: 600px;
+      height: 100px;
+      margin: 40px auto;
+      font-size: 0;
+      /* 渐变色 */
+      background: linear-gradient(to right, #ececf0 8%, #d3d3d9 18%, #ececf0 33%);
+      /* 背景宽度要大于可视区域宽度，通过帧动画改变渐变背景的位置即改变background-position的数值，就可以实现类似波纹的加载动画效果 */
+      background-size: 1200px 100px;
+      animation: shine 2.5s infinite;
+    }
+    @keyframes shine {
+      0% {
+        background-position: -468px 0
+      }
+      100% {
+        background-position: 468px 0
+      }
+    }
+    #mask .mask1 {
+      width: 20px;
+      height: 100px;
+      background-color: white;
+      margin-left: 100px;
+      float: left;
+    }
+    #mask .mask2 {
+      float: left;
+    }
+    #mask .mask2-1 {
+      width: 330px;
+      height: 20px;
+      margin-top: 50px;
+      background-color: white;
+    }
+    #mask .mask2-2 {
+      width: 90px;
+      height: 30px;
+      float: right;
+      background-color: white;
+    }
+    #mask .mask3 {
+      width: 50px;
+      height: 100px;
+      background-color: white;
+      margin-right: 100px;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <div class="area1"></div>
+    <div class="area2">
+      <div class="area2-1"></div>
+      <div class="area2-2"></div>
+    </div>
+    <div class="area3"></div>
+  </div>
+  <p>
+    思路：
+    1. 用白色方块填充间隙
+    2. 设置大面积背景块
+    3. 添加帧动画
+  </p>
+  <div id="mask">
+    <div class="mask1"></div>
+    <div class="mask2">
+      <div class="mask2-1"></div>
+      <div class="mask2-2"></div>
+    </div>
+    <div class="mask3"></div>
+  </div>
+</body>
+</html>
