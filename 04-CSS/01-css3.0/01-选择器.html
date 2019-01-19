@@ -240,6 +240,15 @@
         span::after{
             content:"真好";
         }
+        /* 插入标签
+            插入前
+            <h1 title="插入内容">原来的内容</h1>
+            添加after伪元素插入后
+            <h1 title="插入内容">原来的内容插入内容</h1>
+        */
+        h1:after {
+            content:attr(title);
+        }
         /* 选中第一个字母，首字下沉效果 */
         p:first-child {
             text-indent: 0;

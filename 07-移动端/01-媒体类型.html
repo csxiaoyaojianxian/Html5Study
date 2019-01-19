@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>媒体类型</title>
+	<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="print.css" media="print" />
+
+	<style type="text/css">
+		@importurl(style.css) all;
+	</style>
+
+	<style type="text/css">
+		@media screen{
+			p {
+				/* ... */
+			}
+		}
+	</style>
+</head>
+<body>
+<h3>媒体类型</h3>
+<pre>
+媒体类型（Media Type）在CSS2中是一个常见的属性，也是一个非常有用的属性，可以通过媒体类型对不同的设备指定不同的样式
+
+在CSS2中常碰到的就是all(全部)、screen(屏幕)、print(页面打印或打印预览模式)，其实媒体类型远不止这三种，W3C总共列出了10种媒体类型：
+All 所有设备
+Braille 盲人用点字法触觉回馈设备
+Embossed 盲文打印机
+Handheld 便携设备
+Print 打印用纸或打印预览视图
+Projection 各种投影设备
+Screen 电脑显示器
+Speech 语音或音频合成器
+Tv 电视机类型设备
+Tty 使用固定密度字母栅格的媒介，比如电传打字机和终端
+</pre>
+<h3>媒体类型引用</h3>
+<pre>
+1. link标签，通过media指定类型
+2. @import
+3. @media(CSS3新增)
+</pre>
+</body>
+</html>

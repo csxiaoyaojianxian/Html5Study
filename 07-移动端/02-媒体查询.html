@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>媒体查询</title>
+	<style type="text/css">
+		/* 设备屏幕尺寸 >=480 && <= 800 时使用括号内样式 */
+		@media screen and (min-width: 480px) and (max-width: 800px) {
+		    body {
+		        background-color: lightgreen;
+		    }
+		}
+        @media screen and (min-width: 1000px) {
+        	body {
+        		background-color: rgba(255,125,25,0.5);
+        	}
+		}
+		/* not关键字排除指定媒体类型，除打印设备和设备宽度小于1200px的都使用样式 */
+		@media not print and (max-width: 1200px){
+			body {
+        		background-color: yellow;
+        	}
+		}
+		
+	</style>
+	<!-- 根据设备尺寸加载css -->
+	<link rel="stylesheet" media="screen and (max-device-width:480px),handheld and (max-width:480px)" href="iphone.css" />
+	<!-- only关键字 -->
+	<link rel="stylesheet" media="only screen and (max-device-width:240px)" href="android240.css" />
+</head>
+<body>
+<h1>媒体查询</h1>
+<h3>语法</h3>
+<pre>
+@media 媒体类型 and （媒体特性）{样式}
+max-width 等价于 <=
+min-width 等价于 >=
+</pre>
+</body>
+</html>
