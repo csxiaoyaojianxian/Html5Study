@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>animation</title>
+  <style>
+    #app {
+      -webkit-perspective: 800;
+      -webkit-perspective-origin: 50% 50%;
+      -webkit-transform-style: -webkit-preserve-3d;
+    }
+    /*
+    #block1 {
+      -webkit-transform: rotateX(45deg)
+    }
+    #block2 {
+      -webkit-transform: rotateY(45deg)
+    }
+    #block3 {
+      -webkit-transform: rotateZ(45deg)
+    }
+    */
+  </style>
+  <script>
+  // rotate
+  function rotate() {
+    var x=document.getElementById("rotateX").value;
+    var y=document.getElementById("rotateY").value;
+    var z=document.getElementById("rotateZ").value;
+    document.getElementsByClassName("block")[0].style.webkitTransform="rotateX("+x+"deg) rotateY("+y+"deg) rotateZ("+z+"deg)";
+    document.getElementById("degx-span").innerText=x;
+    document.getElementById("degy-span").innerText=y;
+    document.getElementById("degz-span").innerText=z;
+  }
+  // translate
+  function trans() {
+    var x=document.getElementById("translateX").value;
+    var y=document.getElementById("translateY").value;
+    var z=document.getElementById("translateZ").value;
+    document.getElementsByClassName("block")[0].style.webkitTransform="translateX("+x+"px) translateY("+y+"px) translateZ("+z+"px)";
+    document.getElementById("translatex-span").innerText=x;
+    document.getElementById("translatey-span").innerText=y;
+    document.getElementById("translatez-span").innerText=z;
+  }
+  </script>
+</head>
+<body>
+<h1>CSS3.0 animation 3D场景</h1>
+<h3>设置3D场景</h3>
+  <pre>
+    -webkit-perspective: 800; // 窗口距离三维物体800px
+    -webkit-perspective-origin: 50% 50%; // 视点xy位置，此处表示正中央
+    -webkit-transform-style: -webkit-preserve-3d; // 设置transform为3D
+  </pre>
+
+<img src="./02-创建3D场景.png" width="500" />
+
+<h3>使用transform属性调整元素</h3>
+  <pre>
+    - translate (px)
+      * translateX
+      * translateY
+      * translateZ
+    - rotate (deg)
+      * rotateX
+      * rotateY
+      * rotateZ
+  </pre>
+<img src="./02-坐标系.png" width="500" />
+
+<!-- 场景 #app -->
+<div id="app">
+  <div class="block"></div>
+</div>
+
+<div class="control">
+  <p>rotateX: <span id="degx-span">0</span>deg</p>
+  <input type="range" min="-360" max="360" id="rotateX" value="0" onmousemove="rotate()"/><br/>
+  <p>rotateY: <span id="degy-span">0</span>deg</p>
+  <input type="range" min="-360" max="360" id="rotateY" value="0" onmousemove="rotate()"/><br/>
+  <p>rotateX: <span id="degz-span">0</span>deg</p> 
+  <input type="range" min="-360" max="360" id="rotateZ" value="0" onmousemove="rotate()"/><br/>
+</div>
+<div class="control">
+  <p>translateX: <span id="translatex-span">0</span>px</p>
+  <input type="range" min="-360" max="360" id="translateX" value="0" onmousemove="trans()"/><br/>
+  <p>translateY: <span id="translatey-span">0</span>px</p>
+  <input type="range" min="-360" max="360" id="translateY" value="0" onmousemove="trans()"/><br/>
+  <p>translateZ: <span id="translatez-span">0</span>px</p> 
+  <input type="range" min="-360" max="360" id="translateZ" value="0" onmousemove="trans()"/><br/>
+</div>
+
+<h3>使用transform-origin属性调整元素旋转中心</h3>
+  <pre>
+    - X
+      * left
+      * center
+      * right
+    - Y
+      * top
+      * center
+      * bottom
+    - Z
+      * length (px)
+  </pre>
+
+<style>
+.block {
+  width: 160px;
+  height: 160px;
+  background-color: #6699cc;
+  margin: 40px auto;
+}
+img, pre {
+  display: inline-block;
+  width: 45%;
+  vertical-align: middle;
+}
+#app, .control {
+  width: 30%;
+  display: inline-block;
+  vertical-align: middle;
+}
+</style>
+</body>
+</html>

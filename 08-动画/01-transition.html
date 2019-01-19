@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>transition</title>
+  <style>
+    #block {
+      width: 100px;
+      height: 40px;
+      background-color: #6699cc;
+      /* 不缩写 */
+      -webkit-transition-property: height;
+      -webkit-transition-duration: 1s;
+      -webkit-transition-timing-function: ease;
+      /* 缩写 */
+      -webkit-transition: color 1s;
+      /* 多个属性 */
+      -webkit-transition: color 1s, height 1s;
+    }
+    #block:hover {
+      background-color: red;
+      color: white;
+      height: 100px;
+    }
+
+    .progress-bar {
+      width: 40px;
+      height: 40px;
+      background-color: #6699cc;
+    }
+    .progress-bar:hover {
+      width: 400px;
+    }
+    #bar1 {
+      -webkit-transition: width 3s linear;
+    }
+    #bar2 {
+      -webkit-transition: width 3s ease;
+    }
+    #bar3 {
+      -webkit-transition: width 3s ease-in;
+    }
+    #bar4 {
+      -webkit-transition: width 3s ease-out;
+    }
+    #bar5 {
+      -webkit-transition: width 3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+<h1>transition</h1>
+<h3>属性</h3>
+  <pre>
+    -webkit-transition-property: height;
+    -webkit-transition-duration: 1s;
+    -webkit-transition-timing-function: ease;
+  </pre>
+
+<h3>缩写</h3>
+  <pre>
+    transition: <过渡属性名称> <过渡时间> [<过渡模式>]
+  </pre>
+
+<h3>浏览器前缀</h3>
+  <pre>
+    -webkit-transition: color 1s; /* chrome & safari */
+    -moz-transition: /* firefox */
+    -o-transition: /* opera */
+  </pre>
+  
+<h3>过渡模式 transition-timing-function</h3>
+  <pre>
+    ease    缓慢开始，缓慢结束（默认）
+    linear    匀速
+    ease-in    缓慢开始
+    ease-out    缓慢结束
+    ease-in-out    缓慢开始，缓慢结束，和ease稍有区别
+  </pre>
+
+<h3>demo</h3>
+
+<div id="block">transition</div>
+
+<p>linear 匀速</p><div class="progress-bar" id="bar1"></div>
+<p>ease 缓慢开始，缓慢结束（默认）</p><div class="progress-bar" id="bar2"></div>
+<p>ease-in 缓慢开始</p><div class="progress-bar" id="bar3"></div>
+<p>ease-out 缓慢结束</p><div class="progress-bar" id="bar4"></div>
+<p>ease-in-out 缓慢开始，缓慢结束，和ease稍有区别</p><div class="progress-bar" id="bar5"></div>
+
+</body>
+</html>
