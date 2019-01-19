@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3多列布局</title>
+    <style>
+    .wrapper1 {
+        /*将文档分成3列*/
+        column-count: 3;
+        /* 设置分栏间距*/
+        column-gap: 50px;
+        /* 设置分割线的颜色*/
+        column-rule: 1px dashed red;
+        /* 设置分栏的宽度*/
+        column-width: 200px;
+        /* 缩写 */
+        /* columns: 200px 3; */
+    }
+    h4{
+        /* 设置跨列*/
+        column-span: all;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>多列布局</h1>
+    <h3>语法</h3>
+    <pre>
+    columns：column-width || column-count
+    </pre>
+    <div class="wrapper1">
+        <h4>CSS3简介</h4>
+        <p>
+            测测测测测测测测测测测测测测测测测测测测
+        </p>
+        <p>
+            测试测试测试测试测试测试测试测试测试测试测试
+        </p>
+        <p>
+            多列布局：
+            column-width: auto|200px, 列宽
+            column-count: auto|3, 列数，默认1列
+            column-gap: normal|50px, 列间距
+            column-rule: 分割线样式
+            column-span: none|all, 跨列，all跨所有列
+        </p>
+    </div>
+</body>
+
+</html>
