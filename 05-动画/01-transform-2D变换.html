@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>transform-2D变换</title>
+    <style>
+        .box{
+            width: 1000px;
+            margin:100px auto;
+        }
+        .box div{
+            width: 300px;
+            height:150px;
+            background-color: red;
+            float: left;
+        }
+        .box .box2{
+            background-color: pink;
+            /* 设置变换中心*/
+            transform-origin: top left;
+        }
+        .box .box2:hover{
+            /* transform */
+            transform: scale(2,0.5) translate(10px,50%) rotate(-45deg) skew(0deg,30deg);
+        }
+    </style>
+</head>
+<body>
+    <h1>transform-2D变换</h1>
+    <h3>详细内容参考3D变换部分</h3>
+    <pre>
+        scale() [ scaleX() / scaleY() ]  缩放，基准为1，>1 放大 <1 缩小
+            scale(n): 等比缩放
+            scale(x,y): 水平/垂直缩放倍数
+        translate() [ translateX() / translateY() ]  位移
+            translate(x): 水平方向位移，垂直方向不变
+            tarnslate(x,y): 水平/垂直方向上的位移
+        rotate() [ rotateX() / rotateY() ]   旋转
+            rotate(deg): 旋转角度，正值顺时针，负值逆时针
+            [transform-origin]: 变换中心，默认几何中心，支持自定义：left right center top bottom ,40px 30px
+        skew() [ skewX() / skewY() ]  倾斜
+    </pre>
+    
+    <div class="box">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+    </div>
+</body>
+</html>

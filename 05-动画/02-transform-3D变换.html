@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>transform-3D变换</title>
+  <style>
+    #app {
+      perspective:800;
+      -webkit-perspective:800;
+      perspective-origin: 50% 50%;
+      transform-style: preserve-3d;
+    }
+  </style>
+  <script>
+  // perspective
+  function doPerspective () {
+    var value=document.getElementById("perspective").value;
+    document.getElementById("app").style.webkitPerspective=value;
+    document.getElementById("perspective-span").innerText=value;
+  }
+  // translate
+  function doTranslate () {
+    var x=document.getElementById("translateX").value;
+    var y=document.getElementById("translateY").value;
+    var z=document.getElementById("translateZ").value;
+    document.getElementsByClassName("block")[0].style.transform="translateX("+x+"px) translateY("+y+"px) translateZ("+z+"px)";
+    document.getElementById("translatex-span").innerText=x;
+    document.getElementById("translatey-span").innerText=y;
+    document.getElementById("translatez-span").innerText=z;
+  }
+  // scale
+  function doScale () {
+    // 为方便拖拽，数值 * 100
+    var x=document.getElementById("scaleX").value / 100;
+    var y=document.getElementById("scaleY").value / 100;
+    var z=document.getElementById("scaleZ").value / 100;
+    document.getElementsByClassName("block")[0].style.transform="scaleX("+x+") scaleY("+y+") scaleZ("+z+")";
+    document.getElementById("scalex-span").innerText=x;
+    document.getElementById("scaley-span").innerText=y;
+    document.getElementById("scalez-span").innerText=z;
+  }
+  // rotate
+  function doRotate () {
+    var x=document.getElementById("rotateX").value;
+    var y=document.getElementById("rotateY").value;
+    var z=document.getElementById("rotateZ").value;
+    document.getElementsByClassName("block")[0].style.transform="rotateX("+x+"deg) rotateY("+y+"deg) rotateZ("+z+"deg)";
+    document.getElementById("rotatex-span").innerText=x;
+    document.getElementById("rotatey-span").innerText=y;
+    document.getElementById("rotatez-span").innerText=z;
+  }
+  // skew
+  function doSkew () {
+    var x=document.getElementById("skewX").value;
+    var y=document.getElementById("skewY").value;
+    document.getElementsByClassName("block")[0].style.transform="skewX("+x+"deg) skewY("+y+"deg)";
+    document.getElementById("skewx-span").innerText=x;
+    document.getElementById("skewy-span").innerText=y;
+  }
+  // transform-origin
+  function doOrigin () {
+    var x=document.getElementById("originX").value;
+    var y=document.getElementById("originY").value;
+    var z=document.getElementById("originZ").value;
+    document.getElementsByClassName("block")[0].style.transformOrigin=x+"% "+y+"% "+z+"px";
+    document.getElementById("originx-span").innerText=x;
+    document.getElementById("originy-span").innerText=y;
+    document.getElementById("originz-span").innerText=z;
+  }
+  // clean
+  function clean () {
+    document.getElementsByClassName("block")[0].style.transform="none";
+  }
+  </script>
+</head>
+<body>
+<h1>transform-3D变换</h1>
+<div class="container">
+  <h3>设置3D场景 perspective</h3>
+  <pre>
+    perspective: 800; // perspective 为3D转换元素定义透视视图，窗口距离三维物体800px
+    perspective-origin: 50% 50%; // 视点xy位置，此处表示正中央
+    transform-style: preserve-3d; // 设置transform为3D
+  </pre>
+</div>
+<div class="container">
+  <img src="./doc/创建3D场景.png" width="500" />
+</div>
+<div class="container">
+  <h3>使用transform属性调整元素( 2D + 3D )</h3>
+  <pre>
+    - none
+
+    - matrix ()
+      * matrix(n,n,n,n,n,n)
+      * matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n)
+
+    - translate (px)
+      * translate3d(x,y,z)
+      * translateX(x)
+      * translateY(y)
+      * translateZ(z)
+
+    - scale (n)
+      * scale3d(x,y,z)	
+      * scaleX(x)
+      * scaleY(y)
+      * scaleZ(z)
+
+    - rotate (deg)
+      * rotate3d(x,y,z)
+      * rotateX(x)
+      * rotateY(y)
+      * rotateZ(z)
+
+    - skew (deg)
+      * skew(x,y)
+      * skewX(x)
+      * skewY(y)
+  </pre>
+</div>
+<div class="container">
+  <h3>使用transform-origin属性调整元素旋转中心</h3>
+  <pre>
+    - X
+      * left
+      * center
+      * right
+      * %
+      * length (px)
+    - Y
+      * top
+      * center
+      * bottom
+      * %
+      * length (px)
+    - Z
+      * length (px)
+  </pre>
+  <img src="./doc/坐标系.png" />
+</div>
+
+<h3>测试demo</h3>
+<!-- 场景 #app -->
+<div id="app">
+  <div class="block"></div>
+  <button onclick="clean()">transform:none;</button>
+</div>
+<!-- perspective -->
+<div class="control">
+  <p>perspective: <span id="perspective-span">800</span>px</p>
+  <input type="range" min="0" max="3000" id="perspective" value="800" onmousemove="doPerspective()"/><br/>
+</div>
+<!-- translate -->
+<div class="control">
+  <p>translateX: <span id="translatex-span">0</span>px</p>
+  <input type="range" min="-360" max="360" id="translateX" value="0" onmousemove="doTranslate()"/><br/>
+  <p>translateY: <span id="translatey-span">0</span>px</p>
+  <input type="range" min="-360" max="360" id="translateY" value="0" onmousemove="doTranslate()"/><br/>
+  <p>translateZ: <span id="translatez-span">0</span>px</p> 
+  <input type="range" min="-360" max="360" id="translateZ" value="0" onmousemove="doTranslate()"/><br/>
+</div>
+<!-- scale -->
+<div class="control">
+  <p>scaleX: <span id="scalex-span">0</span></p>
+  <input type="range" min="0" max="300" id="scaleX" value="100" onmousemove="doScale()"/><br/>
+  <p>scaleY: <span id="scaley-span">0</span></p>
+  <input type="range" min="0" max="300" id="scaleY" value="100" onmousemove="doScale()"/><br/>
+  <p>scaleZ: <span id="scalez-span">0</span></p> 
+  <input type="range" min="0" max="300" id="scaleZ" value="100" onmousemove="doScale()"/><br/>
+</div>
+<!-- rotate -->
+<div class="control">
+  <p>rotateX: <span id="rotatex-span">0</span>deg</p>
+  <input type="range" min="-360" max="360" id="rotateX" value="0" onmousemove="doRotate()"/><br/>
+  <p>rotateY: <span id="rotatey-span">0</span>deg</p>
+  <input type="range" min="-360" max="360" id="rotateY" value="0" onmousemove="doRotate()"/><br/>
+  <p>rotateZ: <span id="rotatez-span">0</span>deg</p> 
+  <input type="range" min="-360" max="360" id="rotateZ" value="0" onmousemove="doRotate()"/><br/>
+</div>
+<!-- skew -->
+<div class="control">
+  <p>skewX: <span id="skewx-span">0</span>deg</p>
+  <input type="range" min="-360" max="360" id="skewX" value="0" onmousemove="doSkew()"/><br/>
+  <p>skewY: <span id="skewy-span">0</span>deg</p>
+  <input type="range" min="-360" max="360" id="skewY" value="0" onmousemove="doSkew()"/><br/>
+</div>
+<!-- transform-origin -->
+<div class="control">
+  <p>originX: <span id="originx-span">50</span>%</p>
+  <input type="range" min="0" max="100" id="originX" value="50" onmousemove="doOrigin()"/><br/>
+  <p>originY: <span id="originy-span">50</span>%</p>
+  <input type="range" min="0" max="100" id="originY" value="50" onmousemove="doOrigin()"/><br/>
+  <p>originZ: <span id="originz-span">0</span>px</p>
+  <input type="range" min="0" max="1000" id="originZ" value="0" onmousemove="doOrigin()"/><br/>
+</div>
+
+<style>
+.block {
+  width: 160px;
+  height: 160px;
+  background-color: #6699cc;
+  margin: 40px auto;
+}
+body {
+  margin: 0;
+  padding: 8px;
+}
+h3 {
+  display: inline-block;
+  width: 100%;
+}
+.container {
+  display: inline-block;
+  width: 48%;
+  vertical-align: top;
+}
+img, pre {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+#app, .control {
+  display: inline-block;
+  vertical-align: middle;
+}
+#app {
+  width: 30%;
+  text-align: center;
+}
+.control {
+  width: 10%;
+}
+</style>
+</body>
+</html>
