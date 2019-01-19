@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    .box_shadow{
+        width: 100px;
+        height: 100px;
+        /* 同时添加多个阴影 */
+        box-shadow:4px 2px 6px #f00, -4px -2px 6px #000, 0px 0px 12px 5px #33CC00 inset;
+    }
+    </style>
+    <pre>
+        box-shadow 向盒子添加阴影, 支持添加一个或者多个
+        box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式(默认外阴影，可设置inset内阴影)];
+
+        阴影模糊半径与阴影扩展半径的区别：
+            阴影模糊半径：此参数可选，其值只能是为正值，如果其值为0时，表示阴影不具有模糊效果
+            阴影扩展半径：此参数可选，其值可以是正负值，如果值为正，则整个阴影都延展扩大，反之值为负值时，则缩小
+    </pre>
+    
+    <div class="box_shadow"></div>
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8">
+<title>多重背景</title>
+<style type="text/css">
+.demo{
+    width: 300px;
+    height: 140px;
+    border: 1px solid #999;
+    background-image: url(http://img.mukewang.com/54cf2365000140e600740095.jpg),
+                      url(http://img.mukewang.com/54cf238a0001728d00740095.jpg),
+                      url(http://img.mukewang.com/54cf23b60001fd9700740096.jpg);
+    background-position: left top, 100px 0, 200px 0;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    margin:0 0 20px 0;
+}
+/* 导航栏小短线 关注right/1px 15px */
+.line {
+    background:linear-gradient(to bottom,#dd2926,#a82724,#dd2926) no-repeat right / 1px 15px;
+}
+</style>
+</head>
+<body>
+<pre>
+background: [background-color] | [background-image] | [background-position][/background-size] | [background-repeat] | [background-attachment] | [background-clip] | [background-origin],...
+拆解
+background-image: url1,url2,...,urlN;
+background-repeat: repeat1,repeat2,...,repeatN;
+backround-position: position1,position2,...,positionN;
+background-size: size1,size2,...,sizeN;
+background-attachment: attachment1,attachment2,...,attachmentN;
+background-clip: clip1,clip2,...,clipN;
+background-origin: origin1,origin2,...,originN;
+background-color: color;
+</pre>
+<div class="demo"></div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8">
+<title>text-overflow</title>
+<style type="text/css">
+.demo1{
+    text-overflow:ellipsis; 
+    overflow:hidden; /* 溢出内容隐藏 */
+    white-space:nowrap; /* 强制文本在一行内显示 */
+
+    width:70px;
+    background:#ccc;
+}
+.demo2 {
+    text-overflow: ellipsis;
+    overflow : hidden;
+    display:-webkit-box;
+    -webkit-line-clamp: 2; /* 行数 */
+    -webkit-box-orient: vertical;
+
+    width:120px;
+    background:#ccc;
+}
+</style>
+</head> 
+<body>
+<pre>
+    text-overflow只是用来说明文字溢出时用什么方式显示
+</pre>
+<div class="demo1">
+    单行省略号
+</div>
+<div class="demo2">
+    多行省略号多行省略号多行省略号多行省略号
+</div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8">
+<title>背景裁切</title>
+<style type="text/css">
+.wrap {
+    width:220px; 
+    border:20px dashed #000; 
+    padding:20px; 
+    font-weight:bold; 
+    color:#000; 
+    background:#ccc url(https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20180828195629.png) no-repeat; 
+    background-origin: border-box;
+    background-clip: content-box;
+    background-size: 300px;
+    position: relative;
+}
+.wrap span { 
+    position: absolute; 
+    left:0; 
+    top:0;
+}
+.content {
+    height:80px; 
+    border:1px solid #333;
+}
+</style>  
+</head> 
+<body>
+<pre>
+将背景图片裁剪以适应实际需要
+background-clip: border-box(默认) | padding-box | content-box | no-clip;
+参数分别表示从(边框 | 内填充 | 内容区域)向外裁剪背景
+no-clip表示不裁切，和参数border-box显示同样的效果
+</pre>
+<div class="wrap"><span>padding</span>
+    <div class="content">content</div>
+</div>
+</body>
+</html>

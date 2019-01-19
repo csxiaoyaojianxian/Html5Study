@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8">
+<title>Gradient</title>
+<style type="text/css">
+p {
+  width: 400px;
+  height: 150px;
+  line-height: 150px;
+  text-align:center;
+  color: #000;
+  font-size:24px;
+  background-image:linear-gradient(to top left, red, orange,yellow,green,blue,indigo,violet);
+} 
+</style>
+</head> 
+<body>
+    <pre>
+        CSS3 Gradient 分为线性渐变(linear)和径向渐变(radial)
+        linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet)
+        参数1: 方向，默认'180deg'，等同于'to bottom'
+            0deg   - to top
+            90deg  - to right
+            180deg - to bottom
+            270deg - to left
+                   - to top left
+                   - to top right
+        参数2,3...: 颜色的起点和终点，可以有多个颜色值
+    </pre>
+　　<p>右下角向左上角的线性渐变背景</p>
+</body>
+</html>
