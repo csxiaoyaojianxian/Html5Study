@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>transition</title>
+  <title>transition过渡</title>
   <style>
     #block {
       width: 100px;
@@ -53,32 +53,27 @@
 
 <body>
 <h1>transition</h1>
-<h3>属性</h3>
+<h3>相关属性</h3>
   <pre>
-    -webkit-transition-property: height;
-    -webkit-transition-duration: 1s;
-    -webkit-transition-timing-function: ease;
+    transition-property: background-color | all; // 作用的属性名
+    transition-duration: 1s; // 过渡持续时间
+    transition-timing-function: ease | linear | ease-in | ease-out | ease-in-out; // 过渡模式
+    transition-delay: 1s; // 延迟执行时间
   </pre>
-
 <h3>缩写</h3>
   <pre>
-    transition: <过渡属性名称> <过渡时间> [<过渡模式>]
-  </pre>
-
-<h3>浏览器前缀</h3>
-  <pre>
-    -webkit-transition: color 1s; /* chrome & safari */
-    -moz-transition: /* firefox */
-    -o-transition: /* opera */
+    transition: <过渡属性名称> <过渡时间> [<过渡模式> <延迟执行时间>]
+    transition: all .1s ease-out 0s;
   </pre>
   
-<h3>过渡模式 transition-timing-function</h3>
+<h3>过渡模式 / 运动曲线 transition-timing-function</h3>
   <pre>
-    ease    缓慢开始，缓慢结束（默认）
-    linear    匀速
-    ease-in    缓慢开始
-    ease-out    缓慢结束
+    ease    先加速后减速，缓慢开始，缓慢结束（默认）
+    linear    线性匀速
+    ease-in    加速，缓慢开始
+    ease-out    减速，缓慢结束
     ease-in-out    缓慢开始，缓慢结束，和ease稍有区别
+    cubic-bezier(n,n,n,n)   使用cubic-bezier函数中的值(0到1的数值)
   </pre>
 
 <h3>demo</h3>
