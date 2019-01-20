@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>圣杯布局</title>
+    <style type="text/css">
+        header, footer {
+            height: 30px;
+            background-color: #888;
+        }
+        .container {
+            height: 300px;
+            /* overflow: hidden; */
+            padding: 0 150px; /* 让中间自适应盒子安全显示 */
+        }
+        .left, .middle, .right {
+            height: 100%;
+            float: left;
+            position: relative; /* 让中间自适应盒子安全显示 */
+        }
+        .middle {
+            width: 100%;
+            background-color: #aaa;
+        }
+        .left {
+            width: 150px;
+            left: -150px;
+            margin-left: -100%; /* 左侧盒子局左的精髓 CSS负边距 */
+            background-color: pink;
+        }
+        .right {
+            width: 150px;
+            right: -150px;
+            margin-left: -150px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Header</header>
+    <div class="container">
+        <div class="middle">
+            <h4>middle中间弹性区</h4>
+            <p>注意HTML中三部分顺序：middle -> left -> right ...... </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus sequi mollitia odio iure eligendi et blanditiis atque, minima repudiandae saepe! Obcaecati distinctio rerum numquam modi sint deleniti quo veniam illum voluptatem perspiciatis. Animi dignissimos libero rem quae architecto ab, aut ducimus iste laboriosam, tempora! Incidunt molestiae perspiciatis, at. Nobis consequatur aliquid ducimus voluptas, laboriosam explicabo ut, odio sed dolor distinctio veritatis fugit dolores magnam ipsam iste similique a eos labore cumque saepe illum suscipit natus. Modi odit, quia, ab obcaecati cum maiores! Delectus nihil cum accusantium tempora voluptatem sed velit corrupti dicta voluptate porro eligendi, ducimus, accusamus quas tenetur, odio molestiae! Omnis tenetur debitis reiciendis quo possimus ipsum autem odit optio excepturi nulla porro, sint placeat! Blanditiis quaerat, tempora? Perspiciatis ducimus accusamus nam esse repudiandae, quibusdam ullam soluta aspernatur similique hic! Similique quos maxime sapiente, voluptatum, atque quaerat id rerum corrupti sed architecto, ut magni hic aliquam animi, distinctio perspiciatis. In doloremque assumenda vitae autem unde veritatis accusantium aperiam iure quia et hic cupiditate laudantium incidunt explicabo eos velit, blanditiis dolor sequi molestias quod repellat ad accusamus? Exercitationem, magnam consequuntur, mollitia repellat fugit eveniet cumque inventore ipsa deleniti nemo. Sunt minus iusto labore eveniet accusantium. Nostrum eius dolore perferendis suscipit quam ad accusantium odit veniam accusamus in soluta aspernatur laudantium, ipsa nisi necessitatibus voluptatum harum! Sit velit suscipit, praesentium dolor. Cupiditate consequuntur praesentium nulla laboriosam libero ex aliquid error nam adipisci necessitatibus tempore, iure cumque et, harum enim ab dolor molestias fugit mollitia dolorem eaque temporibus at! Aspernatur a adipisci nobis natus ad quod cum excepturi nesciunt ab eaque quia doloremque dignissimos, iure et sapiente error necessitatibus odio, itaque repellat officiis vel optio debitis quisquam! Quam adipisci, nemo aspernatur est ex debitis voluptatem esse, cum dicta rem modi soluta eveniet ad consectetur. Dolores rerum, commodi tempore? Dignissimos totam, atque quidem.</p>
+        </div>
+        <div class="left">
+            <h4>left左侧固定区</h4>
+            <p>左侧盒子上移一层局左的精髓:CSS负边距(margin-left: -100%;)</p>
+            <p>margin-left的百分比是相对父元素，-100%相当于left上移一行，left的左侧贴middle左侧</p>
+        </div>
+        <div class="right">
+            <h4>right右侧固定区</h4>
+            <p>margin-left: -150px;</p>
+            <p>right: -150px;</p>
+        </div>
+    </div>
+    <footer>Footer</footer>
+</body>
+
+</html>

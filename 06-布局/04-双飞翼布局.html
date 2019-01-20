@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>双飞翼布局</title>
+    <style type="text/css">
+        header, footer {
+            height: 30px;
+            background-color: #888;
+        }
+        footer {
+            clear: both;
+        }
+        .left, .middle, .right {
+            float: left;
+            height: 300px;
+        }
+        .middle {
+            width: 100%;
+            background-color: #aaa;
+        }
+        .middle-inner {
+            margin: 0 150px;
+            background-color: #aaa;
+        }
+        .left {
+            width: 150px;
+            margin-left: -100%;
+            background-color: pink;
+        }
+        .right {
+            width: 150px;
+            margin-left: -150px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Header</header>
+    <div class="middle">
+        <div class="middle-inner">
+            <h4>middle中间弹性区</h4>
+            <p>和圣杯布局的区别在于DOM结构，不是由container做padding，而是直接由middle的inner做margin</p>
+        </div>
+    </div>
+    <div class="left">
+        <h4>left左侧固定区</h4>
+        <p>CSS负边距(margin-left: -100%;)</p>
+    </div>
+    <div class="right">
+        <h4>right右侧固定区</h4>
+        <p>margin-left: -150px;</p>
+    </div>
+    <footer>Footer</footer>
+</body>
+
+</html>

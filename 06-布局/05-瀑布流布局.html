@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瀑布流布局</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        .box {
+            float: left;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/sign.jpg" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/logo.jpg" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/docker.jpeg" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20181223181202.png" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20181223182125.png" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20181223174428.png" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/01.jpg" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20181223174428.png" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/01.jpg" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20181223174428.png" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20181223174428.png" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/01.jpg" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20181223181202.png" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/01.jpg" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20181223181202.png" alt=""/></div>
+    <div class="box"><img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20181223181202.png" alt=""/></div>
+</div>
+</body>
+</html>
+<script>
+    var boxs = []
+    window.onload = function () {
+        var container = document.getElementById("container");
+        boxs = container.children;
+        var pageWidth = window.innerWidth;
+        // var boxWidth = boxs[0].offsetWidth;
+        // var column = Math.floor(pageWidth / boxWidth);
+        var column = 6; // 写死列数
+        var arrHeight = []; // 存储每列高度
+        var perWidth = Math.floor(pageWidth / column);
+        // 瀑布流核心方法
+        function waterfall() {
+            for (var i = 0; i < boxs.length; i++) {
+                // 设置图片宽度，需要注意padding和border-width
+                boxs[i].getElementsByTagName('img')[0].style.width = perWidth -12 + 'px';
+                if (i < column) {
+                    // 统计第一行每列高度
+                    arrHeight[i] = boxs[i].offsetHeight;
+                } else {
+                    // 从第二行开始，获取height最小的列，设置位置
+                    var minHeight = getMin(arrHeight).value;
+                    var minHeightIndex = getMin(arrHeight).index;
+                    boxs[i].style.position = "absolute";
+                    boxs[i].style.left = boxs[minHeightIndex].offsetLeft + "px";
+                    boxs[i].style.top = minHeight + "px";
+                    arrHeight[minHeightIndex] = minHeight + boxs[i].offsetHeight;
+                }
+            }
+        }
+        waterfall();
+        
+        // 触底追加
+        window.onscroll = function () {
+            if (bottomed()) {
+                var json = [
+                    {"src": "https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/sign.jpg"},
+                    {"src": "https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/logo.jpg"},
+                    {"src": "https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/docker.jpeg"},
+                    {"src": "https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20181223181202.png"},
+                    {"src": "https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20181223182125.png"},
+                    {"src": "https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20181223174428.png"},
+                    {"src": "https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/01.jpg"}
+                ]
+                for (var i = 0; i < json.length; i++) {
+                    var div = document.createElement("div");
+                    div.className = "box";
+                    var img = document.createElement("img");
+                    img.src = json[i].src;
+                    div.appendChild(img);
+                    container.appendChild(div);
+                }
+                // 重新定位
+                waterfall();
+            }
+        }
+    }
+    // 判断是否到底
+    function bottomed() {
+        var scrollTop = window.pageYOffset; // 卷进去的高度
+        var clientHeight = window.innerHeight; // 可视区域高度
+        var lastBoxTop = boxs[boxs.length - 1].offsetTop; // 最后一个盒子的top距离
+        if ((scrollTop + clientHeight) > lastBoxTop) {
+            return true;
+        }
+    }
+    // 获取数组中的最小值和对应的下标
+    function getMin(arr) {
+        var min = {};
+        min.index = 0;
+        min.value = arr[min.index];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] < min.value) {
+                min.value = arr[i];
+                min.index = i;
+            }
+        }
+        return min;
+    }
+</script>
