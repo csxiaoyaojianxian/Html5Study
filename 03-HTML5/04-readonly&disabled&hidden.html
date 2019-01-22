@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+【1】总结readonly、disbled和hidden
+
+1. readonly只针对input和textarea有效，而disabled对于所有的表单元素都有效，包括select, radio, checkbox, button等
+2. 表单元素在使用了disabled后，以POST或GET的方式提交时这个元素的值不会被传递出去，而readonly和hidden会将该值传递出去
+3. 两者的数值改变，只能通过script脚本
+
+【2】disabled
+【2.1】disabled='disabled' / disabled / disabled='true' 用哪种
+1. XHTML如果使用XML检查，必须用disabled="disabled"，其余情况皆可
+2. html5中disabled是一个布尔值
+3. 注意css选择器的区别
+    $('[disabled=disabled]') // 此时包含属性值
+    $('[disabled]') // 此时为布尔值
+
+【2.2】设置disabled不生效？
+var btn=document.querySelector('button');
+以下四种disabled方式都生效
+1.  btn.disabled=true;
+2.  btn.disabled='disabled';
+3.  btn.setAttribute('disabled',true); // <button type='button' disabled='true'>test</button>
+4.  btn.setAttribute('disabled','disabled'); // <button type='button' disabled='disabled'>test</button>
+
+重新激活按钮
+1. btn.disabled=false;
+2. btn.disabled="";
+3. btn.setAttributed('disabled',false); //【不生效】，因为setAttributed值是string，非bool
+4. btn.removeAttribute('disabled');
+
+正确做法
+1. btn.disabled=true;
+   btn.disabled=false;
+2. btn.setAttribute('disabled','disabled');
+   btn.removeAttribute('disabled');
+
+</body>
+</html>

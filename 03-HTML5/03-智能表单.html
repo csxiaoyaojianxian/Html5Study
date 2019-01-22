@@ -24,9 +24,6 @@
     </style>
 </head>
 <body>
-    <!-- type：表单的类型-->
-    <!--&lt;!&ndash; 表单新增属性&ndash;&gt;-->
-    <!--<input type="text" class="name" />-->
     <!--
 表单类型： type="text"
     email
@@ -41,63 +38,59 @@
     week
     month
     datatime
+
 表单元素：
     output：输出信息
     keygen:生成按钮密钥
     meter: 度量器 max min value low high
-    progress 进度条
+    progress: 进度条
 
 表单属性：
-    placeholder :提示文字
-    autofocus:自动聚焦
-    autocomplete:自动完成（填充）  on 开启（默认）   off 取消提示
-    required:必填
-    multiple:多选
-    novalidate关闭表单的默认验证功能 用于form
+    placeholder: 提示文字
+    autofocus: 自动聚焦
+    autocomplete:  自动完成（填充）  on 开启（默认）  off 取消提示
+    required: 必填
+    multiple: 多选
+    novalidate: 关闭表单的默认验证功能 用于form
     pattern:自定义正则验证 pattern="\D+";
 
 表单事件：
-    当用户输入时 触发
-    oninput
-    当验证不通过是触发->设置验证不通过时的提示文字
-    oninvalid
+    oninput: 当用户输入时 触发
+    oninvalid: 当验证不通过时触发->设置验证不通过时的提示文字
     -->
 
-
-
-    <!-- <form action="" novalidate> -->
     <form action="">
+    <!-- <form action="" novalidate> -->
         <fieldset>
             <legend>智能表单</legend>
             <label for="uname">
-                用户名(for/placeholder/autofocus/autocomplete/required)：<input type="text" name="userName" id="uname" placeholder="CS逍遥剑仙" autofocus autocomplete="on" required/>
+                用户名(for/placeholder/autofocus/autocomplete/required)：
+                <input type="text" name="userName" 
+                    id="uname" placeholder="CS逍遥剑仙" 
+                    autofocus autocomplete="on" required />
+            </label>
+            <label for="txt1">
+                email (novalidate，自定义失败提示) <input type="email" name="email" id="txt1"/>
             </label>
             <label for="txt2">
-                oninput 统计字数绑定email：<input type="text" name="" id="txt2"/>
+                oninput 触发oninput输出到email输入框：<input type="text" name="" id="txt2"/>
             </label>
-
             <label>
                 密码：<input type="password" name="pwd" />
             </label>
-
-            <label for="txt1">
-                email: <input type="email" name="email" id="txt1"/>
-            </label>
             
             <label>
-                性别：<input type="text" name="sex" list="sex" />
+                性别：数据列表datalist，新类型<input type="text" name="sex" list="sex" />
             </label>
-            <!-- 定义数据列表-->
             <datalist id="sex">
                 <option >男</option>
                 <option >女</option>
-                <option >不祥</option>
+                <option >其他</option>
             </datalist>
 
             <label for="">
-                电话：<input type="tel" pattern="1\d{10}" />
+                电话 select：<input type="tel" pattern="1\d{10}" />
             </label>
-
             <select >
                 <option>选项1</option>
                 <option>选项2</option>
@@ -106,17 +99,19 @@
             </select>
 
             <label for="">
-                推荐人：<output>csxiaoyao</output>
+                推荐人：<output>output</output>
             </label>
 
             <label for="">
-                加密类型： <keygen/>
+                加密类型keygen： <keygen/>
             </label>
 
             <label for="#">
-                度量器：<meter value="50" max="100" min="0" low="30" high="80"></meter>
+                度量器 meter：<meter value="50" max="100" min="0" low="30" high="80"></meter>
             </label>
+
             <!-- 进度条-->
+            progress
             <progress value="40" max="100" min="0"></progress>
 
             <input type="file" name="file" multiple/>
@@ -163,20 +158,19 @@
 
     <script>
         //表单事件： oninput　 当用户输入的时候
-        //           oninvalid 当验证不通过时触发
-        var  txt1=document.getElementById('txt1');
-        var  txt2=document.getElementById('txt2');
+        //         oninvalid 当验证不通过时触发
+        var txt1=document.getElementById('txt1'); // email
+        var txt2=document.getElementById('txt2'); // pwd
         var num=0;
-        txt1.oninput=function(){
+        txt2.oninput=function(){
             num++;
-            //将字数显示在txt2中
-            txt2.value=num;
+            txt1.value=num;
         }
-        //oninvalid 当验证不通过时触发
-        //一般用于设置验证不通过时的提示文字
+        // oninvalid 当验证不通过时触发
+        // 一般用于设置验证不通过时的提示文字
         txt1.oninvalid=function(){
             //用于设置验证不通过时的提示文字
-            this.setCustomValidity('请输入正确的邮箱格式!');
+            this.setCustomValidity('[自定义]:请输入正确的邮箱格式!');
         }
     </script>
 </body>

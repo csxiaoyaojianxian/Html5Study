@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>opacity</title>
+    <style>
+        .out{
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+            /* 可以给盒子设置半透明，但是会影响子盒子，并且子盒子无法改变透明度 */
+            opacity: 0.3;
+            /* 可以单独设置透明度，但是无法改变透明的值 */
+            background: transparent;
+        }
+        .in{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="out">
+        <div class="in"></div>
+    </div>
+</body>
+</html>

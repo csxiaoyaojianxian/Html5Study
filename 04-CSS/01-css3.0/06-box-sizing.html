@@ -5,6 +5,7 @@
 <title>box-sizing</title>
 <style type="text/css">
 .test1 {
+    /* 外加模式，默认*/
     box-sizing: content-box; /* 300px + margin | W3C */
     width: 200px; /* content-width=200px，不包含padding和border-width */
     height: 200px;
@@ -14,6 +15,7 @@
     background-color: yellow;
 }
 .test2 {
+    /* 内减模式*/
     box-sizing: border-box; /* 200px + margin | IE */
     width: 200px; /* 包含padding和border-width，实际content-width=100px */
     height: 200px;
@@ -25,13 +27,13 @@
 </style>
 </head>
 <body>
-<h1>box-sizing</h1>
+<h1>box-sizing 盒模型： content-box  border-box</h1>
 <p>
 box-sizing: content-box | border-box | inherit
 </p>
 
 <pre>
-【 W3C标准盒模型 】
+【 W3C标准盒模型 】 外加模式(CSS2.0默认值)，content-box，Element-width = width + border + padding
 
 外盒尺寸计算（元素空间尺寸，包含margin）
 element w/h ＝ content w/h ＋ padding ＋ border-width ＋ margin
@@ -41,7 +43,7 @@ element w/h ＝ content w/h ＋ padding ＋ border-width ＋ margin
 element w/h ＝ content w/h ＋ padding ＋ border-width
 200px + 30px * 2 + 20px * 2 = 300px
 
-【 IE传统下盒模型（IE6以下，不包含IE6版本或QuirksMode下IE5.5+）】
+【 IE传统下盒模型（IE6以下，不包含IE6版本）】内减模式，border-box，Element-width = width
 
 外盒尺寸计算（元素空间尺寸，包含margin）
 element w/h ＝ content w/h ＋ margin
@@ -58,9 +60,8 @@ border-box: IE传统的盒模型，元素的宽度高度等于元素内容的宽
 inherit: 继承父元素的盒模型模式
 </pre>
 
-<div class="test1">box-sizing</div>
-<div class="test2">box-sizing</div>
-
+<div class="test1">box-sizing: content-box</div>
+<div class="test2">box-sizing: border-box</div>
 
 </body>
 </html>

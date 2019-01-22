@@ -4,25 +4,36 @@
 <meta charset="utf-8">
 <title>text-shadow</title>
 <style type="text/css">
-.demo {
+.shadow {
     width: 340px;
     padding: 30px;
     font: bold 55px/100% "微软雅黑";
     background: #C5DFF8;
     text-shadow: 3px 3px 5px #fff;
 }
+.ao{
+    color:#666;
+    /* 可以设置多个阴影，每个阴影之间使用逗号隔开(实现凹凸效果) */
+    text-shadow: -1px -1px 1px #000, 1px 1px 1px #fff;
+}
+.tu{
+    color:#666;
+    text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+}
 </style>  
 </head> 
 <body>
     <pre>
-        text-shadow可以设置文本的阴影效果
-            X-Offset：表示阴影的水平偏移距离，其值为正值时阴影向右偏移，反之向左偏移
-            Y-Offset：是指阴影的垂直偏移距离，如果其值是正值时，阴影向下偏移，反之向上偏移
-            Blur：是指阴影的模糊程度，其值不能是负值，如果值越大，阴影越模糊，反之阴影越清晰，如果不需要阴影模糊可以将Blur值设置为0
-            Color：是指阴影的颜色，其可以使用rgba色
+        text-shadow 设置文本阴影效果
+            X-Offset：阴影水平偏移距离，其值为正值时阴影向右偏移，反之向左偏移
+            Y-Offset：阴影垂直偏移距离，如果其值是正值时，阴影向下偏移，反之向上偏移
+            Blur：阴影模糊程度，其值不能是负值，如果值越大，阴影越模糊，反之阴影越清晰，如果不需要阴影模糊可以将Blur值设置为0
+            Color：阴影颜色，其可以使用rgba色
 
         text-shadow: 0 1px 1px #fff
     </pre>
-<div class="demo">sunshine</div>
+    <div class="shadow">SUNSHINE</div>
+    <p class="ao">SUNSHINE</p>
+    <p class="tu">SUNSHINE</p>
 </body>
 </html>

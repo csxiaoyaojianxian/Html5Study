@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab 标签</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F7F7F7;
+        }
+
+        .tabs {
+            width: 400px;
+            margin: 30px auto;
+            background-color: #FFF;
+            border: 1px solid #C0DCC0;
+            box-sizing: border-box;
+        }
+
+        .tabs nav {
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            overflow: hidden;
+            background-color: #C0DCC0;
+            display: flex;
+        }
+
+        nav a {
+            display: block;
+            width: 100px;
+            border-right: 1px solid #FFF;
+            color: #000;
+            text-decoration: none;
+        }
+
+        nav a:last-child {
+            border-right: 0 none;
+        }
+
+        nav a.active {
+            background-color: #9BAF9B;
+        }
+
+        .cont {
+            overflow: hidden;
+            display: none;
+        }
+
+        .cont ol {
+            line-height: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="tabs">
+    <nav>
+        <a href="javascript:;" data-cont="tab1">tab1</a>
+        <a href="javascript:;" data-cont="tab2">tab2</a>
+        <a href="javascript:;" data-cont="tab3">tab3</a>
+        <a href="javascript:;" data-cont="tab4">tab4</a>
+    </nav>
+    <section class="cont" id="tab1" >
+        <ol>
+            <li>测试1测试1测试1测试1测试1</li>
+            <li>测试1测试1测试1测试1测试1</li>
+            <li>测试1测试1测试1测试1测试1</li>
+            <li>测试1测试1测试1测试1测试1</li>
+        </ol>
+    </section>
+    <section class="cont" id="tab2">
+        <ol>
+            <li>测试2测试2测试2测试2测试2</li>
+            <li>测试2测试2测试2测试2测试2</li>
+            <li>测试2测试2测试2测试2测试2</li>
+            <li>测试2测试2测试2测试2测试2</li>
+        </ol>
+    </section>
+    <section class="cont" id="tab3">
+        <ol>
+            <li>测试3测试3测试3测试3测试3</li>
+            <li>测试3测试3测试3测试3测试3</li>
+            <li>测试3测试3测试3测试3测试3</li>
+            <li>测试3测试3测试3测试3测试3</li>
+        </ol>
+    </section>
+    <section class="cont" id="tab4">
+        <ol>
+            <li>测试4测试4测试4测试4测试4</li>
+            <li>测试4测试4测试4测试4测试4</li>
+            <li>测试4测试4测试4测试4测试4</li>
+            <li>测试4测试4测试4测试4测试4</li>
+        </ol>
+    </section>
+</div>
+<script>
+// key 表示的当前显示的是第几个
+(function(key){
+    // 获取所有导航
+    var navs=document.querySelectorAll('nav a');
+    // 遍历 给导航 绑定事件，并且添加当前样式
+    for(var i=0;i<navs.length;i++){
+        // 如果是用户指定的当前样式
+        if(key==i){
+            navs[i].classList.add('active');
+            // 拿到要显示内容section的id
+            var secId=navs[i].dataset['cont'];
+            // 获取对应的section标签
+            document.querySelector('#'+secId).style.display='block';
+        }
+        // 给每一个导航绑定点击事件
+        navs[i].onclick=function(){
+        // 排他
+        // 之前有active样式的清除, 之前显示的section 隐藏
+        var currentNav=document.querySelector('.active');
+            // 获取对应的内容区域 ，让其隐藏
+            var currentId=currentNav.dataset['cont'];
+            // 去掉导航的active 样式
+            currentNav.classList.remove('active');
+            document.querySelector('#'+currentId).style.display='none';
+            this.classList.add('active');
+            var myId=this.dataset['cont'];
+            document.querySelector('#'+myId).style.display='block';
+        }
+    }
+})(0);
+</script>
+</body>
+</html>
