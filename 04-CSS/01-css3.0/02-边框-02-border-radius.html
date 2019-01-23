@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>border-radius</title>
+<style type="text/css">
+
+/**
+ * 赋值顺序
+ */
+div.radius {
+/*             
+    border-radius: 20px;
+    border-top-left-radius:60px 120px;
+    border-top-right-radius:60px 120px;
+    border-bottom-left-radius:60px 120px;
+    border-bottom-right-radius:60px 120px; 
+*/
+
+    /* 1组数据 */
+    /* 
+        1  2
+
+        4  3
+    */
+    /*  一个值  4个角的水平垂直半径都是120px */
+    border-radius: 120px; 
+
+    /* 
+        两个值
+        第一个值： 左上、右下 1、3
+        第二个值： 右上、左下 2、4
+    */
+    border-radius: 60px 120px;
+
+    /*
+        三个值
+        第一个值： 左上 1
+        第二值值： 右上、左下 2、4
+        第三个值： 右下 3
+    */
+    border-radius: 20px 60px 120px;
+
+    /*
+        四个值
+        顺时针 左上 -> 右上 -> 右下 -> 左下 1、2、3、4
+        如果值不满4个取对角的值
+    */
+    border-radius: 1px 2px 3px 4px;
+
+    /* 2组数据：水平 + 垂直 */
+    /*
+         1    2
+        5      6
+        
+        8      7
+         4    3
+    */
+    /* 水平半径{1,4}/垂直半径{1,4}  */
+    /* 1 2 3 4 / 5 6 7 8 */
+    border-radius: 30px 60px 90px 120px / 30px 60px 90px 120px;
+    border-radius: 30px / 120px;
+}
+
+/**
+ *【border-radius】应用
+ */
+/* 正圆 */
+.circle {
+    height:120px;/*与width设置一致*/
+    width:120px;
+    background:#9da;
+    border-radius:50%; /*四个圆角值都设置为宽度或高度值的一半*/
+}
+/* 半圆 */
+.semi-circle { 
+    height:100px;
+    width: 50px;
+    background:#9da;
+    border-radius:50px 0 0 50px;/*半径至少设置为width的值*/
+}
+/* 椭圆 */
+.ellipsoid {
+    border-radius: 150px / 75px;
+}
+/* 1/4圆 */
+.quarter-circle {
+    border-radius: 100% 0 0 0;
+}
+</style>
+</head>
+<body>
+    <div class="circle"></div>
+    <div class="semi-circle"></div>
+</body>
+</html>
