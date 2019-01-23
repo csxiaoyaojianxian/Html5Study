@@ -2,7 +2,7 @@
 <html>
 <head> 
 <meta charset="utf-8">
-<title>背景裁切</title>
+<title>背景裁剪</title>
 <style type="text/css">
 .wrap {
     width:220px; 
@@ -10,12 +10,16 @@
     padding:20px; 
     font-weight:bold; 
     color:#000; 
-    background:#ccc url(https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20180828195629.png) no-repeat; 
+    background-image: url(https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20180828195629.png); 
+    /* 设置背景原点为 border-box */
     background-origin: border-box;
+    background-repeat: no-repeat;
+    /* background-clip: border-box(默认) | padding-box | content-box | no-clip; */
     background-clip: content-box;
     background-size: 300px;
     position: relative;
 }
+
 .wrap span { 
     position: absolute; 
     left:0; 

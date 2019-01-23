@@ -8,11 +8,21 @@
     width: 300px;
     height: 140px;
     border: 1px solid #999;
+    /**
+     * 多背景
+     */
     background-image: url(http://img.mukewang.com/54cf2365000140e600740095.jpg),
                       url(http://img.mukewang.com/54cf238a0001728d00740095.jpg),
                       url(http://img.mukewang.com/54cf23b60001fd9700740096.jpg);
-    background-position: left top, 100px 0, 200px 0;
     background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: left top, 100px 0, 200px 0;
+    /* 缩写 */
+    background: url(http://img.mukewang.com/54cf2365000140e600740095.jpg) no-repeat left top,
+                url(http://img.mukewang.com/54cf2365000140e600740095.jpg) no-repeat right top,
+                url(http://img.mukewang.com/54cf2365000140e600740095.jpg) no-repeat right bottom,
+                url(http://img.mukewang.com/54cf2365000140e600740095.jpg) no-repeat left bottom,
+                url(http://img.mukewang.com/54cf2365000140e600740095.jpg) no-repeat center center;
+
     margin:0 0 20px 0;
 }
 /* 导航栏小短线 关注right/1px 15px */

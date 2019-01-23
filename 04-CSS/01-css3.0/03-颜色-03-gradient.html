@@ -4,30 +4,125 @@
 <meta charset="utf-8">
 <title>Gradient</title>
 <style type="text/css">
-p {
+.linear {
   width: 400px;
   height: 150px;
-  line-height: 150px;
-  text-align:center;
-  color: #000;
-  font-size:24px;
-  background-image:linear-gradient(to top left, red, orange,yellow,green,blue,indigo,violet);
-} 
+  /*
+    线性渐变: linear-gradient
+      background-image: linear-gradient(方向, 起始颜色, 终止颜色);
+      方向  to right left top bottom / 角度：45deg
+  */
+  background-image: linear-gradient(45deg,yellow ,green);
+  background-image: linear-gradient(to top left, red, orange,yellow,green,blue,indigo,violet);
+  background-image: linear-gradient(to right, yellow 0%,pink 30%, blue 60%,red 100%);
+}
+.radial {
+  width: 400px;
+  height: 150px;
+  /*
+    径向渐变: radial-gradient
+      background-image: radial-gradient(位置, 起始颜色, 终止颜色);
+      中心点位置 at center left top bottom right / at 50px 50px
+  */
+  background-image: radial-gradient(at center,yellow ,green);
+  background-image: radial-gradient(at 50px 50px,yellow 0%, pink 30% , green 60%, red 100% );
+  /* 辐射范围： 200px  */
+  background-image: radial-gradient(200px at left top,yellow ,green);
+  background-image: radial-gradient(100px 50px at center,yellow ,green);
+}
 </style>
 </head> 
 <body>
-    <pre>
-        CSS3 Gradient 分为线性渐变(linear)和径向渐变(radial)
-        linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet)
-        参数1: 方向，默认'180deg'，等同于'to bottom'
-            0deg   - to top
-            90deg  - to right
-            180deg - to bottom
-            270deg - to left
-                   - to top left
-                   - to top right
-        参数2,3...: 颜色的起点和终点，可以有多个颜色值
-    </pre>
-　　<p>右下角向左上角的线性渐变背景</p>
+  <pre>
+  CSS3 Gradient 分为线性渐变(linear)和径向渐变(radial)
+  linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet)
+  参数1: 方向，默认'180deg'，等同于'to bottom'
+      0deg   - to top
+      90deg  - to right
+      180deg - to bottom
+      270deg - to left
+              - to top left
+              - to top right
+  参数2,3...: 颜色的起点和终点，可以有多个颜色值
+  </pre>
+  <p class="linear">线性渐变</p>
+  <p class="radial">径向渐变</p>
+
+  <h3>demo</h3>
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+  <div class="box4"></div>
+  <div class="box5"></div>
+  <div class="ball"></div>
+  <style>
+  div{
+    width: 1000px;
+    height: 100px;
+    border: 1px solid #000;
+    margin:0 auto;
+    margin-top: 50px;
+  }
+  .box1{
+    background-image: linear-gradient(to left,yellow ,green) ;
+  }
+  .box2{
+    height:300px;
+    background-image: linear-gradient(45deg,yellow ,green);
+  }
+  .box3{
+    background-image: linear-gradient(to right, yellow 0%,pink 30%, blue 60%,red 100%);
+  }
+  .box4{
+    background-image: linear-gradient(135deg,
+        #000 0%,
+        #000 25%,
+        yellow 25%,
+        yellow 50%,
+        green 50%,
+        green 75%,
+        red 75%,
+        red 100%
+    );
+  }
+  .box5{
+    background-image: linear-gradient(135deg,
+        #000 0%,
+        #000 25%,
+        #fff 25%,
+        #fff 50%,
+        #000 50%,
+        #000 75%,
+        #fff 75%,
+        #fff 100%
+    );
+    background-size:1000px 100px;
+    background-repeat: no-repeat;
+    animation: move 5s linear infinite;
+  }
+  @keyframes move {
+    0%{
+      background-position: 0 0 ;
+    }
+    100%{
+      background-position: 1000px 0;
+    }
+  }
+  /**
+   * 应用：球体
+   */
+  .ball {
+    width: 200px;
+    height: 200px;
+    margin: 40px auto;
+    border-radius: 100px;
+    background-color: gray;
+    background-image: radial-gradient(
+        200px at 50px 60px,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.8)
+    );
+  }
+  </style>
 </body>
 </html>
