@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        /* 红色的鱼，容器，通过改变容器位置实现移动 */
+        .fishbox{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left:0;
+            top:0;
+            animation: run 20s linear infinite;
+            animation-direction: normal;
+        }
+        @keyframes run {
+            0%{
+
+            }
+            15%{
+                transform:translate(600px,0px) rotate(45deg) ;
+            }
+            50%{
+                transform:translate(600px,350px) rotate(135deg) ;
+            }
+            75%{
+                transform:translate(50px,300px) rotate(235deg);
+            }
+            100%{
+                transform:translate(0px,0px) rotate(360deg) ;
+            }
+        }
+        /* 红色的鱼，实例，通过改变background-position实现鱼的自身动画效果 */
+        .fish{
+            width: 174px;
+            height: 126px;
+            position: absolute;
+            left:35%;
+            top:0;
+            background: url(img/fish.png) no-repeat left top;
+            /*transition:all 0.8s steps(8) ;*/
+            animation: active1 0.8s steps(8) infinite;
+        }
+        @keyframes active1 {
+            0%{
+
+            }
+            100%{
+                background-position: left -1008px;
+            }
+        }
+
+        /* 蓝色的鱼 */
+        .sharkbox{
+            width: 509px;
+            height: 270px;
+            animation: run2 20s linear infinite;
+        }
+        @keyframes run2{
+            0%{
+                transform:translateX(-600px);
+            }
+            100%{
+                transform:translateX(2000px);
+            }
+       }
+        .shark{
+            width: 509px;
+            height: 270px;
+            background:url(img/shark.png) no-repeat;
+            animation: active2 1s steps(8) infinite;
+        }
+        @keyframes active2 {
+            0%{
+
+            }
+            100%{
+                background-position: left -2160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="fishbox">
+        <div class="fish"></div>
+    </div>
+    <div class="sharkbox">
+        <div class="shark"></div>
+    </div>
+</body>
+</html>

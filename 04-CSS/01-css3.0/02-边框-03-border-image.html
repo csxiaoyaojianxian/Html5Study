@@ -5,22 +5,22 @@
 <title>border-image 边框图片</title>
 <style>
 #border_image {
-    margin:0 auto;
+    margin: 100px auto;
+	width:450px;
 	height:100px;
 	line-height:100px;
 	text-align:center;
 	font-size:30px;
-	width:450px;
 
 	border:15px solid #ccc;
     border-color:red green blue yellow;
 
     /* background:url('./pic.png') 10px 20px no-repeat; */
-    border-image:url('./pic.png') 300 10 20 100 repeat;
+    /* border-image:url('./pic.png') 300 10 20 100 repeat; */
     /* border-image:url('./pic.png') 70 round */
     /* border-image:url('./pic.png') 70 stretch */
 
-    border-image-source: url(images/border.png);
+    border-image-source: url(img/border.png);
     /* 裁剪顺序：上右下左*/
     border-image-slice: 27 27 27 27;
     /* 边框图片的宽度*/

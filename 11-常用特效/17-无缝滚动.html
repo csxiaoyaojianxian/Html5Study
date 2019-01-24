@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 动画</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #F7F7F7;
+        }
+
+        .view {
+            width: 800px;
+            height: 170px;
+            margin: 200px auto;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid red;
+        }
+
+        ul {
+            width: 1566px;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            position: absolute;
+            left: 0;
+            animation: move 3s linear infinite;
+        }
+
+        li {
+            float: left;
+            font-size: 0;
+        }
+
+        @keyframes move {
+            0%{
+
+            }
+            100%{
+                transform:translateX(-783px)
+            }
+        }
+        .view:hover ul{
+            /*
+                animation-paly-state:
+                running:播放
+                paused: 暂停
+            */
+            /* 鼠标移动的轮播图时 动画停止 */
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <div class="view">
+        <ul>
+            <!-- width: 457 -->
+            <li><img height="170" src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/01.jpg" alt=""></li>
+            <!-- width: 326 -->
+            <li><img height="170" src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/docker.jpeg" alt=""></li>
+            <!-- width: 457 -->
+            <li><img height="170" src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/01.jpg" alt=""></li>
+            <!-- width: 326 -->
+            <li><img height="170" src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/docker.jpeg" alt=""></li>
+        </ul>   
+    </div>
+</body>
+</html>

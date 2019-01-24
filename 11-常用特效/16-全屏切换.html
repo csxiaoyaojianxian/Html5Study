@@ -8,50 +8,42 @@
             height: 100%;
             overflow: hidden;
         }
-
         body {
             margin: 0;
             padding: 0;
             position: relative;
         }
-
         ul {
             padding: 0;
             margin: 0;
             list-style: none;
         }
-
         .pics {
             width: 100%;
             height: 100%;
-
             position: relative;
         }
-
         .pics li {
             width: 100%;
             height: 100%;
-            /*background-color: pink;*/
-
             position: absolute;
             left: 0;
             top: 0;
-
             background-size: cover;
         }
 
         .pics li:nth-child(1) {
-            background-image: url(images/1.jpg);
+            background-image: url(https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/docker.jpeg);
             z-index: 3;
         }
 
         .pics li:nth-child(2) {
-            background-image: url(images/2.jpg);
+            background-image: url(https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/docker.jpeg);
             z-index: 2;
         }
 
         .pics li:nth-child(3) {
-            background-image: url(images/3.jpg);
+            background-image: url(https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/docker.jpeg);
             z-index: 1;
         }
 
@@ -62,7 +54,6 @@
             width: 100%;
             height: 100px;
             text-align: center;
-            /*background-color: blue;*/
         }
 
         .btn li {
@@ -86,19 +77,16 @@
 
         #pic1:target {
             z-index: 3;
-
             animation: slideLeft 1s linear;
         }
 
         #pic2:target {
             z-index: 3;
-
             animation: scale 1s linear;
         }
 
         #pic3:target {
             z-index: 3;
-
             animation: rotate 1s linear;
         }
 
@@ -106,7 +94,6 @@
             from {
                 transform: translateX(-100%);
             }
-
             to {
                 transform: translateX(0px);
             }
@@ -116,7 +103,6 @@
             from {
                 transform: scale(0);
             }
-
             to {
                 transform: scale(1);
             }
@@ -126,7 +112,6 @@
             from {
                 transform: scale(0) rotate(0deg);
             }
-
             to {
                 transform: scale(1) rotate(360deg);
             }

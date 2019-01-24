@@ -11,20 +11,21 @@
         font-family: '微软雅黑';
         background-color: #F7F7F7;
     }
-    
+    /* 容器属性 */
     .text-box {
         margin-top: 100px;
         text-align: center;
-        line-height: 1;
+        /* line-height: 1; */
         font-size: 100px;
-        /*color: #065DAC;*/
+        color: #065DAC;
     }
     
     .text-box span {
         display: inline-block;
         position: relative;
     }
-    
+
+    /* attr获取内容，::before为上层，::after为下层阴影 */
     .text-box span::before,
     .text-box span::after {
         content: attr(data-text);
@@ -34,28 +35,23 @@
         transition: all 1s;
         transform-origin: left center;
     }
-    
     .text-box span::before {
         z-index: 3;
         color: #FFF;
         transform: rotateY(-15deg);
     }
-    
     .text-box span::after {
         z-index: 2;
         color: rgba(0, 0, 0, 0.3);
     }
-    
     .text-box:hover span::before {
         transform: rotateY(-40deg) skew(0deg, 5deg);
     }
-    
     .text-box:hover span::after {
-        transform: skew(0deg, 20deg);
+        transform: skew(0deg, 15deg);
     }
     </style>
 </head>
-
 <body>
     <div class="text-box">
         <span data-text="禅">禅</span>
@@ -64,5 +60,4 @@
         <span data-text="苑">苑</span>
     </div>
 </body>
-
 </html>

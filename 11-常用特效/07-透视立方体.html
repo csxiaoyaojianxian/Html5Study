@@ -8,31 +8,49 @@
         .box{
             width: 250px;
             height: 250px;
-            border: 1px dashed red;
             margin:100px auto;
             position: relative;
+            border: 1px dotted red;
             border-radius: 50%;
-
-            /* transform-style:preserve-3d;
+            /* 
+            transform-style:preserve-3d;
             加给变换元素的父盒子，让子盒子存在三维空间中，保持3d效果
             flat:默认值 （让子盒子被扁平化） */
-            transform-style:preserve-3d;
-            transform:rotateX(7deg) rotateY(-25deg);
-            /*animation: gun 8s linear infinite;*/
+            transform-style: preserve-3d;
+            /* transform: rotateX(7deg) rotateY(-25deg); */
+            animation: gun 8s linear infinite;
+        }
+        @keyframes gun {
+            0%{
+
+            }
+            100%{
+                transform:rotateX(360deg) rotateY(360deg);
+            }
         }
 
-        .box>div{
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            left:0;
-            top:0;
-            text-align: center;
-            line-height: 250px;
-            font-size:100px;
-            color:rgba(255,0,0,0.5);
+        .box .front{
+            background-color: rgba(255,0,0,0.4);
+            transform:translateZ(125px);
         }
 
+        .box .back{
+            background-color: rgba(0,244,0,0.6);
+            transform:translateZ(-125px);
+        }
+
+        .box .up{
+            background-color: rgba(0,255,255,0.6);
+            /* rotateX以后，坐标系发生变化 */
+            transform:rotateX(90deg) translateZ(125px);
+        }
+
+        .box .down{
+            background-color: rgba(255,255,0,0.6);
+            /* rotateX以后，坐标系发生变化 */
+            transform:rotateX(90deg) translateZ(-125px);
+        }
+        
         .box .left{
             background-color: rgba(0,0,255,0.4);
             transform-origin: left;
@@ -44,40 +62,17 @@
             transform-origin: right;
             transform:rotateY(90deg) translateX(125px);
         }
-
-        .box .front{
-            background-color: rgba(255,0,0,0.4);
-
-            color:blue;
-            transform:translateZ(125px);
-        }
-
-        .box .back{
-            background-color: rgba(0,244,0,0.6);
-            color:blue;
-            transform:translateZ(-125px);
-        }
-
-        .box .up{
-            background-color: rgba(0,255,255,0.6);
-            /*color:blue;*/
-            transform:rotateX(90deg) translateZ(125px);
-        }
-
-        .box .down{
-            background-color: rgba(255,255,0,0.6);
-            /*color:blue;*/
-            transform:rotateX(90deg) translateZ(-125px);
-        }
-
-
-        @keyframes gun {
-            0%{
-
-            }
-            100%{
-                transform:rotateX(360deg) rotateY(360deg);
-            }
+        
+        .box>div{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left:0;
+            top:0;
+            text-align: center;
+            line-height: 250px;
+            font-size:100px;
+            color:rgba(255,0,0,0.5);
         }
     </style>
 </head>

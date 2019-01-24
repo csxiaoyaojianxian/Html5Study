@@ -20,17 +20,17 @@
         }
         /* 整个菜单导航条的左右边 */
         ul::after ,ul::before{
-            content:"";
+            content: "";
             position: absolute;
             width: 100px;
-            height:80px;
+            height: 80px;
             background-color: #ccc;
-            left:-100px;
+            left: -100px;
         }
         ul::after{
-            /* left 设置auto */
-            left:auto;
-            right:-100px;
+            /* left 设置auto，让最右侧的空白区域居右 */
+            left: auto;
+            right: -100px;
         }
         ul li{
             float: left;
@@ -41,7 +41,7 @@
             float: left;
             height:80px;
         }
-        ul li .left,ul li .right{
+        ul li .left, ul li .right{
             width: 30px;
             height:100%;
             background-color: #ccc;
@@ -61,7 +61,7 @@
             transform-origin: left;
             transform:skew(0deg,-30deg);
             background-color: #c1c1c1;
-            box-shadow: 10px 20px 20px  -10px #666;
+            /* box-shadow: 10px 20px 20px  -10px #666; */
         }
         ul li:hover .center{
             transform:translateY(-17px);
@@ -72,7 +72,7 @@
             transform-origin: right;
             transform:skew(0deg,30deg);
             background-color: #c1c1c1;
-            box-shadow: -10px 20px 20px  -10px #666;
+            /* box-shadow: -10px 20px 20px  -10px #666; */
         }
     </style>
 </head>

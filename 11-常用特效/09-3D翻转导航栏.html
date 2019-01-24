@@ -22,9 +22,8 @@
             width: 120px;
             height: 40px;
             /*transform:rotateX(30deg) rotateY(45deg) scale(3);*/
-            /* 让li里面的子盒子保持3d效果*/
+            /* 让li里面的子盒子保持3d效果 */
             transform-style:preserve-3d;
-
             transition:all 0.5s;
         }
 
@@ -39,16 +38,14 @@
             top:0;
         }
 
+        /* 设置默认的形变 */
         li span:nth-child(1){
             background-color: green;
             transform:rotateX(90deg) translateZ(20px);
         }
-
         li span:nth-child(2){
-
             transform:translateZ(20px);
         }
-
 
         ul:hover li{
             transform:rotateX(-90deg);
