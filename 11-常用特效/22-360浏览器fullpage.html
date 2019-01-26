@@ -1,284 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
     *{
         margin: 0;
         padding: 0;
     }
-
-/*¶¯»­ ²âÊÔ*/
-
-    h3{
-        width: 200px;
-        height: 100px;
-        background-color: red;
-        transition:all 0.5s;
-        transform:translateX(-1000px);
-    }
-
-    .section.current h3{
-        transform:translateX(500px) translateY(400px);
-    }
-
+    /* é€šç”¨å…¨å±æ ·å¼ */
     .section{
         overflow: hidden;
         position: relative;
     }
-
-    /*µÚÒ»ÆÁ*/
+    /* ç¬¬ä¸€å± */
     .first {
         padding-top: 80px;
     }
-
     .first .logo {
         width: 251px;
         height: 186px;
         margin: 0 auto;
-        background-image: url(../images/360/logo.png);
+        background-image: url(./img/360/logo.png);
     }
-
     .first .text {
         text-align: center;
         line-height: 1;
         margin: 85px 0 45px;
     }
-
-    .first img {
+    /* åŠ¨ç”»å‰å›¾ç‰‡æ–‡å­—æ ·å¼ */
+    .first .text img {
         margin: 0 24px;
         opacity: 0;
-
     }
-
     .first .info {
         height: 49px;
-        background: url(../images/360/info_1.png) center center no-repeat;
+        background: url(./img/360/info_1.png) center center no-repeat;
     }
-
-    /* µÚÒ»ÆÁµÄ¶¯»­*/
+    /* ç¬¬ä¸€å±åŠ¨ç”» æ–‡å­—æ”¶ç¼© */
     .first.current img{
-        /*¹ı¶É  Èë³¡ĞèÒª¹ı¶É £¬³ö³¡¿ìËÙ..*/
-        transition:all 1s;
-
-        margin: 0 10px;
-        opacity: 1;
+        transition: all 1s;
+        margin: 0 10px; /* margin: 0 24px; */
+        opacity: 1; /* opacity: 0; */
     }
 
-
-    /*µÚ¶şÆÁ*/
+    /* ç¬¬äºŒå± */
     .second {
         padding: 0 100px;
     }
-
     .second > div {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-
     .second .shield {
         width: 428px;
         height: 498px;
     }
-
-    .second img {
+    .second .shield img {
         display: block;
         float: left;
-
     }
-
+    /* æ‰“ä¹± */
     .second img:nth-child(1) {
         transform: translate(35px, 78px) rotate(45deg);
     }
-
     .second img:nth-child(2) {
         transform: translate(135px, 282px) rotate(15deg);
     }
-
     .second img:nth-child(3) {
         transform: translate(187px, 62px) rotate(15deg);
     }
-
     .second img:nth-child(4) {
         transform: translate(10px, 162px) rotate(30deg);
     }
-
     .second img:nth-child(5) {
         transform: translate(465px, 522px) rotate(30deg);
     }
-
     .second img:nth-child(6) {
         transform: translate(480px, 62px) rotate(90deg);
     }
-
     .second img:nth-child(7) {
         transform: translate(180px, -305px) rotate(80deg);
     }
-
     .second img:nth-child(8) {
         transform: translate(300px, -22px) rotate(70deg);
     }
-
     .second img:nth-child(9) {
         transform: translate(280px, -322px) rotate(60deg);
     }
-
     .second .info {
         width: 635px;
         height: 309px;
-        background: url(../images/360/info_2.png);
+        background: url(./img/360/info_2.png);
     }
-
-    /*¶¯»­*/
+    /* ç¬¬äºŒå±åŠ¨ç”» ç›¾ç‰Œå¤ä½ */
     .second.current img{
-
-        /* ¹ı¶É*/
         transition:all 1s;
-        /* ¸´Î»*/
+        /* å¤ä½ */
         transform: translate(0px, 0px) rotate(0deg);
     }
 
-
-    /*µÚÈıÆÁ*/
+    /* ç¬¬ä¸‰å± */
     .third {
         padding: 0 60px;
     }
-
     .third > div {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-
     .third .info {
         width: 631px;
         height: 278px;
-        background: url(../images/360/info_3.png);
+        background: url(./img/360/info_3.png);
     }
-
     .third .circle {
         width: 453px;
         height: 449px;
-        background: url(../images/360/circle.png);
+        background: url(./img/360/circle.png);
         animation:rot 4s infinite linear;
     }
-
     .third .rocket {
         position: absolute;
         bottom: 0;
         left: 0;
         width: 204px;
         height: 204px;
-        background: url(../images/360/rocket.png);
+        background: url(./img/360/rocket.png);
         transform: translate(500px, 210px);
     }
-
-    /*¶¯»­*/
-
+    /* ç¬¬ä¸‰å±åŠ¨ç”» ç«ç®­ç§»åŠ¨ã€åœ†ç¯è½¬ */
     .third.current .rocket{
-        /* ¹ı¶É*/
         transition:all 1s;
         transform: translate(1111px, -280px);
-
     }
-
     @keyframes rot {
         0%{
             transform:rotate(0deg);
         }
-
         100%{
             transform:rotate(360deg);
         }
     }
 
-    /*µÚËÄÆÁ*/
+    /* ç¬¬å››å± */
     .fourth {
         padding: 0 85px;
     }
-
     .fourth > div {
         display: flex;
         justify-content: space-between;
         align-items: center;
         overflow: hidden;
     }
-
     .fourth .search {
         width: 529px;
         height: 320px;
         position: relative;
-        transform: translateX(-100%);
+        transform: translateX(-100%); /* åˆå§‹çŠ¶æ€éšè—åœ¨å·¦ä¾§ */
     }
-
     .fourth .input {
         width: 529px;
         height: 66px;
-        background: url(../images/360/search.png);
+        background: url(./img/360/search.png);
     }
-
     .fourth .key {
         position: absolute;
         left: 20px;
         top: 24px;
         width: 0;
-        /*width: 100px;*/
         height: 22px;
-        background: url(../images/360/key.png) left center no-repeat;
+        background: url(./img/360/key.png) left center no-repeat;
     }
-
     .fourth .wrap {
         width: 529px;
         height: 393px;
         transform: translateY(-13px);
         overflow: hidden;
     }
-
-    .fourth .result {
+    .fourth .wrap .result {
         width: 100%;
         height: 100%;
-        background: url(../images/360/result.png) no-repeat;
-        transform: translateY(-100%);
+        background: url(./img/360/result.png) no-repeat;
+        transform: translateY(-100%); /* å‘ä¸Šéšè— */
     }
-
     .fourth .info {
         width: 612px;
         height: 299px;
-        background: url(../images/360/info_4.png);
+        background: url(./img/360/info_4.png);
     }
-
-    /*¶¯»­Ä£¿é*/
+    /* ç¬¬å››å±åŠ¨ç”» æœç´¢æ ä½ç§»ã€æ‰“å­—æœºå¸§åŠ¨ç”»æ•ˆæœã€æœç´¢ç»“æœä½ç§» */
     .fourth.current .search{
-        /*¹ı¶É*/
         transition:all 1s;
         transform: translateX(0px);
-
     }
-
     .fourth.current .key{
-        /*¹ı¶É*/
         transition:all 2s steps(5) 1s;
         width:99px;
     }
-
     .fourth.current .result{
         transition:all 1s 3s;
         transform: translateY(0);
-
     }
 
-    /*µÚÎåÆÁ*/
-    .fifth {
-        /*padding-top: 30px;*/
-    }
-
+    /* ç¬¬äº”å± */
     .fifth > div {
         display: flex;
         flex-direction: column;
     }
-
     .fifth .info {
         height: 135px;
         margin: 30px 0;
-        background: url(../images/360/info_5.png) center center no-repeat;
+        background: url(./img/360/info_5.png) center center no-repeat;
     }
-
     .fifth .broswer {
         width: 1004px;
         margin: 0 auto;
@@ -286,19 +221,16 @@
         background-color: rgba(255, 255, 255, 0.15);
         position: relative;
     }
-
     .fifth .toolbar {
         height: 80px;
-        background: url(../images/360/toolbar.png) left bottom no-repeat;
+        background: url(./img/360/toolbar.png) left bottom no-repeat;
         position: relative;
         opacity: 0;
     }
-
     .leftline, .topline, .rightline, .bottomline {
         position: absolute;
         border-color: rgba(255, 255, 255, 0.5);
     }
-
     .leftline {
         left: 0;
         height: 100%;
@@ -306,7 +238,6 @@
         transform: translateY(-100%);
         opacity: 0;
     }
-
     .topline {
         top: 0;
         width: 100%;
@@ -314,7 +245,6 @@
         transform: translateX(100%);
         opacity: 0;
     }
-
     .rightline {
         right: 0;
         height: 100%;
@@ -322,23 +252,19 @@
         transform: translateY(100%);
         opacity: 0;
     }
-
     .bottomline {
         bottom: 0;
         width: 100%;
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     }
-
     .fifth .box {
         position: absolute;
         left: 70px;
         top: 32px;
         width: 0;
-        /*width: 920px;*/
         height: 27px;
         overflow: hidden;
     }
-
     .fifth .box span {
         display: block;
         width: 100%;
@@ -347,56 +273,152 @@
         border-radius: 3px;
         box-sizing: border-box;
     }
-
     .fifth .extra {
         position: absolute;
         right: 0;
         bottom: 0;
         width: 394px;
         height: 29px;
-        background: url(../images/360/extra.png);
+        background: url(./img/360/extra.png);
         opacity: 0;
     }
-
     .fifth .line {
         width: 100%;
         position: absolute;
         bottom: 30px;
         border-top: 1px solid rgba(255, 255, 255, 0.5);
     }
-
-    /* ¶¯»­*/
-    /* µÚÒ»²½£ºÈıÌõ±ß ³öÏÖ*/
+    /* ç¬¬äº”å±åŠ¨ç”» */
+    /* step1ï¼šä¸‰æ¡è¾¹çº¿å‡ºç°*/
     .fifth.current .leftline,
     .fifth.current .rightline{
-        /*¹ı¶É*/
         transition:all 1s;
         transform: translateY(0);
         opacity: 1;
     }
-
     .fifth.current .topline{
-        /*¹ı¶É*/
         transition:all 1s;
         transform: translateX(0);
         opacity: 1;
     }
-
-    /* µÚ¶ş²¿ ¹¤¾ßÀ¸ ³öÏÖ*/
+    /* step2ï¼šå·¥å…·æ å‡ºç°*/
     .fifth.current .box{
         transition:all 1s 1.2s;
         width:920px;
-
     }
-
+    /* step3ï¼štoolbarå’Œextraå‡ºç° */
     .fifth.current .toolbar,
     .fifth.current .extra{
         transition:all 1s 1.7s;
         opacity: 1;
     }
-
-
-
-
-
-
+    </style>
+</head>
+<body>
+    <div id="dowebok">
+        <!-- ç¬¬ä¸€å± -->
+        <div class="section first">
+            <!-- LOGO -->
+            <div class="logo"></div>
+            <!-- æ–‡å­— -->
+            <div class="text">
+                <img src="./img/360/text_1.png" alt="">
+                <img src="./img/360/text_2.png" alt="">
+                <img src="./img/360/text_3.png" alt="">
+                <img src="./img/360/text_4.png" alt="">
+                <img src="./img/360/text_5.png" alt="">
+                <img src="./img/360/text_6.png" alt="">
+                <img src="./img/360/text_7.png" alt="">
+                <img src="./img/360/text_8.png" alt="">
+            </div>
+            <!-- ä¿¡æ¯ -->
+            <div class="info"></div>
+        </div>
+        <!-- ç¬¬äºŒå± -->
+        <div class="section second">
+            <!-- ç›¾ç‰Œ -->
+            <div class="shield">
+                <img src="./img/360/shield_1.png" alt="">
+                <img src="./img/360/shield_2.png" alt="">
+                <img src="./img/360/shield_3.png" alt="">
+                <img src="./img/360/shield_4.png" alt="">
+                <img src="./img/360/shield_5.png" alt="">
+                <img src="./img/360/shield_6.png" alt="">
+                <img src="./img/360/shield_7.png" alt="">
+                <img src="./img/360/shield_8.png" alt="">
+                <img src="./img/360/shield_9.png" alt="">
+            </div>
+            <!-- ä¿¡æ¯ -->
+            <div class="info"></div>
+        </div>
+        <!-- ç¬¬ä¸‰å± -->
+        <div class="section third">
+            <!-- ä¿¡æ¯ -->
+            <div class="info"></div>
+            <!-- åœ†ç¯ -->
+            <div class="circle"></div>
+            <!-- ç«ç®­ -->
+            <div class="rocket"></div>
+        </div>
+        <!-- ç¬¬å››å± -->
+        <div class="section fourth">
+            <!-- æœç´¢ -->
+            <div class="search">
+                <div class="key"></div>
+                <div class="input"></div>
+                <div class="wrap">
+                    <div class="result"></div>
+                </div>
+            </div>
+            <!-- ä¿¡æ¯ -->
+            <div class="info"></div>
+        </div>
+        <!-- ç¬¬äº”å± -->
+        <div class="section fifth">
+            <!-- ä¿¡æ¯ -->
+            <div class="info"></div>
+            <!-- æµè§ˆå™¨ -->
+            <div class="broswer">
+                <!-- å››è¾¹æ¡† -->
+                <div class="leftline"></div>
+                <div class="topline"></div>
+                <div class="rightline"></div>
+                <div class="bottomline"></div>
+                <!-- å·¥å…·æ  -->
+                <div class="toolbar"></div>
+                <!-- è¾¹æ¡†ç›’å­ -->
+                <div class="box">
+                    <span></span>
+                </div>
+                <!-- ä¸‹éƒ¨æ¡†çº¿ -->
+                <div class="line"></div>
+                <!-- ä¸‹éƒ¨å†…å®¹ -->
+                <div class="extra"></div>
+            </div>
+        </div>
+    </div>
+<!-- é¦–å…ˆå¼•å…¥jq-->
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="lib/jquery.fullPage.min.js"></script>
+<script>
+//è°ƒç”¨å…¨å±çš„æ–¹æ³•
+$(function(){
+    $('#dowebok').fullpage({
+        //è®¾ç½®æ¯ä¸€å±å¹•çš„é¢œè‰²
+        sectionsColor:['#0da5d6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+        // loopTop:true,
+        // æ»šåˆ°æŸä¸€å±ä¹‹åè°ƒç”¨
+        afterLoad:function(link,index){
+            // index å½“å‰sectionçš„ç¼–å·
+            // currentç±»åŠ ç»™è° è°å°±åšåŠ¨ç”»
+            $('.section').removeClass('current');
+            // è®©åŠ¨ç”» å»¶è¿Ÿæ‰§è¡Œ100ms
+            setTimeout(function(){
+                $('.section').eq(index-1).addClass('current');
+            },100);
+        }
+    });
+});
+</script>
+</body>
+</html>

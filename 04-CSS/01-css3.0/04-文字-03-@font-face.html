@@ -4,19 +4,36 @@
 <meta charset="utf-8">
 <title>嵌入字体</title>
 <style type="text/css">
-/* 安装字体 */
+/* 字体 */
 @font-face {
     font-family: "test font";
     src: url("http://xxx/Amaranth.otf");
 }
+
+/* 声明安装字体 */
+@font-face {font-family: 'webfont';
+            src: url('font/webfont.eot'); /* IE9*/
+            src: url('font/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('font/webfont.woff') format('woff'), /* chrome、firefox */
+            url('font/webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('font/webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+}
+        
 /* 使用字体 */
 .demo {
     /* font-family: "Microsoft Yahei"; */
     font-family: "test font";
 }
+/* 图标字体 */
+.icon::before{
+    /*&#xe628;*/
+    content:"\e628";
+    font-family: iconfont;
+    color:red;
+}
 </style>  
 </head> 
 <body>
 <div class="demo">test</div>
+<p class="icon">扫码付款</p>
 </body>
-</html>

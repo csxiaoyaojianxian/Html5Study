@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <title></title>
+    <style>
+        .banner{
+            margin:20px auto;
+            width: 1340px;
+            height:620px;
+            border: 1px solid blue;
+            /* perspective 为3D转换元素定义透视视图，窗口距离三维物体800px */
+            perspective: 2000px;
+        }
+        .item{
+            width: 1340px;
+            height:620px;
+            border: 1px solid red;
+            position: relative;
+            transform-style:preserve-3d;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .itme:hover{
+            box-shadow: 0 0 50px 2px rgba(100,100,100,0.7);
+        }
+
+        .item>div{
+            width: 1220px;
+            height: 500px;
+            position: absolute;
+            border-radius: 20px;
+            left:50%;
+            top:50%;
+            margin-left:-610px;
+            margin-top:-250px;
+            overflow: hidden;
+            border: 1px solid red;
+        }
+
+        .item1>.shadow{
+            background: url(img/banner-shadow.png) center no-repeat;
+            width: 1340px;
+            height: 620px;
+            left:50%;
+            top:50%;
+            margin-left:-670px;
+            margin-top:-310px;
+        }
+        .item1 .bottom{
+            background:url(img/banner-1.png) center no-repeat ;
+        }
+
+        .item1 .center{
+            background:url(img/banner-2.png) center no-repeat;
+        }
+
+        .item1 .top{
+            background:url(img/banner-3.png) center  no-repeat;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 定义视窗 -->
+<div class="banner">
+    <!-- 3D场景内的元素容器 -->
+    <div class="item item1">
+        <div class="shadow"></div>
+        <div class="bottom"></div>
+        <div class="center"></div>
+        <div class="top"></div>
+    </div>
+</div>
+
+<script>
+var banner=document.querySelector('.banner');
+var item=document.querySelector('.item1');
+var center=document.querySelector('.center');
+var topEle=document.querySelector('.top');
+var shadow=document.querySelector('.shadow');
+
+var w=item.offsetWidth;
+var h=item.offsetHeight;
+console.log(w+'|--|'+h);
+
+var centerX=w/2;
+var centerY=h/2;
+
+banner.onmousemove=function(e){
+
+    var moveX= e.offsetX;
+    var moveY= e.offsetY;
+    /* 距离中心的长度 */
+    var distanceX=moveX-centerX;
+    var distanceY=centerY-moveY;
+    // console.log(distanceX+'|---|'+distanceY);
+    var rx=distanceX/centerX; // -1 ～ 1
+    var ry=distanceY/centerY; // -1 ～ 1
+    // console.log(rx+'|--|'+ry);
+
+    // 【 rotate 】
+    // 第一层：  x:8  y:6
+    // 第二层：  x:3 y:0.6
+    // 第三层：  x:4  y:1
+    // shadow层：30 15
+
+    // 第一层
+    var rotX=rx*8;
+    var rotY=ry*6;
+    item.style.transform='rotateX('+rotY+'deg) rotateY('+rotX+'deg)';
+
+    // 第二层
+    rotX=rx*3;
+    rotY=ry*1;
+    center.style.transform='translateX('+(-rotX)+'px) translateY('+(-rotY)+'px)';
+
+    // 第三层
+    var rotX=rx*4;
+    var rotY=ry*1;
+    topEle.style.transform='translateX('+rotX+'px) translateY('+rotY+'px)';
+
+    // shadow阴影
+    var rotX=rx*30;
+    var rotY=ry*15;
+    shadow.style.transform='translateX('+(-rotX)+'px) translateY('+(-rotY)+'px)';
+}
+
+banner.onmouseout=function() {
+    item.style.transition = 'all 0.3s ease-out';
+    topEle.style.transition = 'all 0.3s ease-in-out';
+    center.style.transition = 'all 0.3s ese-in-out';
+    item.style.transform = 'rotateX(0deg) rotateY(0deg)';
+    topEle.style.transform = 'none';
+    center.style.transform = 'none';
+}
+</script>
+</body>
+</html>

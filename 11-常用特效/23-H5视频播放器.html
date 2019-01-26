@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title></title>
     <!-- 引入字体图标的文件-->
-    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link href="https://cdn.bootcss.com/font-awesome/3.0.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
         *{
             margin: 0;
@@ -23,7 +23,7 @@
             height: 360px;
             margin:10px auto;
             border: 1px solid #000;
-            background: url(images/loading.gif) center no-repeat #000;
+            background: url(img/loading.gif) center no-repeat #000;
             background-size:auto 100%;
             position: relative;
             border-radius: 20px;
@@ -118,7 +118,7 @@
         <!--  多媒体标题-->
         <figcaption>视频案例</figcaption>
         <div class="palyer">
-            <video src="media/video.mp4"></video>
+            <video src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"></video>
             <!-- 控制条-->
             <div class="controls">
                 <!-- 播放暂停-->
@@ -162,7 +162,6 @@
         var tTime=0;
 
         // 1、点击按钮 实现播放暂停并且切换图标
-
         playBtn.onclick=function(){
         // 如果视频播放 就暂停，如果暂停 就播放
             if(video.paused){

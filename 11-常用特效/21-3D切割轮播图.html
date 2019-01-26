@@ -4,65 +4,55 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
         .view{
             width: 560px;
             height: 300px;
-            border: 1px solid #000;
             margin:100px auto;
             position: relative;
+        }
+        .view ul {
+            margin: 0;
+            padding: 0;
         }
 
         .view ul li{
             width: 112px;
             height:300px;
+            list-style: none;
             float: left;
             position: relative;
-
             /* 让里面的子盒子保持3d 效果*/
-
             transform-style:preserve-3d;
             transition:all 1s;
-
-            /*transform:rotateX(-45deg) rotateY(-27deg);*/
+            /* 初始状态 */
+            transform:rotateX(-20deg) rotateY(-20deg);
         }
 
         .view li span{
             position: absolute;
             width: 100%;
             height: 100%;
+            color: white;
         }
 
         .view li span:nth-child(1){
             transform:translateZ(150px);
-            background-image: url(images/1.jpg);
-
+            background-image: url(img/1.jpg);
         }
 
         .view li span:nth-child(2){
             transform:rotateX(90deg) translateZ(150px);
-
-
-            background-image: url(images/2.jpg);
+            background-image: url(img/2.jpg);
         }
 
         .view li span:nth-child(3){
             transform:rotateX(180deg) translateZ(150px);
-            background-image: url(images/3.jpg);
+            background-image: url(img/3.jpg);
         }
 
         .view li span:nth-child(4){
             transform:rotateX(-90deg) translateZ(150px);
-            background-image: url(images/4.jpg);
-        }
-
-        .view li:nth-child(1) span{
-
+            background-image: url(img/4.jpg);
         }
 
         .view li:nth-child(2) span{
@@ -78,10 +68,8 @@
             background-position: -448px 0;
         }
 
-
         /*左右按钮*/
-
-        .view .prev,.view .next{
+        .prev, .next{
             position: absolute;
             width: 80px;
             height: 80px;
@@ -92,107 +80,89 @@
             color:red;
             left:0;
             top:50%;
-            /*margin-top:-40px;*/
             transform:translateY(-50%);
             text-decoration: none;
         }
-
         .view .next{
             left:auto;
             right:0;
         }
-
     </style>
 </head>
 <body>
 <div class="view">
     <ul>
         <li>
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
+            <span>1</span> <!-- 图1的第一部分 -->
+            <span>2</span> <!-- 图2的第一部分 -->
+            <span>3</span> <!-- 图3的第一部分 -->
+            <span>4</span> <!-- 图4的第一部分 -->
         </li>
         <li>
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
+            <span>1</span> <!-- 图1的第二部分 -->
+            <span>2</span> <!-- 图2的第二部分 -->
+            <span>3</span> <!-- 图3的第二部分 -->
+            <span>4</span> <!-- 图4的第二部分 -->
         </li>
         <li>
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
+            <span>1</span> <!-- 图1的第三部分 -->
+            <span>2</span> <!-- 图2的第三部分 -->
+            <span>3</span> <!-- 图3的第三部分 -->
+            <span>4</span> <!-- 图4的第三部分 -->
         </li>
         <li>
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
+            <span>1</span> <!-- 图1的第四部分 -->
+            <span>2</span> <!-- 图2的第四部分 -->
+            <span>3</span> <!-- 图3的第四部分 -->
+            <span>4</span> <!-- 图4的第四部分 -->
         </li>
         <li>
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
+            <span>1</span> <!-- 图1的第五部分 -->
+            <span>2</span> <!-- 图2的第五部分 -->
+            <span>3</span> <!-- 图3的第五部分 -->
+            <span>4</span> <!-- 图4的第五部分 -->
         </li>
     </ul>
     <a href="javascript:;" class="prev">&lt;</a>
     <a href="javascript:;" class="next">&gt;</a>
 </div>
-<script src="js/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script>
 $(function(){
-    //    基本思路
-    //    定义变量 记录当前播放的index
-           var index=0;
-
-        var isTransitionEnd=true;
-
-    //    当左箭头被点击是
-        $('.prev').click(function(){
-
-            if(isTransitionEnd){
-                index++;
-                //选择 90deg
-                var r=90*index;
-                isTransitionEnd=false;
-                $('li').css('transform','rotateX('+r+'deg)');
-
-                $('li').each(function(index,item){
-//                 设置动画的延迟间隔0.25秒
-                    $(item).css('transition-delay',index*0.25+'s');
-                });
-            }
-        });
-// 下一张
-    $('.next').click(function(){
-//        如果上次过渡结束 ，执行下一次
+    var index=0; // index记录当前播放的pic是哪张
+    var isTransitionEnd=true; // 轮播图过渡结束，用于限制连续点击
+    // prev
+    $('.prev').click(function(){
         if(isTransitionEnd){
-            //        索引值减小
-            index--;
-            //       选择 90deg
+            index++;
             var r=90*index;
             isTransitionEnd=false;
-
             $('li').css('transform','rotateX('+r+'deg)');
-
+            $('li').each(function(i,item){
+                // 设置动画的延迟间隔0.25秒
+                $(item).css('transition-delay',i*0.25+'s');
+            });
+        }
+    });
+    // next
+    $('.next').click(function(){
+        // 如果上次过渡结束 ，执行下一次
+        if(isTransitionEnd){
+            index--;
+            var r=90*index;
+            isTransitionEnd=false;
+            $('li').css('transform','rotateX('+r+'deg)');
             $('li').each(function(index,item){
-//                 设置动画的延迟间隔0.25秒
+                // 设置动画的延迟间隔0.25秒
                 $(item).css('transition-delay',index*0.25+'s');
             });
-
         }
-
     });
-//    只有最会一个li过渡结束才算 轮播图过渡结束
+    // 只有最会一个li过渡结束才算轮播图过渡结束
     $('li').eq(4).on('webkitTransitionEnd',function(){
         isTransitionEnd=true;
     })
-
 })
-
 </script>
 </body>
 </html>

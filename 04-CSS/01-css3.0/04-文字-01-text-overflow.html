@@ -4,23 +4,35 @@
 <meta charset="utf-8">
 <title>text-overflow</title>
 <style type="text/css">
-.demo1{
-    text-overflow:ellipsis; 
-    overflow:hidden; /* 溢出内容隐藏 */
-    white-space:nowrap; /* 强制文本在一行内显示 */
+.single{
+    text-overflow: ellipsis; 
+    overflow: hidden; /* 溢出内容隐藏 */
+    white-space: nowrap; /* 强制文本在一行内显示，不换行 */
 
     width:70px;
     background:#ccc;
 }
-.demo2 {
-    text-overflow: ellipsis;
-    overflow : hidden;
+.multiple {
+    overflow: hidden;
     display:-webkit-box;
-    -webkit-line-clamp: 2; /* 行数 */
+    -webkit-line-clamp: 3; /* 行数 */
     -webkit-box-orient: vertical;
-
+    
+    position: relative;
     width:120px;
     background:#ccc;
+}
+/* 渐变效果 */
+.multiple::after{
+	content: "..."; 
+	position: absolute; 
+    bottom: 0;
+    right: 0; 
+	padding-left: 40px;
+	background: -webkit-linear-gradient(left, transparent, #fff 55%);
+	background: -o-linear-gradient(right, transparent, #fff 55%);
+	background: -moz-linear-gradient(right, transparent, #fff 55%);
+	background: linear-gradient(to right, transparent, #fff 55%);
 }
 </style>
 </head> 
@@ -28,11 +40,11 @@
 <pre>
     text-overflow只是用来说明文字溢出时用什么方式显示
 </pre>
-<div class="demo1">
-    单行省略号
+<div class="single">
+    单行省略号，对p、div等有效，对span无效
 </div>
-<div class="demo2">
-    多行省略号多行省略号多行省略号多行省略号
+<div class="multiple">
+    多行省略号多行省略号多行省略号多行省略号多行省略号多行省略号多行省略号多行省略号
 </div>
 
 </body>
