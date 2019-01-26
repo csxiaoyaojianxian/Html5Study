@@ -86,5 +86,21 @@
 <p>ease-out 缓慢结束</p><div class="progress-bar" id="bar4"></div>
 <p>ease-in-out 缓慢开始，缓慢结束，和ease稍有区别</p><div class="progress-bar" id="bar5"></div>
 
+<script>
+// js过渡事件
+window.onload = function () {
+  document.querySelector("div").onclick = function () {
+    this.style.backgroundColor = 'red';
+  }
+  // 添加事件监听 transitionEnd
+  document.querySelector("div").addEventListener('transitionEnd',function () {
+    console.log('过渡结束');
+  })
+  // 过渡结束事件
+  document.querySelector("div").addEventListener('webkitTransitionEnd',function () {
+    console.log('过渡结束，添加浏览器前缀方法');
+  })
+}
+</script>
 </body>
 </html>

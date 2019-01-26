@@ -1,6 +1,7 @@
 /**
  * created by csxiaoyao
  * localstorage 扩展
+ * 支持各种数据类型，支持过期时间
  * 2019.01.14
  */
 class csxiaoyaoStorage {

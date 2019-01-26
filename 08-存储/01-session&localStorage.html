@@ -19,11 +19,9 @@
     <button>localStorage删除</button>
     <button>localStorage清除</button>
     <script>
-
-        // h5中提供两种web存储方式
-
-        // sessionStorage  session（会话，会议） 5M  当窗口关闭是数据销毁  内存
-        // localStorage    20M 永久生效 ，除非手动删除  清理垃圾  硬盘上
+        // 【 H5两种web存储方式 】
+        // sessionStorage  5M  窗口关闭时数据销毁  内存
+        // localStorage    20M 永久，除非手动删除  硬盘上
         
         var btns=document.querySelectorAll('button');
         var txt1=document.querySelectorAll('input')[0];
@@ -32,8 +30,7 @@
         // sessionStorage存储数据
         btns[0].onclick=function(){
             window.sessionStorage.setItem('userName',txt1.value);
-            window.sessionStorage.setItem('pwd','123456');
-            window.sessionStorage.setItem('age',18);
+            window.sessionStorage.setItem('pwd','19931128');
         }
         // sessionStorage获取数据
         btns[1].onclick=function(){
@@ -56,7 +53,7 @@
         btns[5].onclick=function(){
             window.localStorage.setItem('userName',txt2.value);
         }
-        // localStorage存储数据
+        // localStorage获取数据
         btns[6].onclick=function(){
            txt2.value= window.localStorage.getItem('userName');
         }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<!-- 
+		1. 点击高亮效果
+		在移动端浏览器会存在点击出现高亮的效果，在项目中一般不需要这个默认的效果，需要把点击颜色设置成透明
+		-webkit-tap-highlight-color:transparent;
+	
+		2. input默认样式清除
+		在移动设备的浏览器中input标签一般会有默认的样式，通过border=none,outline=none无法去除如立体效果、3d效果等，需要添加下列样式
+		-webkit-appearance: none;
+
+		3.最小宽度和最大的宽度
+			在移动端开发的时候，如果想限制某个元素的大小，选用 max-width 限制最大值，为了不让用户无止境的缩放
+			使用min-width 防止在超小屏幕上显示错乱(不考虑小屏幕手机用户)
+			移动端为了在宽度方向上进行适配会使用百分比宽度
+			高度方向上由于页面的高度由内容撑开的，所以高度还是使用具体的值
+		
+		max-width: 640px;  /*在行业当中的移动端的设计图一般使用的是640px*/
+		min-width: 320px;  /*在移动设备当中现在最小的尺寸320px*/
+	-->
+	<style type="text/css">
+		a{
+			width: 200px;
+			height: 200px;
+			display: block;
+			/* 手指点击 清除默认的高亮效果 透明 */
+			-webkit-tap-highlight-color: transparent ;
+			/* 保证盒子大小不变，内容可能会变，移动端设置所有盒子border-box，盒子大小不变 */
+			box-sizing: border-box;
+		}
+		input{
+			border: 0;
+			width: 100px;
+			height: 100px;
+			background-color: skyblue;
+			/* 移动端 有些浏览器会默认给input标签添加一些特有的样式，如3d高光效果 */
+			-webkit-appearance: none;
+		}
+	</style>
+	<script type="text/javascript">
+		var viewport = document.documentElement;
+	 	var width = viewport.clientWidth;
+	 	var fontSize = width / 20;
+	 	viewport.style.fontSize = fontSize;
+	</script>
+</head>
+<body>
+	<a href="#"></a>
+	<input type="button" name="" value="按钮">
+</body>
+</html>

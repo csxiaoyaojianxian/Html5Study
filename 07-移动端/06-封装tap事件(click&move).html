@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		html,body{
+			height: 100%;
+		}
+		body{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+/*
+	【 fox_tap 】 解决click延迟问题
+	参数1:绑定的dom元素
+	参数2:回调函数
+ */
+function fox_tap(element,callBack) {
+	// 绑定touch事件
+	/*
+		1. 长按失效
+		2. 移动失效
+	*/
+	// 开始时间
+	var startTime = 0;
+	// 记录是否触发move事件
+	var isMove =false;
+	// 定义最大延迟时间
+	var maxTime = 250;
+	element.addEventListener('touchstart',function (e) {
+		startTime = Date.now();
+		// 重置
+		isMove = false;
+	})
+	element.addEventListener('touchmove',function (e) {
+		isMove = true;
+	})
+	element.addEventListener('touchend',function (e) {
+		if (isMove == true) {
+			console.log('移动失效');
+			return;
+		}
+		// 判断延迟时间
+		if ((Date.now()-startTime)>maxTime) {
+			console.log('长按失效');
+			return;
+		}
+		console.log('点击成功');
+		callBack(e);
+	})
+}
+</script>
+<script>
+window.onload = function () {
+	fox_tap(document.body,function(e){
+		console.log(e);
+	})
+}
+</script>
+	

@@ -34,14 +34,6 @@ ol,ul{
 }
 
 /* 清除浮动 */
-.f_l{
-	float: left;
-}
-.f_r{
-	float: right;
-}
-
-/* 清除浮动 */
 .clearfix::before,
 .clearfix::after{
 	content: '';
