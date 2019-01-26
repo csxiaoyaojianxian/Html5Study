@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .container {
+            width: 800px;
+            height: 150px;
+            border: 1px solid blue;
+            position: relative;
+        }
+        .box {
+            width: 400px;
+            height: 100px;
+            background-color: red;
+        }
+  
+        /* 绝对定位1 margin-left & margin-right 设为 auto，水平居中有效，垂直居中无效，对浮动或绝对定位元素无效 */
+        .box1 {
+            margin: 0 auto;
+        }
+        /* 绝对定位2 IE9+ */
+        .box2 {
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute; /* 不可缺少 */
+        }
+        .box3 {
+            left: 50%;
+            top: 50%;
+            margin-left: -200px;
+            margin-top: -50px;
+            position: absolute;
+        }
+
+        /* text-align:center; 仅对图片、按钮、文字等行内元素有效(IE6、7对所有元素有效) */
+        /* line-height设为文字父容器高度，适用于只有一行文字的情况 */
+        .box4 {
+            text-align: center;
+            line-height: 150px;
+        }
+
+        /* css3 transform，ie8及以下不支持transform，且需要前缀 */
+        .box5 {
+            left:50%;
+            top: 50%;
+            /* 左移自身宽度的一半 */
+            transform:translate(-50%,-50%);
+            position: absolute;
+        }
+        /* 利用浮动，content是真正需要居中的元素 */
+        .box6 {
+            float: left;
+            position: relative;
+            left: 50%; /* 50%相对于box */
+            clear: both;
+        }
+        .box6 .content {
+            border: 1px solid yellow;
+            position: relative;
+            left: -50%; /* 50%相对于content */
+            white-space: nowrap;
+        }
+
+        /* table-cell IE8+ 使用hack支持到ie6 */
+        .box7 {
+            display:table;
+            overflow:hidden;
+            _position:relative;
+        }   
+        .box7 .box {
+            vertical-align:middle;
+            display:table-cell;
+            text-align:center;
+            _position:absolute;
+            _top:50%;
+            _left:50%;
+            border:1px solid #000;
+        }   
+        .box7 .box  .content {
+            display:inline-block;
+            _position:relative;
+            _top:-50%;
+            _left:-50%;
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1"></div>
+    </div>
+    <div class="container">
+        <div class="box box2"></div>
+    </div>
+    <div class="container">
+        <div class="box box3"></div>
+    </div>
+
+    <div class="container box4">
+        测试
+    </div>
+
+    <div class="container">
+        <div class="box box5"></div>
+    </div>
+    <div class="container">
+        <div class="box box6">
+            <div class="content">content是真正需要居中的元素</div>
+        </div>
+    </div>
+    <div class="container box7">
+        <div class="box">
+            <div class="content">content是真正需要居中的元素</div>
+        </div>
+    </div>
+</body>
+</html>
