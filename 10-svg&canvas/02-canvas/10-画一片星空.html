@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <canvas id="cvs" >不支持canvas</canvas>
+</body>
+<script type="text/javascript">
+var cvs=document.getElementById("cvs");
+cvs.width=600;
+cvs.height=600;
+var context=cvs.getContext("2d");
+
+context.fillStyle="black";
+context.fillRect(0,0,cvs.width,cvs.height);
+
+for(var j=0;j<50;j++){
+    var r=Math.random()*10+10;
+    var x=Math.random()*600;
+    var y=Math.random()*600;
+    var a=Math.random()*360;
+    drawStar(context,r/2,r,x,y,a);
+}
+
+function drawStar(cnt,r,R,x,y,rot){
+    cnt.beginPath();
+    if(!rot) rot=0;
+    for(var i=0;i<5;i++){
+        cnt.lineTo(Math.cos((18+i*72-rot)/180*Math.PI)*R+x,-Math.sin((18+i*72-rot)/180*Math.PI)*R+y);
+        cnt.lineTo(Math.cos((54+i*72-rot)/180*Math.PI)*r+x,-Math.sin((54+i*72-rot)/180*Math.PI)*r+y);
+    }
+    cnt.closePath();
+
+    cnt.lineWidth=10;
+    cnt.strokeStyle="yellow";
+    cnt.fillStyle="yellow";
+    cnt.lineJoin="miter";
+
+    cnt.stroke();
+    cnt.fill();
+}
+</script>
+</html>

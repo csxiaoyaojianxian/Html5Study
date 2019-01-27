@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+var canvas=document.getElementById('canvas');
+var context=canvas.getContext('2d');
+//在context中加入新的方法，方法名为fillStar
+//调用对象的原型，对这个原型进行修改（函数当做对象来处理）
+CanvasRenderingContext2D.prototype.fillStar=function(r,R,x,y,rot){
+	this.beginPath();
+	for(var i=0;i<5;i++){
+		this.lineTo(Math.cos((18+i*72-rot)/180*Math.PI)*R+x,-Math.sin((18+i*72-rot)/180*Math.PI)*R+y);
+		this.lineTo(Math.cos((54+i*72-rot)/180*Math.PI)*r+x,-Math.sin((54+i*72-rot)/180*Math.PI)*r+y);
+	}
+	this.closePath();
+	this.fill();
+}
+
+window.onload=function(){
+	canvas.width=800;
+	canvas.height=800;
+	context.fillStyle="#058";
+	context.fillStar(150,300,400,400,0);
+}
+</script>
+</body>
+
+</html>

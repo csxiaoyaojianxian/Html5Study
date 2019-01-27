@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lineCap</title>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="800"></canvas>
+    <script>
+    var canvas = document.getElementById('canvas')
+    var context = canvas.getContext('2d')
+    /*
+        【 lineJoin & miterLimit 】
+        miter (default) // 斜接 miterLimit
+        bevel // 斜面
+        round
+    */
+    context.beginPath()
+    context.moveTo(100,100)
+    context.lineTo(400,400)
+    context.lineTo(100,400)
+    context.lineTo(100,100)
+    context.closePath()
+    context.lineWidth = 20
+    context.strokeStyle = '#005588'
+    // lineJoin
+    context.lineJoin = 'miter'
+    context.miterLimit = 10 // 内外角距离最大值，默认10，值小时，不能正常展示特别尖锐的角
+    
+    context.stroke()
+    </script>
+</body>
+</html>

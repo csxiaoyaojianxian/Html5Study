@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+
+	canvas.width=1024;
+	canvas.height=800;
+
+	var context=canvas.getContext('2d');
+	/*
+		context.shadowColor="gray";//指定阴影的颜色
+		context.shadowOffsetX=-20;//指定阴影的位移值
+		context.shadowOffsetY=-20;//指定阴影的位移值
+		context.shadowBlur=5;//描述阴影模糊的程度（值越大越模糊）
+	*/
+	context.fillStyle="#058";
+	context.shadowColor="gray";//可以使用任意的css可以接受的样式值，包括使用rgba设置半透明色
+	//context.shadowOffsetX=20;
+	//context.shadowOffsetY=20;
+	//负值时阴影方向会相反
+	context.shadowOffsetX=-20;
+	context.shadowOffsetY=-20;
+	context.shadowBlur=5;//越大越模糊
+
+	context.fillRect(200,200,400,400);
+}
+</script>
+</body>
+</html>

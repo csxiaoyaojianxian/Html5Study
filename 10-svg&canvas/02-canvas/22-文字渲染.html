@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+	
+	canvas.width=800;
+	canvas.height=800;
+
+	var context=canvas.getContext('2d');
+	
+	//开始编码
+	context.font="bold 40px Arial";
+	context.fillStyle="#058";
+	context.fillText("fillText欢迎大家多提意见！",40,100);
+
+	context.lineWidth=1;
+	context.strokeStyle="#058";
+	context.strokeText("strokeText欢迎大家多提意见！",40,200);
+
+	//可选参用于控制字符的长度
+	context.fillText("欢迎大家多提意见！",40,300,100);
+	context.strokeText("欢迎大家多提意见！",40,400,100);
+
+	//渐变字体
+	var linearGrad=context.createLinearGradient(0,0,800,0);//水平渐变方向
+	linearGrad.addColorStop(0.0,'red');
+	linearGrad.addColorStop(0.25,'yellow');
+	linearGrad.addColorStop(0.5,'green');
+	linearGrad.addColorStop(0.75,'blue');
+	linearGrad.addColorStop(1.0,'black');
+	context.fillStyle=linearGrad;
+	context.fillText("欢迎大家多提意见！",40,500);
+
+	//利用图片填充字体
+	var backgroundImage=new Image();
+	backgroundImage.src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/docker.jpeg";
+	backgroundImage.onload=function(){
+		var pattern=context.createPattern(backgroundImage,"repeat");
+		context.fillStyle=pattern;
+		context.font="bold 80px Arial";
+		context.fillText("Canvas！",40,650);
+		context.strokeText("Canvas！",40,650);//描边
+	}
+}
+</script>
+</body>
+</html>

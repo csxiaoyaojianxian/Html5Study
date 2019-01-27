@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+	
+	canvas.width=800;
+	canvas.height=800;
+
+	var context=canvas.getContext('2d');
+	//设置画布颜色
+	context.beginPath();
+	context.fillStyle="black";
+	context.fillRect(0,0,canvas.width,canvas.height)
+	/*
+		context.clip();
+		此函数与路径规划函数一起使用，例如：lineTo、arc、贝塞尔曲线等等
+	*/
+	context.beginPath();
+	context.arc(400,400,150,0,Math.PI*2);
+	context.fillStyle="#fff";
+	context.fill();
+	context.clip();
+	
+	context.font="bold 140px Arial";
+	context.textAlign="center";
+	context.textBaseline="middle";
+	context.fillStyle="#058";
+	context.fillText("CANVAS",canvas.width/2,canvas.height/2);    
+}
+</script>
+</body>
+</html>

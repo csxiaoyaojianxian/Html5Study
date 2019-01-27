@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+<canvas id="cvs" >不支持canvas</canvas>
+</body>
+<script>
+window.onload=function(){
+    var cvs=document.getElementById("cvs");
+    var context=cvs.getContext("2d");
+    context.lineWidth=10;
+    cvs.width=800;
+    cvs.height=800;
+
+    drawStart(context,300,150,400,400,30);
+    // cxt为canvas上下文环境变量，R为大圆半径，r为小圆半径，x和y为五角心中心坐标，rot为顺时针旋转的角度
+    function drawStart(cxt,R,r,x,y,rot){
+        cxt.beginPath();
+        for(var i=0;i<5;i++){
+            cxt.lineTo(Math.cos((18+i*72-rot)/180*Math.PI)*R+x, //把角度转成弧度才能用Math.cos
+                            -Math.sin((18+i*72-rot)/180*Math.PI)*R+y);
+            cxt.lineTo(Math.cos((54+i*72-rot)/180*Math.PI)*r+x,
+                            -Math.sin((54+i*72-rot)/180*Math.PI)*r+y);
+        }
+        cxt.closePath();
+        cxt.stroke();
+    }
+}
+</script>
+</html>

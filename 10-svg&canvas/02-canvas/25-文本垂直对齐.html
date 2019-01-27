@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+
+	canvas.width=800;
+	canvas.height=800;
+
+	var context=canvas.getContext('2d');
+	/*
+	context.textBaseline="top";
+	context.textBaseline="middle";
+	context.textBaseline="bottom";
+	context.textBaseline="alphabetic";//（默认值）基于拉丁字符的语言
+	context.textBaseline="ideographic";//基于汉字及日本文字来设置的垂直方向的基准线
+	context.textBaseline="hanging";//基于印度文的字符串来设计的垂直方向的基准线
+	*/
+	//文本垂直对齐
+	context.fillStyle="#058";
+	context.font="bold 20px sans-serif";
+
+	context.textBaseline="top";
+	context.fillText("欢迎大家提意见!",40,100);
+	drawBaseline(context,100);
+
+	context.textBaseline="middle";
+	context.fillText("欢迎大家提意见！",40,200);
+	drawBaseline(context,200);
+
+	context.textBaseline="bottom";
+	context.fillText("欢迎大家提意见！",40,300);
+	drawBaseline(context,300);
+
+	function drawBaseline(cxt,b){
+		var width=cxt.canvas.width;
+
+		cxt.save();
+
+		cxt.strokeStyle="#888";
+		cxt.lineWidth=2;
+		cxt.moveTo(0,b);
+		cxt.lineTo(width,b);
+		cxt.stroke();
+
+		cxt.restore();
+	}
+}
+</script>
+</body>
+</html>

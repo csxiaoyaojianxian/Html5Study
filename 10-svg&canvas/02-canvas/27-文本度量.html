@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+
+	canvas.width=800;
+	canvas.height=800;
+
+	var context=canvas.getContext('2d');
+	/*
+		context.measureText(string).width
+		传入字符串将返回一个对象，这个对象拥有一个.width的属性，这个属性将返回传入字符串在canvas中渲染时渲染出的字符串的宽度
+	*/
+	//文本垂直对齐 
+	context.fillStyle="#058";
+	context.font="bold 40px sans-serif";
+
+	context.fillText("欢迎大家多提意见！",40,100);
+	var textWidth=context.measureText("欢迎大家多提意见！").width;
+	context.fillText("以上字符串的宽度为"+textWidth+"px",40,200);
+}
+</script>
+</body>
+</html>

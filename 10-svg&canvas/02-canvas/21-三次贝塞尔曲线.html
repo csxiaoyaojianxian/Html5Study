@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+	canvas.width=800;
+	canvas.height=800;
+	var context=canvas.getContext('2d');
+	/*
+		context.moveTo(x0,y0);
+		context.bezierCurveTo(x1,y1,x2,y2,x3,y3);
+		其中(x0,y0)为曲线的起点，(x1,y1),(x2,y2)为控制点，(x3,y3)为曲线的终点。示例代码如下：
+	*/
+	context = canvas.getContext("2d")
+	context.lineWidth = 6;
+	context.strokeStyle = "#333";
+	context.beginPath();
+	context.moveTo(212, 275);
+	context.bezierCurveTo(150, 100, 350, 100, 276, 282);
+	context.stroke();
+}
+</script>
+</body>
+</html>

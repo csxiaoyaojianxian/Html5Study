@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body >
+<canvas id="canvas" style="border: 1px solid #aaa;display: block;margin: 50px auto">
+	当前浏览器不支持canvas，请更换浏览器后再试
+</canvas>
+<div id="buttons">
+	<a href="#">source-over</a>
+	<a href="#">source-atop</a>
+	<a href="#">source-in</a>
+	<a href="#">source-out</a>
+	<a href="#">destination-over</a>
+	<a href="#">destination-atop</a>
+	<a href="#">destination-in</a>
+	<a href="#">destination-out</a>
+	<a href="#">lighter</a>
+	<a href="#">copy</a>
+	<a href="#">xor</a>
+</div>
+
+<script type="text/javascript">
+/*
+	globalCompositeOperation（描述绘制的图形在重叠时所产生的效果）
+	context.globalCompositeOperation="source-over"; // 后绘制的图形会盖住之前绘制的图形
+	context.globalCompositeOperation="destination-over"; // 之前绘制的图形会盖住之后绘制的图形
+
+	source-over
+	source-atop
+	source-in
+	source-out
+	destination-over
+	destination-atop
+	destination-in
+	destination-out
+	lighter
+	copy
+	xor
+*/
+window.onload=function(){
+	draw("source-over");
+	var buttons=document.getElementById("buttons").getElementsByTagName("a");
+	for(var i=0;i<buttons.length;i++){
+		buttons[i].onclick=function(){
+			draw(this.text);
+			return false;
+		}
+	}
+}
+
+function draw(compositeStyle){
+	var canvas=document.getElementById('canvas');
+	canvas.width=1200;
+	canvas.height=800;
+	var context=canvas.getContext('2d');
+
+	context.clearRect(0,0, canvas.width,canvas.height);
+
+	//draw title
+	context.font="bold 40px Arial";
+	context.textAlign="center";
+	context.textBaseline="middle";
+	context.fillStyle="#058";
+	context.fillText("globalCompositeOperation="+compositeStyle,canvas.width/2,60);
+
+	//draw a rect
+	context.fillStyle="blue";
+	context.fillRect(300,150,500,500);
+
+	//drae a triangle
+	context.globalCompositeOperation=compositeStyle;
+	context.fillStyle="red";
+	context.beginPath();
+	context.moveTo(700,250);
+	context.lineTo(1000,750);
+	context.lineTo(400,750);
+	context.closePath();
+	context.fill();
+}
+</script>
+</body>
+</html>

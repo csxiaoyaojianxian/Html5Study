@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+	canvas.width=800;
+	canvas.height=800;
+	var context=canvas.getContext('2d');
+	//文本垂直对齐 
+	context.fillStyle="#058";
+	context.font="bold 120px Arial";
+
+	context.textAlign="center";
+	context.textBaseline="middle";
+	context.fillText("CANVAS",canvas.width/2,canvas.height/2);
+
+	context.strokeStyle="#888";
+	context.moveTo(0,canvas.height/2);
+	context.lineTo(canvas.width,canvas.height/2);
+	context.moveTo(canvas.width/2,0);
+	context.lineTo(canvas.width/2,canvas.height);
+	context.stroke();  
+}
+</script>
+</body>
+</html>

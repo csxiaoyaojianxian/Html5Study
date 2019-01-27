@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style>
+		canvas{border:1px solid #ddd; }
+	</style>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+	
+	canvas.width=800;
+	canvas.height=800;
+
+	var context=canvas.getContext('2d');
+
+	/*
+	【 使用图片、画布或video填充 】
+	使用图片填充：context.createPattern(img,repeat-style);
+		repeat-style包含三个值：no-repeat、repeat-x、repeat-y、repeat
+	使用画布填充：context.createPattern（canvas,repeat-style);
+	使用视频填充：context.createPattern（video,repeat-style);
+	*/
+	var backgroundImage=new Image();
+	backgroundImage.src="https://ws1.sinaimg.cn/large/8aaa9b40ly1fzlepc9mlbj20to0tngmw.jpg";
+	backgroundImage.onload=function(){
+		var pattern=context.createPattern(backgroundImage,"repeat");
+		context.fillStyle=pattern;
+		context.fillRect(0,0,800,800);
+	}
+}
+</script>
+</body>
+</html>

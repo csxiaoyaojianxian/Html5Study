@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+/*
+context.font="bold 80px Arial";//设置字体的样式、大小、字型
+context.fillText(String,x,y);//设置所填充的文字以及位置
+context.strokeText(String,x,y);//绘制一行文字，这行文字只有外边框
+context.fillText(String,x,y,[maxlen]);
+context.strokeText(String,x,y,[maxlen]);
+[maxlen]为可选参，描述所写文字的最长宽度为多少。
+font-style的属性值：normal（默认值）、italic（斜体字）、oblique（倾斜字体）；
+font-variant的属性值：normal（默认值）、small-caps（小写字母变为小的大写字母）；
+font-weight的属性值：lighter（大多数浏览器不支持）、normal（默认值）、bold、bolder（大多数浏览器不支持）；
+font-size的属性值：20px（默认值）、2em、150%、xx-small、x-small、medium、large、x-large、xx-large；
+font-family:设置多种字体备选（各个字体之间用逗号隔开）；支持@font-face。
+*/
+/*
+	context.font = font-style font-variant font-weight font-size font-family
+	font-style: normal(Default) italic(斜体字) oblique (倾斜字体)
+	font-variant: normal(Default) small-caps   	
+	font-weight: lighter normal(Default) bold
+					bolder   	
+					100 , 200 , 300 , 400 (normal) ,
+					500 , 600 , 700 (bold) , 
+					800 , 900
+	font-size: 	20px(Default) 2em 150%
+				xx-small x-small medium large x-large xx-large
+*/
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+	
+	canvas.width=800;
+	canvas.height=2000;
+
+	var context=canvas.getContext('2d');
+	
+	//font-style的属性值
+	context.fillStyle="#058";
+
+	context.font="bold 40px sans-serif";
+	context.fillText("欢迎大家多提意见！",40,100);
+	
+	context.font="italic bold 40px sans-serif";
+	context.fillText("欢迎大家多提意见！",40,200);
+
+	context.font="oblique bold 40px sans-serif";
+	context.fillText("欢迎大家多提意见！",40,300);
+	
+	//font-variant的属性值
+	context.font="bold 40px sans-serif";
+	context.fillText("欢迎大家多提意见——Canvas！",40,400);
+	
+	context.font="small-caps bold 40px sans-serif";
+	context.fillText("欢迎大家多提意见——Canvas！",40,500);
+
+	//font-weight的属性值
+	context.font="lighter 40px impact";
+	context.fillText("欢迎大家多提意见！",40,600);
+	
+	context.font="normal 40px impact";
+	context.fillText("欢迎大家多提意见！",40,700);
+
+	context.font="bold 40px impact";
+	context.fillText("欢迎大家多提意见！",40,800);
+
+	context.font="bolder 40px impact";
+	context.fillText("欢迎大家多提意见！",40,900);
+
+	//font-size的属性值
+	context.font="lighter 2em impact";
+	context.fillText("欢迎大家多提意见！",40,1000);
+
+	context.font="xx-small  sans-serif";
+	context.fillText("欢迎大家多提意见——Canvas！",40,1100);
+
+	context.font="x-small  sans-serif";
+	context.fillText("欢迎大家多提意见——Canvas！",40,1200);
+
+	context.font="medium sans-serif";
+	context.fillText("欢迎大家多提意见——Canvas！",40,1300);
+
+	context.font="large sans-serif";
+	context.fillText("欢迎大家多提意见——Canvas！",40,1400);
+
+	context.font="x-large sans-serif";
+	context.fillText("欢迎大家多提意见——Canvas！",40,1500);
+
+	context.font="xx-large  sans-serif";
+	context.fillText("欢迎大家多提意见——Canvas！",40,1600);
+}
+</script>
+</body>
+</html>

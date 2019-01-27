@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>图形变换和状态保存</title>
+</head>
+<body>
+  <canvas id="canvas" ></canvas>
+  <script type="text/javascript">
+    /**
+     * 【 图形变换 】
+     * 位移：translate（x,y）
+     * 旋转: rotate(deg) 
+     * 缩放: scale(sx,sy)
+     */
+    window.onload=function(){
+        var c=document.getElementById("canvas");
+        c.width=1024;
+        c.height=800;
+        var context=c.getContext("2d");
+        context.fillStyle="red";
+        context.translate(100,100); // 状态位移
+        context.fillRect(0,0,400,400);
+        context.restore(); // 状态恢复1
+
+        context.save(); // 状态保存2
+        context.fillStyle="green";
+        context.translate(300,300); // 如果没有状态恢复1，此时相当于translate(400,400)
+        context.fillRect(0,0,400,400);
+        context.restore(); // 恢复状态到保存2
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+
+<body>
+	<canvas id="canvas" width="1000" height="800"></canvas>
+	<script type="text/javascript">
+		window.onload=function(){
+		   var canvas=document.getElementById('canvas');
+		   canvas.width=800;
+		   canvas.height=800;
+		   var context=canvas.getContext('2d');
+		   
+		   // 通过顺时针和逆时针，绘制圆环
+		   context.beginPath();
+		   context.arc(400,400,300,0,Math.PI*2,false);
+		   context.arc(400,400,150,0,Math.PI*2,true);
+		   context.closePath();
+	
+		   context.fillStyle="#058";
+		   context.shadowColor="gray";
+		   context.shadowOffsetX=10;
+		   context.shadowOffsetY=10;
+		   context.shadowBlur=10;
+		   context.fill();
+		}
+	</script>
+</body>
+
+</html>

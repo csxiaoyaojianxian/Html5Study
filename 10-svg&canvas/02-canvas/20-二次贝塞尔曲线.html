@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+	canvas.width=800;
+	canvas.height=800;
+	var context=canvas.getContext('2d');
+	/*
+		context.moveTo(x0,y0);
+		context.quadraticCurveTo(x1,y1,x2,y2);
+		其中(x0,y0)为曲线的起点，(x1,y1)为控制点，(x2,y2)为曲线的终点。
+	*/
+	context.lineWidth = 6;
+	context.strokeStyle = "#333";
+	context.beginPath();
+	context.moveTo(100, 250);
+	context.quadraticCurveTo(250, 100, 400, 250);
+	context.stroke();
+}
+</script>
+</body>
+</html>

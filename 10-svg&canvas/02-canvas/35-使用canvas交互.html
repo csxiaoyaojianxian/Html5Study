@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+/*
+	isPointInPath 是canvas中内置的点击检测函数
+	context.isPointInPath(x,y)
+	看传入的点(x,y)是否在当前规划的路径内
+	下边的例子是绘制10个小球，当点击小球时它的颜色由蓝色变为红色
+*/
+var balls=[];
+var canvas=document.getElementById('canvas');
+var context=canvas.getContext('2d');
+	window.onload=function(){
+	canvas.width=800;
+	canvas.height=800;
+	for(var i=0;i<10;i++){
+	var aBall={x:Math.random()*canvas.width,
+		y:Math.random()*canvas.height,
+		r:Math.random()*50+20};
+		balls[i]=aBall;
+	}
+	draw();
+	//用canvas的addEventListener方法创建事件
+	canvas.addEventListener("mouseup",detect);
+}
+
+function draw(){
+	//一次for循环遍历balls数组
+	for(var i=0;i<balls.length;i++){
+		context.beginPath();
+		context.arc(balls[i].x,balls[i].y,balls[i].r,0,Math.PI*2);
+		context.fillStyle="#058";
+		context.fill();
+	}
+}
+
+function detect(event){
+	//获得鼠标点击在canvas中位置的方法
+	//鼠标坐标基于Web文档的横向距离减去canvas画布离整个文档左侧的距离
+	var x=event.clientX-canvas.getBoundingClientRect().left;
+	var y=event.clientY-canvas.getBoundingClientRect().top;
+	for(var i=0;i<balls.length;i++){
+		context.beginPath();
+		context.arc(balls[i].x,balls[i].y,balls[i].r,0,Math.PI*2);
+		if(context.isPointInPath(x,y)){
+			context.fillStyle="red";
+			context.fill();
+		}
+	}
+}
+</script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style>
+		canvas{border:1px solid #ddd; }
+	</style>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+	canvas.width=800;
+	canvas.height=800;
+
+	var context=canvas.getContext('2d');
+	/*
+	【 线性渐变（定义在两点之间）】
+	分两步进行设置：
+	第一步：确定渐变方向
+	var grd=context.context.createLinearGradient(xstart,ystart,xend,yend);
+	第二步：设置关键颜色位置和渐变色
+	grd.addColorStop(stop,color);
+	*/
+	// 渐变
+	var linearGrad=context.createLinearGradient(0,0,800,0);//水平渐变方向
+	linearGrad.addColorStop(0.0,'white');
+	linearGrad.addColorStop(0.25,'yellow');
+	linearGrad.addColorStop(0.5,'green');
+	linearGrad.addColorStop(0.75,'blue');
+	linearGrad.addColorStop(1.0,'black');
+	context.fillStyle=linearGrad;
+	context.fillRect(0,0,800,800);
+}
+</script>
+</body>
+</html>

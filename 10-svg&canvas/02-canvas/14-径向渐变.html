@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style>
+		canvas{border:1px solid #ddd; }
+	</style>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+	canvas.width=800;
+	canvas.height=800;
+
+	var context=canvas.getContext('2d');
+
+	/*
+		【 径向渐变（放射状渐变，定义在两个同心圆上）】
+		分两步进行设置：
+		第一步：确定渐变的圆心，半径
+		var grd=context.createRadialGradient(x0,y0,r0,x1,y1,r1);
+		第二步：设置关键颜色位置和渐变色
+		grd.addColorStop(stop,color); 
+	 */
+	var radialGrad=context.createRadialGradient(400,400,0,400,400,500);
+	radialGrad.addColorStop(0.0,'white');
+	radialGrad.addColorStop(0.25,'yellow');
+	radialGrad.addColorStop(0.5,'green');
+	radialGrad.addColorStop(0.75,'blue');
+	radialGrad.addColorStop(1.0,'black');
+	context.fillStyle=radialGrad;
+	context.fillRect(0,0,800,800);
+}
+</script>
+</body>
+</html>

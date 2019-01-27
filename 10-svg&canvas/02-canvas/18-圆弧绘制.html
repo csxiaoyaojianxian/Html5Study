@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+/*
+	其中(x0,y0)为起始点并非是圆弧的开始的位置，(x1,y1)为控制点，(x2,y2)为终止点，并非是圆弧结束的位置
+	context.moveTo(x0,y0);
+	context.arcTo(x1,y1,x2,y2,radius);
+ */
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+	canvas.width=800;
+	canvas.height=800;
+	var context=canvas.getContext('2d');
+
+	//arcTo
+	context.beginPath();
+	context.moveTo(150,150);//起始点
+	context.arcTo(650,150,650,650,300);
+
+	context.lineWidth=5;
+	context.strokeStyle="red";
+	context.stroke();
+
+	context.beginPath();
+	context.moveTo(150,150);
+	context.lineTo(650,150);
+	context.lineTo(650,650);
+
+	context.lineWidth=2;
+	context.strokeStyle="gray";
+	context.stroke();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+
+<script>
+/*
+	需明确哪个位置染色，哪个位置不染色
+	非0环绕原则
+*/
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+	
+	canvas.width=800;
+	canvas.height=800;
+
+	var context=canvas.getContext('2d');
+	
+	//绘制
+	context.beginPath();
+	context.rect(100,100,600,600);//顺时针
+	pathRect(context,200,200,400,200);//逆时针
+	pathTriangle(context,300,450,150,650,450,650);
+	context.arc(550,550,100,0,Math.PI*2,true);//逆时针
+	context.closePath();
+
+	context.fillStyle="#058";
+	context.shadowColor="gray";
+	context.shadowOffsetX=10;
+	context.shadowOffsetY=10;
+	context.shadowBlur=10;
+	context.fill();
+}
+
+function pathRect(cxt,x,y,width,height){
+	cxt.moveTo(x,y);
+	cxt.lineTo(x,y+height);
+	cxt.lineTo(x+width,y+height);
+	cxt.lineTo(x+width,y);
+	cxt.lineTo(x,y);
+}
+function pathTriangle(cxt,x1,y1,x2,y2,x3,y3){
+	cxt.moveTo(x1,y1);
+	cxt.lineTo(x2,y2);
+	cxt.lineTo(x3,y3);
+	cxt.lineTo(x1,y1);
+}
+</script>
+</body>
+
+</html>

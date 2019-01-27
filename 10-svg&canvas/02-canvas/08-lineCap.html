@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lineCap</title>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="800"></canvas>
+    <script>
+    var canvas = document.getElementById('canvas')
+    var context = canvas.getContext('2d')
+    /*
+        【 lineCap 】
+        butt (default)
+        round
+        square
+    */
+    context.beginPath()
+    context.moveTo(100,100)
+    context.lineTo(400,400)
+    context.lineTo(100,400)
+    context.lineTo(100,100)
+    // context.closePath()
+    context.lineWidth = 20
+    context.strokeStyle = '#005588'
+    // lineCap
+    context.lineCap = 'round'
+    
+    context.stroke()
+    </script>
+</body>
+</html>

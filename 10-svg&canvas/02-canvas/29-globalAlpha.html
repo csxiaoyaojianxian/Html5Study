@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="800"></canvas>
+<script type="text/javascript">
+window.onload=function(){
+	var canvas=document.getElementById('canvas');
+	canvas.width=1200;
+	canvas.height=700;
+	var context=canvas.getContext('2d');
+	/**
+	 * globalAlpha 全局透明度
+	 * context.globalAlpha=1;默认值
+	 * 在这种情况下默认绘制的图形都不具有透明度，即后绘制的图形会盖住之前绘制的图形
+	 */
+	context.globalAlpha=0.5;//不加此句时后绘制的圆会盖住之前绘制的
+	//画出100个圆
+	for(var i=0;i<100;i++){
+		var R=Math.floor(Math.random()*255);
+		var G=Math.floor(Math.random()*255);
+		var B=Math.floor(Math.random()*255);
+
+		context.fillStyle="rgb("+R+","+G+","+B+")";
+
+		context.beginPath();
+		context.arc(Math.random()*canvas.width,Math.random()*canvas.height,Math.random()*100,0,Math.PI*2);
+		context.fill();
+	}
+}
+</script>
+</body>
+</html>
