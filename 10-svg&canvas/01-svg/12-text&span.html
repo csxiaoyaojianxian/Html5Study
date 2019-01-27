@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Title</title>
+</head>
+<body>
+<svg width="1200" height="1000" xmlns="http://www.w3.org/2000/svg">
+   <defs>
+       <pattern id="grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+           <path stroke="#f0f0f0" fill="none" d="M0 0H20V20"></path>
+       </pattern>
+   </defs>
+   <rect width="1200" height="1000" fill="url(#grid)"></rect>
+   <text id="sintext" x="100" y="100" style="font-size:30px;">
+       ABCDEFGHIJKLMNOPQRSTUVWXYZ
+   </text>
+   <path d="M100,0V200M0,100H200" stroke="red"></path>
+</svg>
+<script>
+   //x=[20,20,20...]
+   //y=s * sin(w*x + t);
+var n=26;
+   var x=[];
+   var y=null;
+   var i=n;
+   var s=100;
+   var w=1;
+   var t=0;
+
+   while (i--) x.push(20);
+
+   function arrange(t){
+       y= x.map(function(x){
+           return s * Math.sin( w * x + t );
+       });
+   };
+
+   function render(){
+       sintext.setAttribute('dx', x.join(' '));
+       sintext.setAttribute('dy', x.join(' '));
+   }
+   render();
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<pre>
+【 Path 命令汇总 】
+M/m (x,y)+ 移动当前位置
+L/l (x,y)+ 从当前位置绘制线段到指定位置
+H/h (x)+ 从当前位置绘制⽔水平线到达指定的 x 坐标
+V/v (x)+ 从当前位置绘制竖直线到达指定的 y 坐标
+Z/z 闭合当前路径
+C/c (x1,y1,x2,y2,x,y)+ 从当前位置绘制三次⻉贝塞尔曲线到指定位置
+S/s (x2,y2,x,y)+ 从当前位置光滑绘制三次⻉贝塞尔曲线到指定位置
+Q/q (x1,y1,x,y)+ 从当前位置绘制⼆二次⻉贝塞尔曲线到指定位置
+T/t (x,y)+ 从当前位置光滑绘制⼆二次⻉贝塞尔曲线到指定位置
+A/a (rx,ry,xr,laf,sf,x,y) 从当前位置绘制弧线到指定位置
+
+【 移动和直线命令 】
+• M (x, y)+ 移动画笔，后面如果有重复参数，会当做是 L 命令处理
+• L (x, y)+ 绘制直线到指定位置
+• H (x)+ 绘制水平线到指定的 x 位置
+• V (y)+ 绘制竖直线到指定的 y 位置
+• m、l、h、v 使用相对位置绘制
+
+【 弧线命令 】
+• A (rx, ry, xr, laf, sf, x, y) - 绘制弧线
+• rx - （radius-x）弧线所在椭圆的 x 半轴长
+• ry - （radius-y）弧线所在椭圆的 y 半轴长
+• xr - （xAxis-rotation）弧线所在椭圆的长轴角度
+• laf - （large-arc-flag）是否选择弧长较长的那一段弧
+• sf - （sweep-flag）是否选择逆时针方向的那一段弧
+• x, y - 弧的终点位置
+</pre>
+</body>
+</html>

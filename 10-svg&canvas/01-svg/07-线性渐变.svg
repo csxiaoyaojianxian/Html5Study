@@ -1,0 +1,16 @@
+<svg version="1.0" encoding="UTF-8" xmlns="http://www.w3.org/2000/svg" >
+	<defs>
+		<linearGradient id="lr_grad" gradientUnits="userSpaceOnUse" x1="300" y1="100" x2="500" y2="200">
+			<stop offset="0" stop-color="#1497FC" />
+			<stop offset="0.5" stop-color="#A469BE" />
+			<stop offset="1" stop-color="#FF8C00" />
+		</linearGradient>
+	</defs>
+	<rect 
+		x="300"
+		y="100"
+		fill="url(#lr_grad)"
+		width="200"
+		height="100">
+	</rect>
+</svg>

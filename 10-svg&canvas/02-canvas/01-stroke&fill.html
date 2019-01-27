@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas</title>
+</head>
+<body>
+<canvas id="canvas" width="512" height="384" style="border: 1px solid #aaa; display: block; margin: 0 auto;">
+    浏览器不支持canvas
+</canvas>
+<script>
+var canvas=document.getElementById("canvas")
+canvas.width = 512
+canvas.height = 512
+// 获取绘图上下文
+if (canvas.getContext("2d")) {
+    var context=canvas.getContext("2d")
+    // 使用context绘制
+    context.beginPath()
+    context.moveTo(100,100)
+    context.lineTo(400,400)
+    context.lineTo(100,400)
+    context.lineTo(100,100)
+    context.closePath()
+    // 线条
+    context.lineWidth = 5
+    context.strokeStyle = '#005588'
+    context.stroke()
+    // 填充
+    context.fillStyle = 'rgb(2,100,30)'
+    context.fill()
+
+    context.beginPath()
+    context.moveTo(200,100)
+    context.lineTo(500,500)
+    context.closePath()
+    context.strokeStyle = 'red'
+    context.stroke()
+} else {
+    alert('浏览器不支持canvas')
+}
+
+</script>
+</body>
+</html>

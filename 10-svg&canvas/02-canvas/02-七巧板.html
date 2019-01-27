@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        #cvs {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cvs"></canvas>
+    <script type="text/javascript">
+        var tang = [
+            {p:[{x:0,y:0},{x:800,y:0},{x:400,y:400}],color:"#d2fd72"},
+            {p:[{x:0,y:0},{x:400,y:400},{x:0,y:800}],color:"#7bc4d6"},
+            {p:[{x:800,y:0},{x:800,y:400},{x:600,y:600},{x:600,y:200}],color:"#ed4e6f"},
+            {p:[{x:600,y:200},{x:600,y:600},{x:400,y:400}],color:"#faf513"},
+            {p:[{x:400,y:400},{x:600,y:600},{x:400,y:800},{x:200,y:600}],color:"#ad9fcb"},
+            {p:[{x:200,y:600},{x:400,y:800},{x:0,y:800}],color:"#f49dd4"},
+            {p:[{x:800,y:400},{x:800,y:800},{x:400,y:800}],color:"#f5cf2a"}]
+        window.onload = function () {
+            var canvas = document.getElementById("cvs");
+            canvas.width = 800;
+            canvas.height = 800;
+            var context = canvas.getContext("2d");
+            for (var i = 0; i < tang.length; i++) {
+                draw(tang[i], context)
+            }
+        }
+        function draw(nums,ctx){
+            ctx.beginPath();
+            ctx.moveTo(nums.p[0].x,nums.p[0].y);
+            for(var i=1;i<nums.p.length;i++){
+                ctx.lineTo(nums.p[i].x,nums.p[i].y);
+            }
+            ctx.closePath();
+            ctx.fillStyle=nums.color;
+            ctx.fill();
+        }
+    </script>
+
+</body>
+
+</html>
