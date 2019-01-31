@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    	body {
+            width: 5000px;
+            height: 5000px;
+            background-color: #eee;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            padding: 10px;
+            margin: 10px;
+            border: 10px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    scrollWidth、scrollHeight、scrollTop、scrollLeft、pageXOffset、pageYOffset
+    window.scrollTo(x,y); 见返回顶部案例
+</div>
+<script>
+    var div = document.getElementsByTagName("div")[0];
+    // 【 scrollWidth / scrollHeight 】
+    // 内容的实际大小，不含border和margin，若未超出则是盒子本身的尺寸（IE8以下，不包括IE8为盒子本身内容的多少）
+    // scrollWidth >= width + padding (本demo为100+2*10=120)
+    // scrollHeight >= height + padding (本demo为100+2*10=120)
+    console.log(div.scrollWidth);// 164
+    console.log(div.scrollHeight);// 208 超出了盒子本身高度
+    // 扩展：滚动条的高度 = document.body.scrollHeight - document.body.clientHeight
+
+    window.onscroll = function () {
+        //【 pageXOffset / pageYOffset 】默认0，设置或返回当前页面相对于窗口显示区左上角的 X 位置
+        //【 scrollLeft / scrollTop 】默认0，设置或返回当前页面的滚动距离
+
+		// document.body.scrollTop : 没有dtd约束的
+		// document.documentElement.scrollTop : 有dtd约束的
+		// 兼容写法
+		var X = window.pageXOffset || document.body.scrollLeft || document.documentElement.scrollLeft;
+		var Y = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
+		console.log(X +" "+ Y);
+		document.title = X +" "+ Y;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+<!--
+【 screen & scroll & offset & client 】
+
+（1）【 screen 】获取设备屏幕尺寸，非浏览器尺寸
+screen.availHeight / screen.availWidth  获取系统屏幕的工作区域尺寸，排除 Microsoft Windows 任务栏
+screen.width / screen.height  获取屏幕的水平/垂直分辨率
+
+（2）【 scroll 】滚动尺寸
+ele.scrollWidth / ele.scrollHeight  实际内容尺寸（不包含border和margin）
+window.pageXOffset / window.pageYOffset / ele.scrollTop / ele.scrollLeft  有滚动条时卷入部分的尺寸(注意兼容问题)
+
+（3）【 offset 】元素坐标距离
+ele.offsetWidth / ele.offsetHeight  当前元素尺寸 (width/height + padding + border)
+ele.offsetTop / ele.offsetLeft  距离最近带有定位的父系盒子的距离
+
+（4）【 event 】事件
+event.pageX / event.pageY  鼠标在body内的相对位置
+event.screenX / event.screenY  鼠标距离设备屏幕原点的距离
+event.clientX / event.clientY  鼠标距离浏览器可视区域原点的距离
+
+（4）【 client 】
+ele.clientWidth / ele.clientHeight  元素尺寸 (width/height + padding)
+ele.clientTop / ele.clientLeft  指border宽度，不常用
+
+（5）【 inner 】
+window.innerWidth / window.innerHeight  屏幕可视区域的尺寸
+-->
+    </body>
+</html>

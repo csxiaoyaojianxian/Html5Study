@@ -43,9 +43,9 @@
                 var pagey = event.pageY || scroll().top + event.clientY;
                 var x = pagex - box.offsetLeft;
                 var y = pagey - box.offsetTop;
-
+                // 绑定移动事件
                 document.onmousemove = function (event) {
-                    //把鼠标的坐标赋值给对话框。
+                    //把鼠标的坐标赋值给对话框
                     event = event || window.event;
                     var xx = event.pageX || scroll().left + event.clientX;
                     var yy = event.pageY || scroll().top + event.clientY;
@@ -56,6 +56,7 @@
                     //给box赋值
                     box.style.left = xx+"px";
                     box.style.top = yy+"px";
+
                     //禁止文本选中（选中后取消）
                     window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
                 }

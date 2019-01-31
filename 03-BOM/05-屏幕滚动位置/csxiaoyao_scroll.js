@@ -4,9 +4,9 @@
 * @Last Modified by:   SUNSHINE
 * @Last Modified time: 2017-02-03 20:59:47
 */
-function scroll() {  // 开始封装自己的scrollTop
+// 封装scrollTop
+function scroll() {
     if(window.pageYOffset !== undefined) {  // ie9+ 高版本浏览器
-        // 因为 window.pageYOffset 默认的是0,所以需要判断
         return {
             left: window.pageXOffset,
             top: window.pageYOffset

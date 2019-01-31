@@ -19,12 +19,15 @@
 <div class="box"></div>
 
 <script>
-    // clientWidth和clientHeight
+    // 【 clientWidth / clientHeight 】 元素的尺寸
     var box = document.getElementsByTagName("div")[0];
-    // clientWidth=padding+width,不包括margin和border
-    console.log(box.clientWidth);//300=100+100*2
-    console.log(box.clientTop);//234 即border宽度
+    // clientWidth = padding + width (不含margin和border)
+    console.log(box.clientWidth); // 300 = 100+100*2
+    console.log(box.clientHeight); // 300 = 100+100*2
 
+    // 【 clientTop / clientLeft 】 特殊，border宽度，不常用
+    console.log(box.clientTop); //234 即border宽度
+    console.log(box.clientLeft); //234 即border宽度
 </script>
 </body>
 </html>

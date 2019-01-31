@@ -85,7 +85,7 @@
             }
             
             //5.添加定时器
-            var timer = setInterval(autoPlay,1000);
+            var timer = setInterval(autoPlay,2000);
 
             //固定向右切换图片
             //两个定时器（一个记录图片，一个记录小方块）
@@ -119,7 +119,7 @@
             }
             all.onmouseout = function () {
                 div.style.display = "none";
-                timer = setInterval(autoPlay,1000);
+                timer = setInterval(autoPlay,2000);
             }
 
             //6.左右切换图片（鼠标放上去显示，移开隐藏）
@@ -170,11 +170,11 @@
 <div class="all" id='all'>
     <div class="screen" id="screen">
         <ul id="ul">
-            <li><img src="images/01.jpg" width="500" height="200" /></li>
-            <li><img src="images/02.jpg" width="500" height="200" /></li>
-            <li><img src="images/03.jpg" width="500" height="200" /></li>
-            <li><img src="images/04.jpg" width="500" height="200" /></li>
-            <li><img src="images/05.jpg" width="500" height="200" /></li>
+            <li><img src="img/01.jpg" width="500" height="200" /></li>
+            <li><img src="img/02.jpg" width="500" height="200" /></li>
+            <li><img src="img/03.jpg" width="500" height="200" /></li>
+            <li><img src="img/04.jpg" width="500" height="200" /></li>
+            <li><img src="img/05.jpg" width="500" height="200" /></li>
         </ul>
         <ol>
 

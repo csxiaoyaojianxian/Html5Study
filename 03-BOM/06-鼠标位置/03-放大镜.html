@@ -53,13 +53,13 @@
 
     <script>
         window.onload = function () {
-            //鼠标放到小盒子上，大盒子里的图片同步等比例移动
-            //技术点：onmouseenter==onmouseover 第一个不冒泡
-            //技术点：onmouseleave==onmouseout  第一个不冒泡
-            //步骤：
-            //1.鼠标放上去显示盒子，移开隐藏盒子
-            //2.黄盒子跟随移动
-            //3.右侧的大图片，等比例移动
+            // 鼠标放到小盒子上，大盒子里的图片同步等比例移动
+            // 技术点：onmouseenter==onmouseover 第一个不冒泡
+            // 技术点：onmouseleave==onmouseout  第一个不冒泡
+            // 步骤：
+            // 1. 鼠标放上去显示盒子，移开隐藏盒子
+            // 2. 黄盒子跟随移动
+            // 3. 右侧的大图片，等比例移动
 
             var box = document.getElementsByClassName("box")[0];
             var small = box.firstElementChild || box.firstChild;
@@ -138,11 +138,11 @@
     <!-- 大照片宽度/big框宽度 = small框宽度/mask框宽度，且小照片宽度=small框宽度，如BigImg=1000，SmallImg=small=200，big=400，那么mask=80 -->
     <div class="box">
         <div class="small">
-            <img src="images/sunshine80.png" alt=""/>
+            <img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/logo.jpg" alt=""/>
             <div class="mask"></div>
         </div>
         <div class="big">
-            <img src="images/sunshine2666.png" alt=""/>
+            <img src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/logo.jpg" alt=""/>
         </div>
     </div>
 </body>

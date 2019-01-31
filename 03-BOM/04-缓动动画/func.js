@@ -15,16 +15,12 @@ function getStyle(ele,attr){
     return ele.currentStyle[attr];
 }
 
-//参数变为3个
-//参数变为3个
+// 参数3个
 function animate(ele,json,fn){
     //先清定时器
     clearInterval(ele.timer);
     ele.timer = setInterval(function () {
-        //开闭原则
         var bool = true;
-
-
         //遍历属性和值，分别单独处理json
         //attr == k(键)    target == json[k](值)
         for(var k in json){
@@ -36,7 +32,6 @@ function animate(ele,json,fn){
             }else{
                 leader = parseInt(getStyle(ele,k)) || 0;
             }
-
             //1.获取步长
             var step = (json[k] - leader)/10;
             //2.二次加工步长
@@ -62,8 +57,6 @@ function animate(ele,json,fn){
                 bool = false;
             }
         }
-
-        console.log(1);
         //只有所有的属性都到了指定位置，bool值才不会变成false；
         if(bool){
             clearInterval(ele.timer);
@@ -75,8 +68,6 @@ function animate(ele,json,fn){
         }
     },25);
 }
-
-
 
 //获取屏幕可视区域的宽高
 function client(){
