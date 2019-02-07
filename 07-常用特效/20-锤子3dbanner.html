@@ -22,7 +22,7 @@
             border-radius: 20px;
             overflow: hidden;
         }
-        .itme:hover{
+        .item:hover{
             box-shadow: 0 0 50px 2px rgba(100,100,100,0.7);
         }
 
@@ -39,7 +39,7 @@
             border: 1px solid red;
         }
 
-        .item1>.shadow{
+        .item>.shadow{
             background: url(img/banner-shadow.png) center no-repeat;
             width: 1340px;
             height: 620px;
@@ -48,15 +48,15 @@
             margin-left:-670px;
             margin-top:-310px;
         }
-        .item1 .bottom{
+        .item .bottom{
             background:url(img/banner-1.png) center no-repeat ;
         }
 
-        .item1 .center{
+        .item .center{
             background:url(img/banner-2.png) center no-repeat;
         }
 
-        .item1 .top{
+        .item .top{
             background:url(img/banner-3.png) center  no-repeat;
         }
     </style>
@@ -66,7 +66,7 @@
 <!-- 定义视窗 -->
 <div class="banner">
     <!-- 3D场景内的元素容器 -->
-    <div class="item item1">
+    <div class="item">
         <div class="shadow"></div>
         <div class="bottom"></div>
         <div class="center"></div>
@@ -76,7 +76,7 @@
 
 <script>
 var banner=document.querySelector('.banner');
-var item=document.querySelector('.item1');
+var item=document.querySelector('.item');
 var center=document.querySelector('.center');
 var topEle=document.querySelector('.top');
 var shadow=document.querySelector('.shadow');
