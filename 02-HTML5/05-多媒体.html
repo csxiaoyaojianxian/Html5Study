@@ -25,10 +25,10 @@
   </audio>
   <script>
   function audioAutoPlay(id){
-    var audio = document.getElementById(id);
-    audio.play();
+    var audio = document.getElementById(id),
     play = function(){
       audio.play();
+      document.removeEventListener("click", play, false);
       document.removeEventListener("touchstart", play, false);
     };
     document.addEventListener("WeixinJSBridgeReady", function () {
@@ -37,6 +37,7 @@
     document.addEventListener('YixinJSBridgeReady', function() {
       play();
     }, false);
+    document.addEventListener("click",play, false);
     document.addEventListener("touchstart",play, false);
   }
   audioAutoPlay('audio');
