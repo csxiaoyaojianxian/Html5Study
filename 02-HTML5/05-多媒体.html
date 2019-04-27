@@ -19,6 +19,29 @@
         抱歉，你的浏览器不支持音频标签！
     </audio>
 
+  <!-- 解决自动播放兼容问题 -->
+  <audio controls autoplay="autoplay" loop="loop" id="audio" style="display:none;">
+    <source src="./sweet.mp3" type="audio/mpeg" />
+  </audio>
+  <script>
+  function audioAutoPlay(id){
+    var audio = document.getElementById(id);
+    audio.play();
+    play = function(){
+      audio.play();
+      document.removeEventListener("touchstart", play, false);
+    };
+    document.addEventListener("WeixinJSBridgeReady", function () {
+      play();
+    }, false);
+    document.addEventListener('YixinJSBridgeReady', function() {
+      play();
+    }, false);
+    document.addEventListener("touchstart",play, false);
+  }
+  audioAutoPlay('audio');
+  </script>
+
     <!--<video src="video/movie.mp4" controls  autoplay ></video>-->
     <!--  行内块 display:inline-block -->
     <video controls autoplay>
