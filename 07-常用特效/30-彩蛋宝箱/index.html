@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+<link rel="stylesheet" href="css/caidan.css">
+<title>luban彩蛋</title>
+</head>
+<body>
+<div class="caidan">
+  <div class="bg rotate"></div>
+  <div class="open-has">
+    <h3 class="title-close">亲爱的<span class="user">victorsun</span>，您收到一个彩蛋</h3>
+    <h3 class="title-open"></h3>
+    <div class="mod-chest">
+      <div class="chest-close show">
+        <div class="gift"></div>
+        <div class="tips">
+          <i class="arrow"></i>
+        </div>
+      </div>
+      <div class="chest-open">
+        <div class="mod-chest-cont open-cont">
+          <div class="content">
+            <h3>恭喜您成为luban</br><span class="important">第100个</span>运营活动的见证者</h3>
+            <h3>感谢有你</br>请联系小助手领取精美小礼品</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="open-none" style="display:block">
+    <h3>已经打开</h3>
+    <div class="mod-chest">
+      <div class="chest-open show"></div>
+    </div>
+  </div> -->
+</div>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript">
+$(".chest-close").click(function(){
+  $(this).addClass("shake");
+  var that=this;
+  this.addEventListener("webkitAnimationEnd", function(){
+    $(that).closest(".open-has").addClass("opened");
+    setTimeout(function(){
+      $(that).removeClass("show");
+      $(that).closest(".mod-chest").find(".chest-open").addClass("show");
+      setTimeout(function(){ $(".chest-open").addClass("blur"); },500)
+    },200)
+  }, false);
+})
+</script>
+</div>
+</body>
+</html>

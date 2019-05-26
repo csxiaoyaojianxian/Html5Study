@@ -1,0 +1,43 @@
+#lottery12 {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	background-color: #ff6959;
+	border-radius: 40px;
+}
+#lottery12.light1, #lottery12.light2{
+	width: 100%;
+	height: 100%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+#lottery12.light1 { background-image: url(../img/light01.png); }
+#lottery12.light2 { background-image: url(../img/light02.png); }
+
+#lottery12 .active{
+	background-image: url(../img/active.png);
+}
+#lottery12 table{
+	width: 88%;
+    height: 88%;
+	margin: 6%;
+	padding: 2%;
+	border-radius: 30px;
+	background-color: orange;
+	position: absolute;
+	border-collapse:collapse;
+}
+#lottery12 td{
+	text-align: center;
+	background-image: url(../img/item.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 25%;
+	height: 25%;
+}
+#lottery12 .submit-btn {
+	background-image: url(../img/buttonUp.png);
+}
+#lottery12 .submit-btn.btn-down{
+	background-image: url(../img/buttonDown.png);
+}

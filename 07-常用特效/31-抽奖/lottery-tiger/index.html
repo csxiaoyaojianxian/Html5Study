@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+<title>抽奖老虎机</title>
+</head>
+<style type="text/css">
+#lottery-tiger .main{
+    background: url("images/main2.png") no-repeat center;
+    height: 689px;
+}
+#lottery-tiger .container{
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+#lottery-tiger .num{
+    position: absolute;
+    left: 248px;
+    top: 171px;
+    width: 124px;
+    height: 198px;
+    overflow: hidden;
+}
+#lottery-tiger .num-con{
+    position: relative;
+    top:-430px;
+}
+#lottery-tiger .num-img{
+    background: url("images/num.png") no-repeat;
+    width: 124px;
+    height: 1298px;
+    margin-bottom: 4px;
+}
+#lottery-tiger .num2{
+    left: 399px;
+}
+#lottery-tiger .num3{
+    left: 551px;
+}
+.submit-btn{
+    width: 307px;
+    height: 95px;
+    position: absolute;
+    left: 313px;
+    top: -290px;
+    cursor: pointer;
+}
+</style>
+<body>
+<div id="lottery-tiger">
+	<div class="main">
+		<div class="container">
+			<div class="num num1">
+				<div class="num-con num-con1">
+					<div class="num-img"></div>
+					<div class="num-img"></div>
+				</div>
+			</div>
+			<div class="num num2">
+				<div class="num-con num-con2">
+					<div class="num-img"></div>
+					<div class="num-img"></div>
+				</div>
+			</div>
+			<div class="num num3">
+				<div class="num-con num-con3">
+					<div class="num-img"></div>
+					<div class="num-img"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="submit-btn"></div>
+	</div>
+</div>
+</body>
+</html>
+<script type="text/javascript"  src="js/jquery.js"></script>
+<script type="text/javascript">
+(function(){
+	$(".submit-btn").click(function () {
+		if(!flag){
+			flag=true;
+			reset();
+			letGo();
+			setTimeout(function () {
+				flag=false;
+				if(index==2){
+					$(".fix,.pop-form").show();
+				}else{
+					$(".fix,.pop").show();
+					$(".pop-text span").text(""+String(4-TextNum1)+(8-TextNum2))
+				}
+			},4000);
+			index++;
+		}
+	});
+
+	var flag=false;
+	var index=0;
+	var TextNum1
+	var TextNum2
+	var TextNum3
+
+	function letGo(){
+
+		TextNum1=parseInt(Math.random()*4)//随机数
+		TextNum2=parseInt(Math.random()*7)
+		TextNum3=parseInt(Math.random()*7)
+
+		var num1=[-549,-668,-786,-904][TextNum1];//在这里随机
+		var num2=[-1377,-1495,-1614,-430,-549,-668,-786,-904][TextNum2];
+		var num3=[-1377,-1495,-1614,-430,-549,-668,-786,-904][TextNum3];
+		$(".num-con1").animate({"top":-1140},1000,"linear", function () {
+			$(this).css("top",0).animate({"top":num1},1000,"linear");
+		});
+		$(".num-con2").animate({"top":-1140},1000,"linear", function () {
+			$(this).css("top",0).animate({"top":num2},1800,"linear");
+		});
+		$(".num-con3").animate({"top":-1140},1000,"linear", function () {
+			$(this).css("top",0).animate({"top":num3},1300,"linear");
+		});
+
+	}
+	function reset(){
+		$(".num-con1,.num-con2,.num-con3").css({"top":-430});
+	}
+})();
+</script>
+</div>
+</body>
+</html>

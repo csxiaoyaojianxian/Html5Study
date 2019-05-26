@@ -1,0 +1,38 @@
+#lottery8 {
+    width: 100%;
+    height: 100%;
+    border:4px solid #ba1809;
+    position: relative;
+}
+#lottery8 table {
+    width: 100%;
+    height: 100%;
+	background-color: orange;
+}
+#lottery8 table td {
+    width: 33.33%;
+	height: 33.33%;
+    text-align:center;
+    position: relative;
+}
+#lottery8 table td .item {
+    display:block;
+    width: 100%;
+	height: 100%;
+}
+#lottery8 table td .submit-btn {
+    display:block;
+    background:url(../img/9.jpg) no-repeat top center;
+}
+#lottery8 table td .submit-btn:hover {
+    background-image:url(../img/11.jpg);
+}
+#lottery8 .active:after {
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+	background-color: rgba(252,211,4,0.5);
+}

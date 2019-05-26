@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>抽奖12项</title>
+<link rel="stylesheet" type="text/css" href="css/lottery12.css"/>
+<style>
+.box {
+	width: 800px;
+	height: 800px;
+	position: relative;
+	margin-top: 100px;
+	margin-left: 100px;
+}
+</style>
+</head>
+<body>
+<div class="box">
+	<div id="lottery12">
+		<table cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="lottery-unit lottery-unit-0"><img src="img/item/01.png"></td>
+				<td class="lottery-unit lottery-unit-1"><img src="img/item/02.png"></td>
+				<td class="lottery-unit lottery-unit-2"><img src="img/item/03.png"></td>
+				<td class="lottery-unit lottery-unit-3"><img src="img/item/04.png"></td>
+			</tr>
+			<tr>
+				<td class="lottery-unit lottery-unit-11"><img src="img/item/01.png"></td>
+				<td rowspan="2" colspan="2" class="submit-btn"></td>
+				<td class="lottery-unit lottery-unit-4"><img src="img/item/05.png"></td>
+			</tr>
+			<tr>
+				<td class="lottery-unit lottery-unit-10"><img src="img/item/01.png"></td>
+				<td class="lottery-unit lottery-unit-5"><img src="img/item/01.png"></td>
+			</tr>
+			<tr>
+				<td class="lottery-unit lottery-unit-9"><img src="img/item/03.png"></td>
+				<td class="lottery-unit lottery-unit-8"><img src="img/item/04.png"></td>
+				<td class="lottery-unit lottery-unit-7"><img src="img/item/02.png"></td>
+				<td class="lottery-unit lottery-unit-6"><img src="img/item/03.png"></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/lotteryRect.js"></script>
+<script>
+// 闪烁效果
+$('#lottery12').addClass('light1')
+setInterval(function(){ 
+	$('#lottery12').hasClass('light1') ? $('#lottery12').addClass('light2').removeClass('light1') : $('#lottery12').addClass('light1').removeClass('light2');
+},500);
+
+// init
+lotteryRect.init('lottery12', {
+	prize: 6, // 中奖位置
+	cycle: 30, // 最少基本次数
+	callback: function () {
+		alert('test');
+	}
+});
+</script>
+
+</div>
+</body>
+</html>

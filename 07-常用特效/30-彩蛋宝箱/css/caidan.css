@@ -1,0 +1,65 @@
+.caidan { width: 100%; overflow: hidden; position: relative;}
+.caidan .bg { position: absolute; z-index: 1; background:url(../img/caidan/light.png) 0px 0px no-repeat; background-size:452px auto; width:452px; height:510px; left:50%; margin-left:-226px; }
+.caidan .bg.rotate { animation: rotate 10s infinite linear; }
+/* box */
+.caidan .mod-chest{ position: relative; width: 100%;}
+.caidan .mod-chest .chest-close{ width: 320px; height:135px; opacity: 0; z-index: 1; position: absolute;left:50%;top:0px;margin-left:-160px;}
+.caidan .mod-chest .show{z-index: 2 !important;opacity: 1 !important;}
+.caidan .mod-chest .chest-close .gift{width: 320px;height:135px;background:url(../img/caidan/chest.png) no-repeat 0px 0px;background-size: 320px auto;position: absolute;left:0;top:0px;}
+.caidan .mod-chest .chest-open{width: 320px;height:150px;background:url(../img/caidan/chest.png) no-repeat 0px -137px;background-size: 320px auto;opacity: 0;position: relative;z-index: 1;position: absolute;left:0px;top:0px;}
+/* message */
+.mod-chest .chest-open .mod-chest-cont{position: absolute;bottom:-27px;left:50%;margin-left:-138px;}
+.caidan .mod-chest-cont{background: url(../img/caidan/open-bg-top.png) center top  no-repeat, url(../img/caidan/open-bg-bottom.png) center bottom  no-repeat;background-size: 276px auto;width:276px;margin:27px auto 118px;position: relative;}
+.caidan .mod-chest-cont:before{width:100%;position: absolute;top:12px;bottom:80px;left:0px;content:"";background:#fff;border-left:#e59c00 1px solid;border-right:#e59c00 1px solid;box-sizing:border-box;}
+.caidan .mod-chest-cont .content{position: relative;z-index: 2;padding:13px;}
+.caidan .mod-chest-cont .content h3 {color:#865500;font-size: 15px;padding-top: 5px;padding-bottom: 5px;}
+.caidan .mod-chest-cont .content h3 .important {color:#ff5400;font-size: 18px;}
+.caidan .open-has{position: relative;z-index: 2;height:450px;width: 320px;margin:0px auto;}
+.caidan .open-has .title-close{opacity: 1;-webkit-transition:all .5s;width: 100%;text-align: center;}
+.caidan .open-has .title-open{opacity: 0;-webkit-transition:all .5s;position: absolute;top:0px;left:0px;text-align: center;width: 100%;}
+.caidan .open-has h3{color: #865500;font-size: 15px;text-align: center;padding-top:75px;padding-bottom:33px;}
+.caidan .open-has h3 .user{color: #ff5400;margin:0px 5px;display: inline-block;overflow:hidden;text-overflow:ellipsis; max-width: 100px;position: relative;white-space:nowrap;vertical-align: top;}
+.caidan .mod-chest .chest-close .tips{width: 166px;height:60px;background:url(../img/caidan/txt-tips-open.png) 0px 0px no-repeat;background-size: 190px auto;position: absolute;left:70px;top:145px;-webkit-transition:all .5s;}
+.caidan .mod-chest .chest-close .tips .arrow{width: 26px;height:60px;background:url(../img/caidan/txt-tips-open.png) right 0px no-repeat;background-size: 190px auto;position: absolute;display: block;top:0px;right:-28px;-webkit-animation:move .7s linear infinite alternate;}
+.caidan .mod-chest .chest-close:after{width: 320px;height:300px;position: absolute;top:-100px;left:-61px;content:"";display: block;}
+.caidan .mod-chest .chest-close:active{-webkit-transform:scale(1.05);-webkit-transition:all .3s;}
+.caidan .mod-chest .chest-close.shake .gift{-webkit-animation:shake 1.2s linear;-webkit-animation-fill-mode:forwards;}
+.caidan .mod-chest .chest-close.shake .tips{opacity: 0;}
+.caidan .mod-chest .chest-open.blur:after{width: 320px;height: 68px;background: url(../img/caidan/chest-open-blur.png) no-repeat 0px 0px;background-size: 320px auto;position: relative;z-index: 1;position: absolute;left: 0px;top: -5px;content:"";display: block;}
+.caidan .open-has.opened .title-open{opacity: 1;}
+.caidan .open-has.opened .title-close{opacity: 0;}
+.caidan .open-has.opened .mod-chest .chest-open{-webkit-transform:translate(0px,150px);}
+.caidan .open-has .mod-chest-cont{padding:30px 0px 50px;text-align: center;overflow: hidden;opacity: 0;-webkit-transform:translate(0px,30px);/*-webkit-transition:all .3s .3s;-webkit-transition:all .3s .3s cubic-bezier(.53,1.5,.69,1.81);*/z-index: 9;-webkit-animation-fill-mode: forwards;}
+.caidan .open-has .chest-open.show .mod-chest-cont{/*-webkit-transform:translate(0px,0px);opacity: 1;*/-webkit-animation:move2 .2s .0s linear;-webkit-animation-fill-mode: forwards;}
+.caidan .open-has .mod-chest-cont .gift{color:#ff6000;font-size: 24px;line-height: 30px;padding-bottom:30px;}
+.caidan .open-has .mod-chest-cont .gift .icon{width: 58px;height:0px;position:relative;display: inline-block;vertical-align: middle;}
+.caidan .open-has .mod-chest-cont .gift img{width: 75px;height:50px;position: absolute;top:-28px;left:-5px;}
+.caidan .open-none{position: relative;z-index:2;height:450px;width: 320px;margin:0px auto;}
+.caidan .open-none .mod-chest{height:150px;}
+.caidan .open-none h3{font-size: 15px;color:#865500;text-align: center;padding-top:35px;padding-bottom:40px;}
+@-webkit-keyframes rotate {
+  0% { -webkit-transform:rotate(0deg); }
+  100% { -webkit-transform:rotate(360deg); }
+}
+@-webkit-keyframes move {
+  0% { -webkit-transform:translate(0px ,0px); }
+  100% { -webkit-transform:translate(0px ,-5px); }
+}
+@-webkit-keyframes move2 {
+  0% {-webkit-transform:translate(0px,30px);opacity: 0;}
+  70% {-webkit-transform:translate(0px,-20px);opacity: 1;}
+  100% {-webkit-transform:translate(0px,0px);opacity: 1;}
+}
+@-webkit-keyframes shake {
+  0% {transform: scale(1);-webkit-transform: scale3d(1, 1, 1);}
+  6%{-webkit-transform: scale(.9) rotate(-8deg);-webkit-transform: scale3d(1, 1, 1) rotate(0, 0, 1, -8deg);}
+  18%, 30%,42%{-webkit-transform: scale(1.1) rotate(8deg);-webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 8deg);}
+  12%,24%, 36%,48%{-webkit-transform: scale(1.1) rotate(-8deg);-webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -8deg);}
+  54%{-webkit-transform: scale(1);-webkit-transform: scale3d(1, 1, 1);}
+  60%{-webkit-transform: scale(1);-webkit-transform: scale3d(1, 1, 1);}
+  80% {-webkit-transform: scale(1) translate(0px,150px);-webkit-transform: scale3d(1, 1, 1) translate3d(0px,150px,0);}
+  90% {-webkit-transform: scale(1) translate(0px,130px);-webkit-transform: scale3d(1, 1, 1) translate3d(0px,130px,0);}
+  100% {-webkit-transform: scale(1) translate(0px,150px);-webkit-transform: scale3d(1, 1, 1) translate3d(0px,150px,0);}
+}
+.chest-notice{text-align: center;font-size: 12px;line-height: 20px;position: relative;color:#ff6000;padding-bottom:10px;}
+.chest-notice input{position: relative;top:3px;}
