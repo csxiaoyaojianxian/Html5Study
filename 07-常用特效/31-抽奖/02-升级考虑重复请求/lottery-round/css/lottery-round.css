@@ -1,0 +1,35 @@
+.lottery-round {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	text-align: center;
+}
+.lottery-round .lottery-unit {
+	width: 25%;
+	height: 25%;
+	position: absolute;
+	transform: translate(-50%);
+    transform-origin: 50% 200%;
+}
+.lottery-round .arrow {
+	background: url("../img/arrow.png") no-repeat;
+	background-size: 100%;
+	width: 7%;
+	height: 35%;
+	position: absolute;
+	left: 46.5%;
+    top: 15%;
+	transform-origin: bottom;
+}
+.lottery-round .submit-btn {
+	background: url("../img/button.png") no-repeat;
+	background-size: 100%;
+    position: absolute;
+    width: 24%;
+    height: 24%;
+    left: 50%;
+    top: 50%;
+    margin-left: -12%;
+	margin-top: -12%;
+    cursor: pointer;
+}

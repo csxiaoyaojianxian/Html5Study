@@ -1,0 +1,56 @@
+.victor-lottery {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.victor-lottery table {
+    width: 100%;
+    height: 100%;
+}
+.victor-lottery table td {
+    text-align:center;
+    position: relative;
+    background:url(../img/victor_lottery_bg.png) no-repeat;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.victor-lottery table td.active {
+    background:url(../img/victor_lottery_active.png) no-repeat;
+    background-size: 100% 100%;
+}
+.victor-lottery table td img {
+    display: inline-block;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    margin: auto; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.victor-lottery table td span {
+    display:table-cell;
+    width: 80%;
+    height: 20%;
+    position: absolute;
+    margin: auto; 
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-size: 0.14rem;
+    vertical-align: bottom;
+}
+.victor-lottery .submit-btn {
+    display:block;
+    background:url(../img/victor_lottery_btn.png) no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+}
+.victor-lottery .submit-btn:hover {
+    background-image:url(../img/victor_lottery_btn.png);
+    background-size: 100% 100%;
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="./css/lottery-round.css">
+<title>抽奖转盘</title>
+<style>
+.box {
+	width: 3rem;
+	height: 3rem;
+}
+#lottery-round3 .lottery-unit.item1 {
+	transform: translate(-50%) rotate(120deg);
+}
+#lottery-round3 .lottery-unit.item2 {
+	transform: translate(-50%) rotate(240deg);
+}
+#lottery-round4 .lottery-unit.item1 {
+	transform: translate(-50%) rotate(90deg);
+}
+#lottery-round4 .lottery-unit.item2 {
+	transform: translate(-50%) rotate(180deg);
+}
+#lottery-round4 .lottery-unit.item3 {
+	transform: translate(-50%) rotate(270deg);
+}
+#lottery-round5 .lottery-unit.item1 {
+	transform: translate(-50%) rotate(72deg);
+}
+#lottery-round5 .lottery-unit.item2 {
+	transform: translate(-50%) rotate(144deg);
+}
+#lottery-round5 .lottery-unit.item3 {
+	transform: translate(-50%) rotate(216deg);
+}
+#lottery-round5 .lottery-unit.item4 {
+	transform: translate(-50%) rotate(288deg);
+}
+#lottery-round6 .lottery-unit.item1 {
+	transform: translate(-50%) rotate(60deg);
+}
+#lottery-round6 .lottery-unit.item2 {
+	transform: translate(-50%) rotate(120deg);
+}
+#lottery-round6 .lottery-unit.item3 {
+	transform: translate(-50%) rotate(180deg);
+}
+#lottery-round6 .lottery-unit.item4 {
+	transform: translate(-50%) rotate(240deg);
+}
+#lottery-round6 .lottery-unit.item5 {
+	transform: translate(-50%) rotate(300deg);
+}
+#lottery-round8 .lottery-unit.item1 {
+	transform: translate(-50%) rotate(45deg);
+}
+#lottery-round8 .lottery-unit.item2 {
+	transform: translate(-50%) rotate(90deg);
+}
+#lottery-round8 .lottery-unit.item3 {
+	transform: translate(-50%) rotate(135deg);
+}
+#lottery-round8 .lottery-unit.item4 {
+	transform: translate(-50%) rotate(180deg);
+}
+#lottery-round8 .lottery-unit.item5 {
+	transform: translate(-50%) rotate(225deg);
+}
+#lottery-round8 .lottery-unit.item6 {
+	transform: translate(-50%) rotate(270deg);
+}
+#lottery-round8 .lottery-unit.item7 {
+	transform: translate(-50%) rotate(315deg);
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<div id="lottery-round3" class="lottery-round">
+			<img class="lottery-unit item0" src="img/test.png" />
+			<img class="lottery-unit item1" src="img/test.png" />
+			<img class="lottery-unit item2" src="img/test.png" />
+			<div class="arrow">
+			</div>
+			<div class="submit-btn"></div>
+		</div>
+	</div>
+	<div class="box">
+		<div id="lottery-round4" class="lottery-round">
+			<img class="lottery-unit item0" src="img/test.png" />
+			<img class="lottery-unit item1" src="img/test.png" />
+			<img class="lottery-unit item2" src="img/test.png" />
+			<img class="lottery-unit item3" src="img/test.png" />
+			<div class="arrow">
+			</div>
+			<div class="submit-btn"></div>
+		</div>
+	</div>
+	<div class="box">
+		<div id="lottery-round5" class="lottery-round">
+			<img class="lottery-unit item0" src="img/test.png" />
+			<img class="lottery-unit item1" src="img/test.png" />
+			<img class="lottery-unit item2" src="img/test.png" />
+			<img class="lottery-unit item3" src="img/test.png" />
+			<img class="lottery-unit item4" src="img/test.png" />
+			<div class="arrow">
+			</div>
+			<div class="submit-btn"></div>
+		</div>
+	</div>
+	<div class="box">
+		<div id="lottery-round6" class="lottery-round">
+			<img class="lottery-unit item0" src="img/test.png" />
+			<img class="lottery-unit item1" src="img/test.png" />
+			<img class="lottery-unit item2" src="img/test.png" />
+			<img class="lottery-unit item3" src="img/test.png" />
+			<img class="lottery-unit item4" src="img/test.png" />
+			<img class="lottery-unit item5" src="img/test.png" />
+			<div class="arrow">
+			</div>
+			<div class="submit-btn"></div>
+		</div>
+	</div>
+	<div class="box">
+		<div id="lottery-round8" class="lottery-round">
+			<img class="lottery-unit item0" src="img/test.png" />
+			<img class="lottery-unit item1" src="img/test.png" />
+			<img class="lottery-unit item2" src="img/test.png" />
+			<img class="lottery-unit item3" src="img/test.png" />
+			<img class="lottery-unit item4" src="img/test.png" />
+			<img class="lottery-unit item5" src="img/test.png" />
+			<img class="lottery-unit item6" src="img/test.png" />
+			<img class="lottery-unit item7" src="img/test.png" />
+			<div class="arrow">
+			</div>
+			<div class="submit-btn"></div>
+		</div>
+	</div>
+</body>
+
+<script class="jquery library" src="js/jquery-1.8.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/LotteryRound.js"></script>
+<script>
+var obj3 = new LotteryRound({
+	id: 'lottery-round3', // id
+	circle: 4, // 最少圈数
+	onStart: function () {
+		doAction3(1,2);
+	},
+	callback: function (msg) {
+		alert(msg);
+	}
+});
+var data3 = {
+	'00': 0,
+	'11': 1,
+	'22': 2
+}
+var index = 0;
+function doAction3 (actionId, flowid) {
+	index++;
+	if (index % 2 === 0){
+		obj3.rollStop(data3['11'], '11');
+	} else {
+		obj3.reset()
+	}
+}
+
+var obj4 = new LotteryRound({
+	id: 'lottery-round4', // id
+	circle: 4, // 最少圈数
+	onStart: function () {
+		doAction4(1,2);
+	},
+	callback: function (msg) {
+		alert(msg);
+	}
+});
+function doAction4 (actionId, flowid) {
+	obj4.rollStop(2, '2');
+}
+
+var obj5 = new LotteryRound({
+	id: 'lottery-round5', // id
+	circle: 4, // 最少圈数
+	onStart: function () {
+		doAction5(1,2);
+	},
+	callback: function (msg) {
+		alert(msg);
+	}
+});
+function doAction5 (actionId, flowid) {
+	obj5.rollStop(2, '2');
+}
+
+var obj6 = new LotteryRound({
+	id: 'lottery-round6', // id
+	circle: 4, // 最少圈数
+	onStart: function () {
+		doAction6(1,2);
+	},
+	callback: function (msg) {
+		alert(msg);
+	}
+});
+function doAction6 (actionId, flowid) {
+	obj6.rollStop(2, '2');
+}
+
+var obj8 = new LotteryRound({
+	id: 'lottery-round8', // id
+	circle: 4, // 最少圈数
+	onStart: function () {
+		doAction8(1,2);
+	},
+	callback: function (msg) {
+		alert(msg);
+	}
+});
+function doAction8 (actionId, flowid) {
+	obj8.rollStop(2, '2');
+}
+// 移动端init
+document.documentElement.style.fontSize = 100 * (document.documentElement.clientWidth / 375) + 'px';
+</script>
+</html>
