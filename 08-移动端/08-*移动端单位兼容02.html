@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>移动端</title>
+<style>
+.box1 {
+    width: 60px;
+    height: 60px;
+    background-color: #eee;
+}
+.box2 {
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: #ddd;
+}
+</style>
+</head>
+<body>
+
+<script>
+/**
+ * //// 消除DPR？
+ * 【 1. 将布局视口大小设为设备像素尺寸 】
+ */
+var scale = 1 / window.devicePixelRatio; // 例如 iPhone5-DPR=2，则 scale=0.5
+document.querySelector('meta[name="viewport"]').setAttribute('content','width=device-width,initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+/**
+ * //// 页面元素跟随设备尺寸等比缩放？
+ * 【 2. 动态设置 html 标签根字体大小 】
+ *    固定设置设计稿 html 标签 font-size: 100px;
+ *    基准n * (clientWidth / 设计稿宽度) = 100 * （375 / 375) = 100
+ *    在设计稿宽度375px下，1rem = 100px
+ *    此时方便换算，如：设计稿宽度375px，屏幕750px，html标签字体大小200px, 此时60px宽的div，不必关心屏幕尺寸缩放，只需要除以100，设置width: 0.6rem;
+ */
+// 注意：rem是相对尺寸单位，是相对于html标签字体大小的单位
+//      早先给html标签设置 font-size: 62.5%; 只是为了实现 1rem = 10px 从而使计算方便，不能满足此处页面元素跟随设备尺寸等比缩放的需求
+//      文字字体大小不要用rem换算
+document.documentElement.style.fontSize = 100 * (document.documentElement.clientWidth / 375) + 'px';
+/**
+ * 【 3. 将设计图中的尺寸换算成 rem 】
+ */
+// 元素rem尺寸(本案例0.6rem) = 设计稿像素尺寸(本案例60px) / 动态设置的html标签的font-size值(本案例100)
+// 如：60px宽的div，不必关心屏幕尺寸缩放，只需要除以100，设置width: 0.6rem;
+/**
+ * 【 4. 媒体查询设置body字体大小 】
+ */
+// 321px以下 / 321px-400px之间 / 400px以上
+</script>
+<style>
+@media screen and (max-width: 321px) {
+    body { font-size:16px; }
+    header,footer { font-size:16px; }
+}
+@media screen and (min-width: 321px) and (max-width:400px) {
+    body { font-size:17px; }
+    header,footer { font-size:17px; }
+}
+@media screen and (min-width: 400px) {
+    body { font-size:19px; }
+    header,footer { font-size:19px; }
+}
+</style>
+
+<div class="box1">60px</div>
+<div class="box2">0.6rem</div>
+
+<script>
+(function(doc, win) {
+	var docEl = doc.documentElement, // 获取html标签
+	    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize', // 页面大小改变事件
+        recalc = function() {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            docEl.style.fontSize = 100 * (clientWidth / 375) + 'px'; // 动态设置html标签字体大小，便于使用rem缩放
+        };
+	if (!doc.addEventListener) return;
+	win.addEventListener(resizeEvt, recalc, false);
+	doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+</script>
+</body>
+</html>

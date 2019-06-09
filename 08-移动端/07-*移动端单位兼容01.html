@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>移动端</title>
+</head>
+<body>
+<pre>
+【 1. 三个视口 】
+布局视口 / 视觉视口 / 理想视口
+* PC端只有布局视口
+   布局视口 = 浏览器窗口
+* 移动端视口分布局视口/视觉视口/理想视口
+   布局视口：!= 浏览器窗口，CSS像素，为容纳PC端设计的网页，默认布局视口宽度远大于浏览器窗口宽度（680~1024px之间）
+   视觉视口：用户看到的区域
+   理想视口：通过 meta-viewport 设置布局视口的理想尺寸，width=device-width 根据设备尺寸动态调整
+！viewport 是 html 的父元素，所以称视口为初始包含块
+</pre>
+<script>
+/**
+ * 在不添加 / 添加 viewport 的情况下
+ */
+console.log(document.documentElement.clientWidth) // 980 / 375
+console.log(document.documentElement.clientHeight) // 1743 / 667
+</script>
+
+<pre>
+【 2. DPR 】
+设备像素比(Device Pixel Ratio)
+公式：设备像素比(DPR) = 设备像素个数 / 理想视口CSS像素个数(device-width)
+公式成立前提：缩放比为1
+例如：iPhone5-DPR = 2
+
+【 3. 媒体查询 】
+响应式设计基础
+1. 检测媒体类型，如 screen，tv 等
+2. 检测[布局视口]特性，如布局视口的宽高分辨率等
+3. 特性相关查询，如浏览器是否支持某特性（略）
+
+@media <媒体类型> and <视口特性阀值> {
+    ...
+}
+@media all and (min-width: 321px) and (max-width: 400px){
+    .box{
+        background: red;
+    }
+}
+</pre>
+</body>
+</html>
