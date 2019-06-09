@@ -12,59 +12,28 @@ CS逍遥剑仙 的 HTML5+CSS3 学习之路，持续更新 [![](https://img.shiel
 ![](https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/01.jpg)
 
 ## 目录
-* 01-JS语言基础
-  + 01-基础语法
-  + 02-常用操作
-  + 03-JS进阶
-* 02-前端拾零
-* 03-ES新特性
-* 04-特效
-* 05-ajax
-* 06-常用功能
-  + 01-upload
-  + 02-dataURL-Blob-File-canvas
-  + 03-强制竖屏
-  + 04-js模板引擎
-  + 05-jquery分页
-  + ......
-* 07-JS数据结构算法
-* 08-设计模式
-* 09-模块化
-  + 01-模块化规范
-  + 02-框架封装
-  + 03-ES6模块化
-* 10-websocket
-* 11-构建工具
-  + 01-webpack
-  + 02-grunt
-  + 03-gulp
-  + 04-ssr
-* 12-前端框架
-  + 01-jQuery
-  + 02-AngularJS
-  + 03-React
-  + 04-zepto
-  + 05-lodash
-  + 06-vue
-* 13-mock数据
-* 14-监控
-* 15-数据可视化 
-  + 01-echarts
-  + 02-d3
-  + 03-jsplumb
-* 16-H5游戏
-  + 01-createjs
-  + 02-egret
-* 17-nodejs
-  + 01-koa2
-* 18-TypeScript
-* 19-移动端
-  + 01-react-native
-  + 02-weex
-  + 03-miniprogram
-* 20-PWA
-* 21-tensorflow.js
-* 22-js探索
+* 01-基础(略)
+* 02-HTML5
+* 03-BOM
+* 04-CSS
+  + 01-css3.0
+  + 02-预编译
+  + 03-css应用实例
+  + 04-web字体图标
+  + 05-css单位
+* 05-布局
+* 06-动画
+* 07-常用特效
+* 08-移动端
+* 09-web优化
+* 10-svg&canvas
+  + 01-svg
+  + 02-canvas
+* 11-UI框架
+  + 01-bootstrap
+* 12-存储
+* 13-粒子动画
+  + 01-CanvasParticles
 
 ![www.csxiaoyao.com](https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/sign.jpg)
 **By CS逍遥剑仙**
