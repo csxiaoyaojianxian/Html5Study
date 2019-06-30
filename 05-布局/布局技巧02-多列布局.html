@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.l {
+	background-color: #eee;
+  height: 40px;
+}
+.c {
+	background-color: #ddd;
+  height: 40px;
+}
+.r {
+	background-color: #ccc;
+  height: 40px;
+}
+.col, .item {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+<h2>1. 左列定宽，右列自适应</h2>
+<h3>1.1 float + margin</h3>
+<pre>
+注：IE6会有3px的bug
+.left1 {
+  float: left;
+  width: 100px;
+}
+.right1 {
+  margin-left: 100px;
+}
+</pre>
+<style>
+.left1 {
+  float: left;
+  width: 100px;
+}
+.right1 {
+  margin-left: 100px;
+}
+</style>
+<div>
+  <div class="l left1"></div>
+  <div class="r right1"></div>
+</div>
+
+<h3>1.2 float + margin(fix)</h3>
+<pre>
+注：IE6会有3px的bug
+.left2 {
+  width: 100px;
+  float: left;
+}
+.right-fix2 {
+  width: 100%;
+  margin-left: -100px;
+  float: right;
+}
+.right2 {
+  margin-left: 100px;
+}
+</pre>
+<style>
+.left2 {
+  width: 100px;
+  float: left;
+}
+.right-fix2 {
+  width: 100%;
+  margin-left: -100px;
+  float: right;
+}
+.right2 {
+  margin-left: 100px;
+}
+</style>
+<div>
+  <div class="r right-fix2">
+    <div class="right2">right</div>
+  </div>
+  <div class="l left2">left</div>
+</div>
+<div style="clear: both;"></div>
+
+<h3>1.3 float + overflow</h3>
+<pre>
+.left3 {
+  width: 100px;
+  float: left;
+}
+.right3 {
+  overflow: hidden;
+}
+</pre>
+<style>
+.left3 {
+  width: 100px;
+  float: left;
+}
+.right3 {
+  overflow: hidden;
+}
+</style>
+触发bfc模式，浮动无法影响，隔离其他元素，IE6不支持
+<div>
+  <div class="l left3">left</div>  
+  <div class="r right3">right</div>
+</div>
+
+<h3>1.4 table</h3>
+<pre>
+.parent {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.left {
+  width: 100px;
+}
+.right, .left {
+  display: table-cell;
+}
+</pre>
+<style>
+.parent4 {
+  display: table;
+  /* table-layout: fixed; */
+  width: 100%;
+}
+.left4 {
+  width: 100px;
+}
+.right4, .left4 {
+  display: table-cell;
+}
+</style>
+<div class="parent4">
+  <div class="l left4">left</div>  
+  <div class="r right4">right</div>
+</div>
+
+<h3>1.5 flex</h3>
+<pre>
+.parent {
+  display: flex;
+}
+.left {
+  width: 100px;
+}
+.right {
+  flex: 1;
+}
+</pre>
+<style>
+.parent5 {
+  display: flex;
+}
+.left5 {
+  width: 100px;
+}
+.right5 {
+  flex: 1; /* 利用右侧容器的flex:1，均分了剩余的宽度 */
+}
+</style>
+<div class="parent5">
+  <div class="l left5">left</div>  
+  <div class="r right5">right</div>
+</div>
+
+<h2>2. 右列定宽，左列自适应</h2>
+<h3>2.1 float + margin</h3>
+<pre>
+.parent {
+  background: red;
+  height: 100px;
+  margin: 0 auto;
+}
+.left {
+  background: green;
+  margin-right: -100px;
+  width: 100%;
+  float: left;
+}
+.right {
+  float: right;
+  width: 100px;background:blue;
+}
+</pre>
+<style>
+.parent6 {
+  height: 100px;
+  margin: 0 auto;
+  background: #eee;
+}
+.left6 {
+  margin-right: -100px;
+  width: 100%;
+  float: left;
+  background: #ccc;
+}
+.right6 {
+  float: right;
+  width: 100px;
+  background:#bbb;
+}
+</style>
+<div class="parent6">
+  <div class="l left6">left</div>  
+  <div class="r right6">right</div>
+</div>
+
+<h3>2.2 table</h3>
+<pre>
+.parent {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.left {
+  display: table-cell;
+}
+.right {
+  width: 100px;
+  display: table-cell;
+}
+</pre>
+<style>
+.parent7 {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.left7 {
+  display: table-cell;
+}
+.right7 {
+  width: 100px;
+  display: table-cell;
+}
+</style>
+<div class="parent7">
+  <div class="l left7">left</div>  
+  <div class="r right7">right</div>
+</div>
+
+<h3>2.3 flex</h3>
+<pre>
+.parent {
+  display: flex;
+}
+.left {
+  flex: 1;
+}
+.right {
+  width: 100px;
+}
+</pre>
+<style>
+.parent8 {
+  display: flex;
+}
+.left8 {
+  flex: 1;
+}
+.right8 {
+  width: 100px;
+}
+</style>
+<div class="parent8">
+  <div class="l left8">left</div>  
+  <div class="r right8">right</div>
+</div>
+
+<h2>3. 两列定宽，一列自适应</h2>
+<h3>3.1 float + margin</h3>
+<pre>
+基本html结构为: 父容器parent,自容器为left, center, right。其中，left / center 定宽，right自适应
+.left, .center {
+  float: left:
+  width :200px;
+}
+.right {
+  margin-left: 400px;
+}
+</pre>
+<style>
+.left9, .center9 {
+  float: left;
+  width :200px;
+}
+.right9 {
+  margin-left: 400px;
+}
+</style>
+<div>
+  <div class="l left9">left</div>
+  <div class="c center9">center</div>
+  <div class="r right9">right</div>
+</div>
+
+<h3>3.2 float + overflow</h3>
+<pre>
+.left, .center {
+  float: left;
+  width: 200px;
+}
+.right {
+  overflow: hidden;
+}
+</pre>
+<style>
+.left10, .center10 {
+  float: left;
+  width: 200px;
+}
+.right10 {
+  overflow: hidden;
+}
+</style>
+<div>
+  <div class="l left10">left</div>
+  <div class="c center10">center</div>
+  <div class="r right10">right</div>
+</div>
+
+<h3>3.3 table</h3>
+<pre>
+.parent {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.left, .center, .right {
+  display: table-cell;
+}
+.left, .center {
+  width: 200px;
+}
+</pre>
+<style>
+.parent11 {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.left11, .center11, .right11 {
+  display: table-cell;
+}
+.left11, .center11 {
+  width: 200px;
+}
+</style>
+<div class="parent11">
+  <div class="l left11">left</div>
+  <div class="c center11">center</div>
+  <div class="r right11">right</div>
+</div>
+
+<h3>3.4 flex</h3>
+<pre>
+.parent {
+  display: flex;
+}
+.left, .center {
+  width: 100px;
+}
+.right { 
+  flex: 1;
+}
+</pre>
+<style>
+.parent12 {
+  display: flex;
+}
+.left12, .center12 {
+  width: 200px;
+}
+.right12 { 
+  flex: 1;
+}
+</style>
+<div class="parent12">
+  <div class="l left12">left</div>
+  <div class="c center12">center</div>
+  <div class="r right12">right</div>
+</div>
+
+<h2>4. 两侧定宽，中栏自适应</h2>
+<h3>4.1 float + margin</h3>
+<pre>
+.left {
+  width: 100px;
+  float: left;
+}
+.center {
+  float: left;
+  width: 100%;
+  margin-right: -200px;
+}
+.right {
+  width: 100px;
+  float: right;
+}
+</pre>
+<style>
+.left13 {
+  width: 100px;
+  float: left;
+}
+.center13 {
+  float: left;
+  width: 100%;
+  margin-right: -200px;
+}
+.right13 {
+  width: 100px;
+  float: right;
+}
+</style>
+<div>
+  <div class="l left13">left</div>
+  <div class="c center13">center</div>
+  <div class="r right13">right</div>
+</div>
+<div style="clear:both;"></div>
+
+<h3>4.2 table</h3>
+<pre>
+.parent {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+.left, .center, .right {
+  display: table-cell;
+}
+.left {
+  width: 100px;
+}
+.right {
+  width: 100px;
+}
+</pre>
+<style>
+.parent14 {
+  width: 100%;
+  display: table;
+  /* table-layout: fixed; */
+}
+.left14, .center14, .right14 {
+  display: table-cell;
+}
+.left14 {
+  width: 100px;
+}
+.right14 {
+  width: 100px;
+}
+</style>
+<div class="parent14">
+  <div class="l left14">left</div>
+  <div class="c center14">center</div>
+  <div class="r right14">right</div>
+</div>
+
+<h3>4.3 flex</h3>
+<pre>
+.parent {
+  display: flex;
+}
+.left {
+  width: 100px;
+}
+.center {
+  flex: 1;
+}
+.right {
+  width: 100px;
+}
+</pre>
+<style>
+.parent15 {
+  display: flex;
+}
+.left15 {
+  width: 100px;
+}
+.center15 {
+  flex: 1;
+}
+.right15 {
+  width: 100px;
+}
+</style>
+<div class="parent15">
+  <div class="l left15">left</div>
+  <div class="c center15">center</div>
+  <div class="r right15">right</div>
+</div>
+
+<h2>5. 一列不定宽，一列自适应</h2>
+<h3>5.1 float + overflow</h3>
+<pre>
+.left {
+  float: left;
+}
+.right {
+  overflow: hidden;
+}
+</pre>
+<style>
+.left16 {
+  float: left;
+}
+.right16 {
+  overflow: hidden;
+}
+</style>
+<div>
+  <div class="l left16">left-left-left</div>
+  <div class="r right16">right</div>
+</div>
+
+<h3>5.2 table</h3>
+<pre>
+.parent {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.left {
+  width: 0.1%;
+}
+.left, .right {
+  display: table-cell;
+}
+</pre>
+<style>
+.parent17 {
+  display: table;
+  /* table-layout: fixed; */
+  width: 100%;
+}
+.left17 {
+  /* width: 0.1%; */
+}
+.left17, .right17 {
+  display: table-cell;
+}
+</style>
+<div class="parent17">
+  <div class="l left17">left</div>
+  <div class="r right17">right</div>
+</div>
+
+<h3>5.3 flex</h3>
+<pre>
+.parent {
+  display: flex;
+}
+.right {
+  flex: 1;
+}
+</pre>
+<style>
+.parent18 {
+  display: flex;
+}
+.right18 {
+  flex: 1;
+}
+</style>
+<div class="parent18">
+  <div class="l left18">left</div>
+  <div class="r right18">right</div>
+</div>
+
+<h2>6. 多列等分布局</h2>
+<h3>6.1 float</h3>
+<pre>
+.parent {
+  margin-left: -20px; /* 假设列间距为20px */
+}
+.column {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+</pre>
+<style>
+.parent19 {
+  margin-left: -20px; /* 假设列间距为20px */
+}
+.column19 {
+  float: left;
+  width: 25%;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+</style>
+<div class="parent19">
+  <div class="col column19">1</div>
+  <div class="col column19">2</div>
+  <div class="col column19">3</div>
+  <div class="col column19">4</div>
+</div>
+
+<h3>6.2 table</h3>
+<pre>
+.parent-fix {
+  margin-left: -20px;
+}
+.parent {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.column {
+  display: table-cell;
+  padding-left: 20px;
+}
+</pre>
+<style>
+.parent-fix20 {
+  margin-left: -20px;
+}
+.parent20 {
+  display: table;
+  /* table-layout: fixed; */
+  width: 100%;
+}
+.column20 {
+  display: table-cell;
+  padding-left: 20px;
+}
+</style>
+<div class="parent-fix20">
+  <div class="parent20">
+    <div class="col column20">1</div>
+    <div class="col column20">2</div>
+    <div class="col column20">3</div>
+    <div class="col column20">4</div>
+  </div>
+</div>
+
+<h3>6.3 flex</h3>
+<pre>
+.parent {
+  display: flex;
+}
+.column {
+  flex: 1;
+}
+.column+.column {
+  margin-left: 20px;
+}
+</pre>
+<style>
+.parent21 {
+  display: flex;
+}
+.column21 {
+  flex: 1;
+}
+.column21+.column21 {
+  margin-left: 20px;
+}
+</style>
+<div class="parent21">
+  <div class="col column21">1</div>
+  <div class="col column21">2</div>
+  <div class="col column21">3</div>
+  <div class="col column21">4</div>
+</div>
+
+<h2>7. 九宫格布局</h2>
+<h3>7.1 table</h3>
+<pre>
+.parent {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.row {
+  display: table-row;
+}
+.item {
+  display: table-cell;
+  width: 33.3%;
+  height: 40px;
+}
+</pre>
+<style>
+.parent22 {
+  display: table;
+  /* table-layout: fixed; */
+  width: 100%;
+}
+.row22 {
+  display: table-row;
+}
+.item22 {
+  display: table-cell;
+  width: 33.3%;
+  height: 40px;
+}
+</style>
+<div class="parent22">
+  <div class="row22"><div class="item item22">content</div><div class="item item22">content</div><div class="item item22">content</div></div>
+  <div class="row22"><div class="item item22">content</div><div class="item item22">content</div><div class="item item22">content</div></div>
+  <div class="row22"><div class="item item22">content</div><div class="item item22">content</div><div class="item item22">content</div></div>
+</div>
+
+<h3>7.2 flex</h3>
+<pre>
+.parent {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  height: 40px;
+  display: flex;
+}
+.item {
+  flex: 1;
+}
+</pre>
+<style>
+.parent23 {
+  display: flex;
+  flex-direction: column;
+}
+.row23 {
+  height: 40px;
+  display: flex;
+}
+.item23 {
+  /* width: 40px; */
+  flex: 1;
+}
+</style>
+<div class="parent23">
+  <div class="row23"><div class="item item23">content</div><div class="item item23">content</div><div class="item item23">content</div></div>
+  <div class="row23"><div class="item item23">content</div><div class="item item23">content</div><div class="item item23">content</div></div>
+  <div class="row23"><div class="item item23">content</div><div class="item item23">content</div><div class="item item23">content</div></div>
+</div>
+
+<h2>响应式布局</h2>
+<pre>
+1. meta标签viewport，设置布局宽度等于设备宽度，布局viewport等于度量viewport
+2. 媒体查询
+</pre>
+
+<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+</body>
+</html>

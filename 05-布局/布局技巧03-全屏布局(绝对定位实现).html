@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全屏布局-绝对定位实现</title>
+<style>
+html, body, .parent {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: #bbb;
+}
+.left{
+    position: absolute;
+    top:100px;
+    left:0;
+    bottom:50px;
+    width:200px;
+    background-color: #ddd;
+}
+.right{
+    position:absolute;
+    overflow:auto; /* overflow */
+    left:200px;
+    right:0;
+    top:100px;
+    bottom:50px;
+    background-color: #eee;
+}
+.bottom{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:50px;
+    background-color: #ccc;
+}
+</style>
+</head>
+<body>
+
+<div class="parent">
+  <div class="top">top 固定高度 100px</div>
+  <div class="left">left 固定宽度 200px</div>
+  <div class="right">right 自适应</div>
+  <div class="bottom">bottom 固定高度 50px</div>
+</div>
+
+</body>
+</html>

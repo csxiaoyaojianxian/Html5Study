@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全屏布局-flex实现</title>
+<style>
+html, body, .parent {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+.parent {
+    display: flex;
+    flex-direction: column;
+}
+.top {
+    height: 100px;
+    background-color: #bbb;
+}
+.bottom {
+    height: 50px;
+    background-color: #ccc;
+}
+.middle {
+    flex: 1;
+    display: flex;
+}
+.left {
+    width: 200px;
+    background-color: #ddd;
+}
+.right {
+    flex: 1;
+    overflow: auto;
+    background-color: #eee;
+}
+</style>
+</head>
+<body>
+<div class="parent">
+    <div class="top">top 固定高度 100px</div>
+    <div class="middle">
+        <div class="left">left 固定宽度 200px</div>
+        <div class="right">right 自适应</div>
+    </div>
+    <div class="bottom">bottom 固定高度 50px</div>
+</div>
+</body>
+</html>
