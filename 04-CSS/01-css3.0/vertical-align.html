@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+【 vertical-align: middle 】<br>
+vertical-align 并不是在高度内居中，而是对齐在行高内的middle线上<br>
+时而失效原因：vertical-align 只作用在 inline-block / inline / table-cell 等元素内<br>
+
+【 两种用法 】<br>
+1. 图片文字分行显示，文字在图片下面同时图片和文字作为整体在元素内垂直居中
+<div class="demo1">
+    <img width="90" src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20180828195629.png">
+    <p>测试文本</p>
+</div>
+
+2. 通过line-height设置middle线
+<div class="demo2">
+    <img width="90" src="https://raw.githubusercontent.com/csxiaoyaojianxian/ImageHosting/master/img/20180828195629.png"/>
+    测试文本
+</div>
+
+<style>
+.demo1 {
+	vertical-align: middle;
+	display: table-cell;
+	background-color: #ccc;
+	height: 300px;
+}
+.demo2 {
+	height:180px;
+	line-height:180px;
+	background-color: #ccc;
+}
+.demo2 img {
+	vertical-align:middle;
+}
+</style>
+</body>
+</html>
