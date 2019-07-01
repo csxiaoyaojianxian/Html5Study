@@ -2,8 +2,12 @@
 <html>
 <body>
 【 vertical-align: middle 】<br>
-vertical-align 并不是在高度内居中，而是对齐在行高内的middle线上<br>
+详见 布局技巧-单列布局
 时而失效原因：vertical-align 只作用在 inline-block / inline / table-cell 等元素内<br>
+vertical-align 并不是在高度内居中，而是对齐在行高内的middle线上<br>
+
+vertical-align 为 inline-block 依赖型元素（inline/inline-block才生效，table-cell可看作inline-block）<br>
+由于对齐的基线是用行高的基线作为标记，故需要设置 line-height 或设置 display: table-cell;<br>
 
 【 两种用法 】<br>
 1. 图片文字分行显示，文字在图片下面同时图片和文字作为整体在元素内垂直居中
