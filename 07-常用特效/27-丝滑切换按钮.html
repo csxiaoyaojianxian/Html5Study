@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test</title>
+
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: #edf1f4;
+        perspective: 500px;
+        --c-wrap-shadow1: #f5f9fd;
+        --c-wrap-shadow2: #d8dbe5;
+        --c-wrap-bg: #e2e6eb;
+        --c-btn-shadow1: #d9dbe6;
+        --c-btn-shadow2: #f5f9fd;
+        --c-txt1: #aaa;
+        --c-txt2: #111;
+        transition: background-color 0.4s linear;
+    }
+    .dark {
+        background-color: #333;
+        --c-wrap-shadow1: #292929;
+        --c-wrap-shadow2: #202020;
+        --c-wrap-bg: #505050;
+        --c-btn-shadow1: #323232;
+        --c-btn-shadow2: #444;
+        --c-txt1: #888;
+        --c-txt2: #fff;
+    }
+    #btnWrapper {
+        position: relative;
+        width: 380px;
+        height: 80px;
+        padding: 12px 16px;
+        margin: 300px auto 0;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: var(--c-wrap-bg);
+        box-shadow: -10px -10px 15px var(--c-wrap-shadow1), 10px 10px 15px var(--c-wrap-shadow2);
+        transform-origin: var(--wraper-origin);
+        transition: transform 0.4s cubic-bezier(0, 0, 0.48, 1), box-shadow 0.4s linear, background-color 0.4s linear;
+    }
+    .rotateWrap {
+        transform: rotateY(var(--wraper-rotate));
+    }
+    #btnWrapper::before {
+        content: "";
+        position: absolute;
+        left: var(--groove-left);
+        top: 12px;
+        width: calc(50% - 16px - 8px);
+        height: calc(100% - 24px);
+        border-radius: 12px;
+        box-shadow: inset 8px 8px 6px var(--c-btn-shadow1), inset -5px -5px 15px var(--c-btn-shadow2), inset -5px -5px 15px var(--c-btn-shadow2), inset 7px 7px 6px var(--c-btn-shadow1);
+        transition: left 1s cubic-bezier(0.82, 0.12, 0.18, 0.88), box-shadow 0.4s linear;
+    }
+    .btn {
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        height: 100%;
+        padding: inherit;
+        color: var(--c-txt1);
+        transition: color 0.4s linear;
+        animation: txtOutScale 0.6s linear;
+        cursor: pointer;
+    }
+    .active {
+        color: var(--c-txt2);
+        transform: scale(1.1);
+        animation: txtEnterScale 0.4s linear;
+    }
+    @keyframes txtEnterScale {
+        0% {
+            transform: scale(1);
+        }
+
+        80% {
+            transform: scale(1.15);
+        }
+
+        100% {
+            transform: scale(1.1);
+        }
+    }
+    @keyframes txtOutScale {
+        0% {
+            transform: scale(1.1);
+        }
+
+        80% {
+            transform: scale(0.95);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+  </style>
+</head>
+<body>
+  <div id="btnWrapper">
+    <div class="btn active">按钮1</div>
+    <div class="btn">按钮2</div>
+  </div>
+
+  <script>
+    let wrapper = document.getElementById('btnWrapper');
+    wrapper.style.setProperty('--groove-left', '12px');
+    let btns = document.getElementsByClassName('btn');
+    for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', function (e) {
+            ThemeChange(i === 1);
+            resetBtn(btns);
+            wrapper.style.setProperty('--groove-left', `calc(12px + ${i * 50}%)`);
+            wrapper.style.setProperty('--wraper-origin', `${i === 0 ? '75% top' : '25% top'}`);
+            wrapper.style.setProperty('--wraper-rotate', `${i === 0 ? -8 : 8}deg`);
+            wrapper.className = 'rotateWrap';
+            setTimeout(() => {
+                btns[i].className = 'btn active';
+            }, 500);
+            setTimeout(() => {
+                wrapper.className = ''
+            }, 550);
+        })
+    }
+    // 重置按钮类名
+    function resetBtn(btns) {
+        for (let i = 0; i < btns.length; i++) {
+            setTimeout(() => {
+                btns[i].className = 'btn';
+            }, 100)
+        }
+    }
+    // 改变主题
+    function ThemeChange(bol) {
+        let body = document.body;
+        body.className = bol ? 'dark' : ''
+    }
+  </script>
+</body>
+</html>
